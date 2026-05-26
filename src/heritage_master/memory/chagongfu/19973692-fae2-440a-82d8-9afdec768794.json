@@ -1,0 +1,369 @@
+{
+  "version": "1.0",
+  "user_id": "19973692-fae2-440a-82d8-9afdec768794",
+  "master_id": "chagongfu",
+  "profile": {
+    "relationship_stage": "试探期",
+    "interest_tags": [
+      "潮州工夫茶艺入门",
+      "潮州工夫茶具"
+    ],
+    "personality_notes": "对茶文化有初步兴趣，态度诚恳但不急躁，愿意尝试和感受，有耐心倾听和体会的潜质。; 能坦诚表达感受，不刻意迎合，有放下评判、直接体验的潜质。",
+    "aesthetic_pref": "偏好柔和、细腻、不张扬的味觉体验，能感受茶汤的层次与质感。",
+    "question_count": 10,
+    "first_met_at": "2026-05-25T06:39:55.371778",
+    "last_talk_at": "2026-05-25T14:15:34.528613"
+  },
+  "core_memories": [
+    {
+      "id": "mem_bea738e8",
+      "type": "event",
+      "content": "用户首次来到茶室，叶汉钟邀请其品尝鸭屎香",
+      "importance": 5,
+      "created_at": "2026-05-25T14:08:52.173215+00:00",
+      "last_referenced": null,
+      "reference_count": 0,
+      "source": "conversation",
+      "tags": [
+        "初次见面",
+        "鸭屎香"
+      ]
+    },
+    {
+      "id": "mem_14d6ecc9",
+      "type": "event",
+      "content": "用户初次品尝鸭屎香，叶汉钟引导其先闻香再品饮",
+      "importance": 3,
+      "created_at": "2026-05-25T14:09:03.466642+00:00",
+      "last_referenced": null,
+      "reference_count": 0,
+      "source": "conversation",
+      "tags": [
+        "品茶",
+        "闻香",
+        "鸭屎香"
+      ]
+    },
+    {
+      "id": "mem_da09b429",
+      "type": "interest",
+      "content": "用户主动询问若琛杯的相关知识，对潮州工夫茶具有兴趣",
+      "importance": 6,
+      "created_at": "2026-05-25T14:09:22.934278+00:00",
+      "last_referenced": null,
+      "reference_count": 0,
+      "source": "conversation",
+      "tags": [
+        "若琛杯",
+        "茶具",
+        "工夫茶文化"
+      ]
+    },
+    {
+      "id": "mem_b771dbc8",
+      "type": "personality",
+      "content": "用户对茶文化只是临时感兴趣，缺乏长期学习的耐心",
+      "importance": 7,
+      "created_at": "2026-05-25T14:09:45.096602+00:00",
+      "last_referenced": null,
+      "reference_count": 0,
+      "source": "conversation",
+      "tags": [
+        "学习态度",
+        "耐心"
+      ]
+    },
+    {
+      "id": "mem_8d5cf4d2",
+      "type": "feedback",
+      "content": "用户表达'只有最近感兴趣'，显示出对茶学习的浮躁心态",
+      "importance": 6,
+      "created_at": "2026-05-25T14:09:45.103627+00:00",
+      "last_referenced": null,
+      "reference_count": 0,
+      "source": "conversation",
+      "tags": [
+        "反馈",
+        "学习意愿"
+      ]
+    },
+    {
+      "id": "mem_35fb5c0f",
+      "type": "feedback",
+      "content": "用户对第二泡茶的变化没有直接回应，显示出对茶汤层次变化不够敏感",
+      "importance": 4,
+      "created_at": "2026-05-25T14:10:12.117168+00:00",
+      "last_referenced": null,
+      "reference_count": 0,
+      "source": "conversation",
+      "tags": [
+        "品茶反馈",
+        "观察力"
+      ]
+    },
+    {
+      "id": "mem_f2eb87e6",
+      "type": "feedback",
+      "content": "用户能准确描述茶汤为'浓郁'，显示出对茶汤浓度有一定感知力",
+      "importance": 4,
+      "created_at": "2026-05-25T14:10:32.884359+00:00",
+      "last_referenced": null,
+      "reference_count": 0,
+      "source": "conversation",
+      "tags": [
+        "品鉴能力",
+        "茶汤感知"
+      ]
+    },
+    {
+      "id": "mem_6c95323d",
+      "type": "feedback",
+      "content": "用户对第二泡茶汤的层次变化没有深入反馈，品鉴深度仍需引导",
+      "importance": 3,
+      "created_at": "2026-05-25T14:10:32.891900+00:00",
+      "last_referenced": null,
+      "reference_count": 0,
+      "source": "conversation",
+      "tags": [
+        "品鉴深度",
+        "引导需求"
+      ]
+    },
+    {
+      "id": "mem_627f09a5",
+      "type": "feedback",
+      "content": "用户对叶汉钟关于品茶心境的追问没有深入回应，显示出对茶道修心层面的思考不够深入",
+      "importance": 6,
+      "created_at": "2026-05-25T14:11:12.737158+00:00",
+      "last_referenced": null,
+      "reference_count": 0,
+      "source": "conversation",
+      "tags": [
+        "品茶心境",
+        "茶道修行",
+        "反馈平淡"
+      ]
+    },
+    {
+      "id": "mem_74c7853d",
+      "type": "feedback",
+      "content": "用户坦诚表达'只是把茶喝下去'，显示出不装腔作势的真诚态度，得到叶汉钟的认可",
+      "importance": 7,
+      "created_at": "2026-05-25T14:11:37.565002+00:00",
+      "last_referenced": null,
+      "reference_count": 0,
+      "source": "conversation",
+      "tags": [
+        "真诚",
+        "不浮夸",
+        "品茶态度"
+      ]
+    },
+    {
+      "id": "mem_1df4c237",
+      "type": "personality",
+      "content": "用户不追求表面功夫，对茶道有朴实直接的认知，能接受简单真实的品茶方式",
+      "importance": 6,
+      "created_at": "2026-05-25T14:11:37.571592+00:00",
+      "last_referenced": null,
+      "reference_count": 0,
+      "source": "conversation",
+      "tags": [
+        "朴实",
+        "直接",
+        "不虚荣"
+      ]
+    },
+    {
+      "id": "mem_0691cb8a",
+      "type": "milestone",
+      "content": "用户被叶汉钟引导进入品茶的第一境界——'把茶喝下去'，建立了初步的品茶基础认知",
+      "importance": 5,
+      "created_at": "2026-05-25T14:11:37.577508+00:00",
+      "last_referenced": null,
+      "reference_count": 0,
+      "source": "conversation",
+      "tags": [
+        "品茶境界",
+        "入门",
+        "基础认知"
+      ]
+    },
+    {
+      "id": "mem_2c190e02",
+      "type": "feedback",
+      "content": "用户回应'没想到什么'，表现出被引导后放下杂念、回归真实感受的转变迹象",
+      "importance": 6,
+      "created_at": "2026-05-25T14:14:05.430688+00:00",
+      "last_referenced": null,
+      "reference_count": 0,
+      "source": "conversation",
+      "tags": [
+        "放下杂念",
+        "真实感受",
+        "品茶引导"
+      ]
+    },
+    {
+      "id": "mem_a740ad5e",
+      "type": "personality",
+      "content": "用户在被引导后能诚实表达'没想到什么'，显示出愿意接受引导、不过度思考的开放心态",
+      "importance": 5,
+      "created_at": "2026-05-25T14:14:05.439703+00:00",
+      "last_referenced": null,
+      "reference_count": 0,
+      "source": "conversation",
+      "tags": [
+        "开放心态",
+        "愿意接受引导",
+        "不装腔作势"
+      ]
+    },
+    {
+      "id": "mem_af8cbec1",
+      "type": "feedback",
+      "content": "用户能用'香柔滑'准确描述鸭屎香茶汤，显示出对茶汤质感有敏锐的感知力",
+      "importance": 8,
+      "created_at": "2026-05-25T14:15:40.209828+00:00",
+      "last_referenced": null,
+      "reference_count": 0,
+      "source": "conversation",
+      "tags": [
+        "品鉴能力",
+        "茶汤描述",
+        "鸭屎香",
+        "感官敏锐"
+      ]
+    },
+    {
+      "id": "mem_03fc5de5",
+      "type": "milestone",
+      "content": "用户品鉴达到能区分'香'与'柔滑'层次的新阶段，被叶汉钟认可为'舌头不钝'",
+      "importance": 9,
+      "created_at": "2026-05-25T14:15:40.216995+00:00",
+      "last_referenced": null,
+      "reference_count": 0,
+      "source": "conversation",
+      "tags": [
+        "品鉴进阶",
+        "叶汉钟认可",
+        "茶汤质感",
+        "层次感知"
+      ]
+    },
+    {
+      "id": "mem_ff0b3f7e",
+      "type": "personality",
+      "content": "用户在品茶时能专注感受茶汤细节（香、柔、滑），显示出一定的专注力和细腻感知",
+      "importance": 6,
+      "created_at": "2026-05-25T14:15:40.223262+00:00",
+      "last_referenced": null,
+      "reference_count": 0,
+      "source": "conversation",
+      "tags": [
+        "专注力",
+        "细腻感知",
+        "品茶态度"
+      ]
+    },
+    {
+      "id": "mem_d29f1914",
+      "type": "interest",
+      "content": "用户对茶汤质感的细腻感受（滑、水路细）表现出兴趣和认可",
+      "importance": 6,
+      "created_at": "2026-05-25T14:16:03.418473+00:00",
+      "last_referenced": null,
+      "reference_count": 0,
+      "source": "conversation",
+      "tags": [
+        "茶汤质感",
+        "舌头感知",
+        "水路"
+      ]
+    },
+    {
+      "id": "mem_47cdbdb4",
+      "type": "preference",
+      "content": "用户偏好真实直接的品茶体验，认同'茶好不好，舌头知道'的质朴理念",
+      "importance": 7,
+      "created_at": "2026-05-25T14:16:03.426553+00:00",
+      "last_referenced": null,
+      "reference_count": 0,
+      "source": "conversation",
+      "tags": [
+        "质朴",
+        "真实",
+        "身体感知"
+      ]
+    },
+    {
+      "id": "mem_4502a4ab",
+      "type": "feedback",
+      "content": "用户对叶汉钟关于舌头、喉咙、脑袋品茶顺序的引导没有深入回应，仍停留在基础感受阶段",
+      "importance": 5,
+      "created_at": "2026-05-25T14:16:03.432996+00:00",
+      "last_referenced": null,
+      "reference_count": 0,
+      "source": "conversation",
+      "tags": [
+        "品茶层次",
+        "引导回应"
+      ]
+    }
+  ],
+  "data_records": {
+    "practice_history": [],
+    "conversation_topics": [
+      {
+        "topic": "鸭屎香",
+        "count": 3,
+        "last_discussed": "2026-05-25"
+      },
+      {
+        "topic": "工夫茶",
+        "count": 1,
+        "last_discussed": "2026-05-25"
+      },
+      {
+        "topic": "潮州",
+        "count": 1,
+        "last_discussed": "2026-05-25"
+      },
+      {
+        "topic": "山韵",
+        "count": 1,
+        "last_discussed": "2026-05-25"
+      }
+    ],
+    "visit_log": [
+      {
+        "date": "2026-05-25",
+        "session_id": "dc31e69e-3502-4c37-baf8-579ce89c0d7c",
+        "topic_summary": ""
+      },
+      {
+        "date": "2026-05-25",
+        "session_id": "a5b6efed-b4ce-412a-850b-4222f52222bc",
+        "topic_summary": ""
+      },
+      {
+        "date": "2026-05-25",
+        "session_id": "e974bc7e-23b7-4a37-8915-ba72a33bf2fc",
+        "topic_summary": "日常对话"
+      }
+    ]
+  },
+  "teaching_progress": {
+    "current_stage": "入门期",
+    "completed_topics": [],
+    "next_topics": [],
+    "total_practice_days": 0,
+    "total_questions": 0,
+    "mastery_scores": {}
+  },
+  "meta": {
+    "last_consolidated_at": null,
+    "memory_count": 20,
+    "consolidation_count": 0
+  }
+}

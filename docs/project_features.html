@@ -1,0 +1,838 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>非遗大师助手 — 已实现功能清单</title>
+<style>
+  :root { --primary: #8B4513; --bg: #faf8f5; --card: #fff; --border: #e8e0d8; --text: #333; --muted: #888; }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: -apple-system, "Noto Sans SC", "Microsoft YaHei", sans-serif; background: var(--bg); color: var(--text); line-height: 1.7; }
+  .container { max-width: 1100px; margin: 0 auto; padding: 40px 24px 80px; }
+  h1 { font-size: 28px; color: var(--primary); margin-bottom: 8px; }
+  .subtitle { color: var(--muted); font-size: 15px; margin-bottom: 36px; }
+  .stats { display: flex; flex-wrap: wrap; gap: 12px; margin-bottom: 40px; }
+  .stat { background: var(--card); border: 1px solid var(--border); border-radius: 10px; padding: 14px 20px; min-width: 140px; text-align: center; }
+  .stat-num { font-size: 28px; font-weight: 700; color: var(--primary); }
+  .stat-label { font-size: 13px; color: var(--muted); }
+
+  .section { margin-bottom: 36px; }
+  .section-header { display: flex; align-items: center; gap: 10px; margin-bottom: 14px; cursor: pointer; user-select: none; }
+  .section-icon { font-size: 22px; width: 36px; height: 36px; background: var(--card); border: 1px solid var(--border); border-radius: 8px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+  .section-title { font-size: 18px; font-weight: 700; color: var(--text); }
+  .section-count { font-size: 12px; color: var(--muted); background: #f0ece8; border-radius: 10px; padding: 2px 8px; margin-left: 4px; }
+  .section-toggle { margin-left: auto; font-size: 12px; color: var(--muted); transition: transform 0.2s; }
+  .section.collapsed .section-toggle { transform: rotate(-90deg); }
+  .section.collapsed .section-body { display: none; }
+
+  .feature { background: var(--card); border: 1px solid var(--border); border-radius: 10px; padding: 14px 18px; margin-bottom: 10px; }
+  .feature-name { font-size: 15px; font-weight: 600; margin-bottom: 6px; }
+  .feature-desc { font-size: 13px; color: #555; margin-bottom: 8px; }
+  .feature-files { display: flex; flex-wrap: wrap; gap: 6px; }
+  .file-tag { font-size: 11px; background: #f5f0eb; color: var(--primary); border: 1px solid #e8ddd4; border-radius: 4px; padding: 1px 7px; font-family: "Cascadia Code", "Fira Code", monospace; }
+  .file-tag.endpoint { background: #e8f5e9; color: #2e7d32; border-color: #c8e6c9; }
+  .file-tag.mcp { background: #e3f2fd; color: #1565c0; border-color: #bbdefb; }
+  .file-tag.script { background: #fff3e0; color: #e65100; border-color: #ffe0b2; }
+
+  .toc { background: var(--card); border: 1px solid var(--border); border-radius: 12px; padding: 20px 24px; margin-bottom: 36px; }
+  .toc h2 { font-size: 16px; margin-bottom: 10px; color: var(--primary); }
+  .toc-list { list-style: none; columns: 2; column-gap: 24px; }
+  .toc-list li { font-size: 14px; padding: 3px 0; break-inside: avoid; }
+  .toc-list a { color: var(--text); text-decoration: none; }
+  .toc-list a:hover { color: var(--primary); text-decoration: underline; }
+  .toc-list .toc-num { color: var(--muted); margin-right: 6px; font-size: 12px; }
+
+  @media (max-width: 700px) {
+    .toc-list { columns: 1; }
+    .stats { gap: 8px; }
+    .stat { min-width: 100px; padding: 10px 12px; }
+  }
+</style>
+</head>
+<body>
+<div class="container">
+
+<h1>非遗大师助手 — 已实现功能清单</h1>
+<p class="subtitle">Heritage Master Project Feature Inventory &middot; 最后更新：2026-05-26</p>
+
+<!-- 统计 -->
+<div class="stats">
+  <div class="stat"><div class="stat-num">40+</div><div class="stat-label">REST API</div></div>
+  <div class="stat"><div class="stat-num">14</div><div class="stat-label">MCP 工具</div></div>
+  <div class="stat"><div class="stat-num">9</div><div class="stat-label">数据库表</div></div>
+  <div class="stat"><div class="stat-num">13</div><div class="stat-label">前端页面</div></div>
+  <div class="stat"><div class="stat-num">8</div><div class="stat-label">工具模块</div></div>
+  <div class="stat"><div class="stat-num">5</div><div class="stat-label">数据模块</div></div>
+  <div class="stat"><div class="stat-num">7</div><div class="stat-label">构建脚本</div></div>
+  <div class="stat"><div class="stat-num">5</div><div class="stat-label">前端组件</div></div>
+</div>
+
+<!-- 目录 -->
+<div class="toc">
+  <h2>目录</h2>
+  <ol class="toc-list">
+    <li><a href="#s1"><span class="toc-num">01</span>非遗项目搜索与详情</a></li>
+    <li><a href="#s2"><span class="toc-num">02</span>场馆查找（高德地图）</a></li>
+    <li><a href="#s3"><span class="toc-num">03</span>旅行路线规划</a></li>
+    <li><a href="#s4"><span class="toc-num">04</span>知识库与 RAG 系统</a></li>
+    <li><a href="#s5"><span class="toc-num">05</span>知识图谱</a></li>
+    <li><a href="#s6"><span class="toc-num">06</span>AI 探索助手</a></li>
+    <li><a href="#s7"><span class="toc-num">07</span>大师人格系统</a></li>
+    <li><a href="#s8"><span class="toc-num">08</span>大师问答</a></li>
+    <li><a href="#s9"><span class="toc-num">09</span>用户管理系统</a></li>
+    <li><a href="#s10"><span class="toc-num">10</span>长期记忆系统</a></li>
+    <li><a href="#s11"><span class="toc-num">11</span>修行/练习系统</a></li>
+    <li><a href="#s12"><span class="toc-num">12</span>论坛/社区</a></li>
+    <li><a href="#s13"><span class="toc-num">13</span>实时资讯</a></li>
+    <li><a href="#s14"><span class="toc-num">14</span>前端页面</a></li>
+    <li><a href="#s15"><span class="toc-num">15</span>MCP Server</a></li>
+    <li><a href="#s16"><span class="toc-num">16</span>基础设施与部署</a></li>
+  </ol>
+</div>
+
+<!-- ═══════════ 1. 非遗项目搜索与详情 ═══════════ -->
+<div class="section" id="s1">
+  <div class="section-header" onclick="this.parentElement.classList.toggle('collapsed')">
+    <div class="section-icon">📜</div>
+    <div class="section-title">1. 非遗项目搜索与详情</div>
+    <span class="section-count">5 项</span>
+    <span class="section-toggle">▼</span>
+  </div>
+  <div class="section-body">
+    <div class="feature">
+      <div class="feature-name">1.1 关键词/类别/地区搜索</div>
+      <div class="feature-desc">按关键词、十大类别、省份地区筛选非遗项目。爬取 ihchina.cn 官方 API，内置 30+ 条兜底数据。</div>
+      <div class="feature-files">
+        <span class="file-tag">heritage_search.py</span>
+        <span class="file-tag">crawler.py</span>
+        <span class="file-tag endpoint">GET /api/search</span>
+        <span class="file-tag mcp">search_heritage_projects</span>
+      </div>
+    </div>
+    <div class="feature">
+      <div class="feature-name">1.2 项目详情查询</div>
+      <div class="feature-desc">多源降级：ihchina.cn 详情页 → knowledge.json → 百度百科 → 内置数据 → 元数据生成描述。</div>
+      <div class="feature-files">
+        <span class="file-tag">heritage_search.py</span>
+        <span class="file-tag">crawler.py</span>
+        <span class="file-tag endpoint">GET /api/project/{name}</span>
+        <span class="file-tag mcp">get_heritage_project_info</span>
+      </div>
+    </div>
+    <div class="feature">
+      <div class="feature-name">1.3 非遗十大类别</div>
+      <div class="feature-desc">返回非遗十大类别列表（民间文学、传统音乐、传统舞蹈、传统戏剧、曲艺、传统美术、传统技艺、民俗等）。</div>
+      <div class="feature-files">
+        <span class="file-tag endpoint">GET /api/categories</span>
+        <span class="file-tag mcp">get_heritage_categories</span>
+      </div>
+    </div>
+    <div class="feature">
+      <div class="feature-name">1.4 LLM 增强搜索</div>
+      <div class="feature-desc">搜索结果可选 LLM 摘要增强。组合端点同时返回项目 + 活动 + 场馆 + 路线建议。</div>
+      <div class="feature-files">
+        <span class="file-tag endpoint">GET /api/search?enrich=True</span>
+        <span class="file-tag endpoint">GET /api/search/enriched</span>
+      </div>
+    </div>
+    <div class="feature">
+      <div class="feature-name">1.5 百度百科集成</div>
+      <div class="feature-desc">从百度百科抓取非遗项目补充信息。</div>
+      <div class="feature-files">
+        <span class="file-tag">crawler.py</span>
+        <span class="file-tag endpoint">GET /api/baike/{keyword}</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════ 2. 场馆查找 ═══════════ -->
+<div class="section" id="s2">
+  <div class="section-header" onclick="this.parentElement.classList.toggle('collapsed')">
+    <div class="section-icon">📍</div>
+    <div class="section-title">2. 场馆查找（高德地图集成）</div>
+    <span class="section-count">4 项</span>
+    <span class="section-toggle">▼</span>
+  </div>
+  <div class="section-body">
+    <div class="feature">
+      <div class="feature-name">2.1 城市场馆搜索</div>
+      <div class="feature-desc">调高德 POI API，支持文本搜索和坐标附近搜索，返回名称、地址、评分、电话等。</div>
+      <div class="feature-files">
+        <span class="file-tag">venue_finder.py</span>
+        <span class="file-tag endpoint">GET /api/venues</span>
+        <span class="file-tag mcp">find_heritage_venues</span>
+      </div>
+    </div>
+    <div class="feature">
+      <div class="feature-name">2.2 场馆详情</div>
+      <div class="feature-desc">查询单个场馆的详细信息：地址、电话、营业时间、类型、区域、照片。</div>
+      <div class="feature-files">
+        <span class="file-tag endpoint">GET /api/venue/detail</span>
+      </div>
+    </div>
+    <div class="feature">
+      <div class="feature-name">2.3 地图配置</div>
+      <div class="feature-desc">返回高德 JS API Key，供前端地图渲染使用。</div>
+      <div class="feature-files">
+        <span class="file-tag endpoint">GET /api/map-config</span>
+      </div>
+    </div>
+    <div class="feature">
+      <div class="feature-name">2.4 AmapView 地图组件</div>
+      <div class="feature-desc">前端交互式地图组件，支持标记点、路线绘制。</div>
+      <div class="feature-files">
+        <span class="file-tag">AmapView.vue</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════ 3. 旅行路线规划 ═══════════ -->
+<div class="section" id="s3">
+  <div class="section-header" onclick="this.parentElement.classList.toggle('collapsed')">
+    <div class="section-icon">🗺</div>
+    <div class="section-title">3. 旅行路线规划</div>
+    <span class="section-count">2 项</span>
+    <span class="section-toggle">▼</span>
+  </div>
+  <div class="section-body">
+    <div class="feature">
+      <div class="feature-name">3.1 多日行程规划</div>
+      <div class="feature-desc">Haversine 距离计算 + 高德步行导航 + 最近邻 TSP 启发式 + 按天聚类。返回文字行程和结构化路线数据（供前端地图渲染）。</div>
+      <div class="feature-files">
+        <span class="file-tag">route_planner.py</span>
+        <span class="file-tag endpoint">POST /api/trip</span>
+        <span class="file-tag mcp">plan_heritage_trip</span>
+      </div>
+    </div>
+    <div class="feature">
+      <div class="feature-name">3.2 模板路线兜底</div>
+      <div class="feature-desc">10 个主要城市预置路线，当无实时场馆数据时使用。</div>
+      <div class="feature-files">
+        <span class="file-tag">route_planner.py</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════ 4. 知识库与 RAG ═══════════ -->
+<div class="section" id="s4">
+  <div class="section-header" onclick="this.parentElement.classList.toggle('collapsed')">
+    <div class="section-icon">📚</div>
+    <div class="section-title">4. 知识库与 RAG 系统</div>
+    <span class="section-count">5 项</span>
+    <span class="section-toggle">▼</span>
+  </div>
+  <div class="section-body">
+    <div class="feature">
+      <div class="feature-name">4.1 本地 Markdown 知识检索</div>
+      <div class="feature-desc">扫描 rag/knowledge/*.md 文件，关键词匹配检索。</div>
+      <div class="feature-files">
+        <span class="file-tag">knowledge_base.py</span>
+      </div>
+    </div>
+    <div class="feature">
+      <div class="feature-name">4.2 向量检索（ChromaDB + sentence-transformers）</div>
+      <div class="feature-desc">本地 embedding 模型生成向量，存入 ChromaDB 进行语义检索。</div>
+      <div class="feature-files">
+        <span class="file-tag">knowledge_base.py</span>
+        <span class="file-tag">local_embedding.py</span>
+        <span class="file-tag endpoint">GET /api/knowledge</span>
+        <span class="file-tag mcp">ask_heritage_question</span>
+        <span class="file-tag mcp">get_heritage_knowledge</span>
+      </div>
+    </div>
+    <div class="feature">
+      <div class="feature-name">4.3 结构化知识</div>
+      <div class="feature-desc">knowledge.json 存储项目结构化数据，支持 MCP 资源访问。</div>
+      <div class="feature-files">
+        <span class="file-tag">knowledge.json</span>
+        <span class="file-tag">master_prompt.py</span>
+        <span class="file-tag mcp">heritage://knowledge/projects</span>
+      </div>
+    </div>
+    <div class="feature">
+      <div class="feature-name">4.4 知识索引</div>
+      <div class="feature-desc">批量索引 Markdown 文件到 ChromaDB 的脚本。</div>
+      <div class="feature-files">
+        <span class="file-tag script">scripts/init_rag.py</span>
+        <span class="file-tag script">scripts/build_rag.py</span>
+      </div>
+    </div>
+    <div class="feature">
+      <div class="feature-name">4.5 多维度知识检索</div>
+      <div class="feature-desc">支持 overview / history / technique / inheritors / works / learning 六个方面查询。降级链：结构化知识 → RAG → 本地文件 → ihchina.cn 元数据。</div>
+      <div class="feature-files">
+        <span class="file-tag">knowledge_base.py</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════ 5. 知识图谱 ═══════════ -->
+<div class="section" id="s5">
+  <div class="section-header" onclick="this.parentElement.classList.toggle('collapsed')">
+    <div class="section-icon">🕸</div>
+    <div class="section-title">5. 知识图谱</div>
+    <span class="section-count">4 项</span>
+    <span class="section-toggle">▼</span>
+  </div>
+  <div class="section-body">
+    <div class="feature">
+      <div class="feature-name">5.1 JSON 图引擎</div>
+      <div class="feature-desc">节点类型：人物/流派/技法/作品/项目/地区。支持加载、查询邻居、BFS 路径查找、传承链、探索、统计。</div>
+      <div class="feature-files">
+        <span class="file-tag">knowledge_graph.py</span>
+        <span class="file-tag">graph.json</span>
+      </div>
+    </div>
+    <div class="feature">
+      <div class="feature-name">5.2 图谱 Web API（7 个端点）</div>
+      <div class="feature-desc">搜索、节点详情、路径查找、传承链、统计、探索、按类型查询。</div>
+      <div class="feature-files">
+        <span class="file-tag endpoint">GET /api/graph/search</span>
+        <span class="file-tag endpoint">GET /api/graph/node/{id}</span>
+        <span class="file-tag endpoint">GET /api/graph/path</span>
+        <span class="file-tag endpoint">GET /api/graph/chain</span>
+        <span class="file-tag endpoint">GET /api/graph/stats</span>
+        <span class="file-tag endpoint">GET /api/graph/explore</span>
+        <span class="file-tag endpoint">GET /api/graph/by-type</span>
+      </div>
+    </div>
+    <div class="feature">
+      <div class="feature-name">5.3 图谱 MCP 工具</div>
+      <div class="feature-desc">3 个 MCP 工具：查询图谱、获取传承链、探索文化图谱。</div>
+      <div class="feature-files">
+        <span class="file-tag mcp">query_knowledge_graph</span>
+        <span class="file-tag mcp">get_inheritance_chain</span>
+        <span class="file-tag mcp">explore_cultural_graph</span>
+      </div>
+    </div>
+    <div class="feature">
+      <div class="feature-name">5.4 前端图谱可视化</div>
+      <div class="feature-desc">交互式知识图谱可视化页面。</div>
+      <div class="feature-files">
+        <span class="file-tag">GraphView.vue</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════ 6. AI 探索助手 ═══════════ -->
+<div class="section" id="s6">
+  <div class="section-header" onclick="this.parentElement.classList.toggle('collapsed')">
+    <div class="section-icon">🧭</div>
+    <div class="section-title">6. AI 探索助手（Agent）</div>
+    <span class="section-count">5 项</span>
+    <span class="section-toggle">▼</span>
+  </div>
+  <div class="section-body">
+    <div class="feature">
+      <div class="feature-name">6.1 对话式 Agent + Function Calling</div>
+      <div class="feature-desc">自动路由到搜索/场馆/旅行三个工具，最多 5 轮工具调用循环。</div>
+      <div class="feature-files">
+        <span class="file-tag">agent_tools.py</span>
+        <span class="file-tag endpoint">POST /api/agent</span>
+      </div>
+    </div>
+    <div class="feature">
+      <div class="feature-name">6.2 个性化注入 <span style="color:#2e7d32;font-size:12px;">(NEW)</span></div>
+      <div class="feature-desc">用户画像 + 记忆 + 兴趣标签 + 阶段行为 + 个性化指令注入 system prompt。根据 question_count 调整回复深度。</div>
+      <div class="feature-files">
+        <span class="file-tag">app.py: _build_agent_personalization()</span>
+      </div>
+    </div>
+    <div class="feature">
+      <div class="feature-name">6.3 个性化问候 <span style="color:#2e7d32;font-size:12px;">(NEW)</span></div>
+      <div class="feature-desc">记忆感知的欢迎语，引用近期话题和核心记忆，返回用户兴趣标签供前端动态生成快捷标签。</div>
+      <div class="feature-files">
+        <span class="file-tag endpoint">GET /api/agent/greeting</span>
+      </div>
+    </div>
+    <div class="feature">
+      <div class="feature-name">6.4 服务端对话历史 <span style="color:#2e7d32;font-size:12px;">(NEW)</span></div>
+      <div class="feature-desc">对话历史存服务端数据库，支持跨设备同步。登录用户从服务端加载，未登录用户保持 localStorage。</div>
+      <div class="feature-files">
+        <span class="file-tag endpoint">GET /api/agent/conversations</span>
+        <span class="file-tag endpoint">GET /api/agent/conversations/{id}</span>
+      </div>
+    </div>
+    <div class="feature">
+      <div class="feature-name">6.5 前端个性化欢迎 <span style="color:#2e7d32;font-size:12px;">(NEW)</span></div>
+      <div class="feature-desc">根据用户兴趣动态生成快捷标签（替代固定标签），显示个性化问候文案。</div>
+      <div class="feature-files">
+        <span class="file-tag">AgentView.vue</span>
+        <span class="file-tag">api.js</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════ 7. 大师人格系统 ═══════════ -->
+<div class="section" id="s7">
+  <div class="section-header" onclick="this.parentElement.classList.toggle('collapsed')">
+    <div class="section-icon">🎭</div>
+    <div class="section-title">7. 大师人格系统</div>
+    <span class="section-count">5 项</span>
+    <span class="section-toggle">▼</span>
+  </div>
+  <div class="section-body">
+    <div class="feature">
+      <div class="feature-name">7.1 内置大师人格</div>
+      <div class="feature-desc">2 个大师：叶汉钟（潮州工夫茶）、陈少峰（广东醒狮）。每个大师包含 system_prompt、场景描述、三阶段行为、问候语、专业领域、性格特征。</div>
+      <div class="feature-files">
+        <span class="file-tag">master_prompt.py</span>
+      </div>
+    </div>
+    <div class="feature">
+      <div class="feature-name">7.2 OpenPersona JSON 加载</div>
+      <div class="feature-desc">从 personas/*.json 动态加载人格，转换为内部 MASTERS 格式。</div>
+      <div class="feature-files">
+        <span class="file-tag">persona_loader.py</span>
+        <span class="file-tag">personas/chagongfu.json</span>
+        <span class="file-tag">personas/wushishizi.json</span>
+      </div>
+    </div>
+    <div class="feature">
+      <div class="feature-name">7.3 三阶段自适应提示</div>
+      <div class="feature-desc">试探期→信任期→修行期。每阶段控制：开放度、留白比例、问候风格、教学深度、主动教学。</div>
+      <div class="feature-files">
+        <span class="file-tag">master_prompt.py</span>
+      </div>
+    </div>
+    <div class="feature">
+      <div class="feature-name">7.4 MCP 提示模板</div>
+      <div class="feature-desc">4 个 MCP 提示：专家提示、对比分析、导览、深度探索。</div>
+      <div class="feature-files">
+        <span class="file-tag mcp">heritage_expert_prompt</span>
+        <span class="file-tag mcp">heritage_compare</span>
+        <span class="file-tag mcp">heritage_guide</span>
+        <span class="file-tag mcp">heritage_deep_dive</span>
+      </div>
+    </div>
+    <div class="feature">
+      <div class="feature-name">7.5 人格蒸馏脚本</div>
+      <div class="feature-desc">从语录/采访中用 LLM 自动提取人格特征，生成 OpenPersona JSON。</div>
+      <div class="feature-files">
+        <span class="file-tag script">scripts/distill_persona.py</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════ 8. 大师问答 ═══════════ -->
+<div class="section" id="s8">
+  <div class="section-header" onclick="this.parentElement.classList.toggle('collapsed')">
+    <div class="section-icon">💬</div>
+    <div class="section-title">8. 大师问答（/api/ask）</div>
+    <span class="section-count">3 项</span>
+    <span class="section-toggle">▼</span>
+  </div>
+  <div class="section-body">
+    <div class="feature">
+      <div class="feature-name">8.1 自适应 Prompt</div>
+      <div class="feature-desc">根据关系阶段、兴趣标签、性格观察动态调整回答风格和深度。</div>
+      <div class="feature-files">
+        <span class="file-tag">master_prompt.py</span>
+        <span class="file-tag endpoint">POST /api/ask</span>
+      </div>
+    </div>
+    <div class="feature">
+      <div class="feature-name">8.2 关键词提取</div>
+      <div class="feature-desc">从自然语言问题中提取关键词，用于知识检索。</div>
+      <div class="feature-files">
+        <span class="file-tag">master_prompt.py</span>
+      </div>
+    </div>
+    <div class="feature">
+      <div class="feature-name">8.3 实时新闻注入</div>
+      <div class="feature-desc">回答中注入最新非遗动态资讯。</div>
+      <div class="feature-files">
+        <span class="file-tag">app.py</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════ 9. 用户管理系统 ═══════════ -->
+<div class="section" id="s9">
+  <div class="section-header" onclick="this.parentElement.classList.toggle('collapsed')">
+    <div class="section-icon">👤</div>
+    <div class="section-title">9. 用户管理系统</div>
+    <span class="section-count">6 项</span>
+    <span class="section-toggle">▼</span>
+  </div>
+  <div class="section-body">
+    <div class="feature">
+      <div class="feature-name">9.1 注册/登录</div>
+      <div class="feature-desc">SHA-256 加盐哈希密码存储。</div>
+      <div class="feature-files">
+        <span class="file-tag">user_manager.py</span>
+        <span class="file-tag endpoint">POST /api/user/register</span>
+        <span class="file-tag endpoint">POST /api/user/login</span>
+      </div>
+    </div>
+    <div class="feature">
+      <div class="feature-name">9.2 会话管理</div>
+      <div class="feature-desc">创建/结束/查询/删除会话，支持按 master_id 区分不同大师的对话。</div>
+      <div class="feature-files">
+        <span class="file-tag endpoint">POST /api/user/session/start</span>
+        <span class="file-tag endpoint">POST /api/user/session/end</span>
+        <span class="file-tag endpoint">GET /api/session/{id}/messages</span>
+      </div>
+    </div>
+    <div class="feature">
+      <div class="feature-name">9.3 消息存储</div>
+      <div class="feature-desc">chat_sessions + chat_messages 表存储完整对话历史。</div>
+      <div class="feature-files">
+        <span class="file-tag">user_manager.py</span>
+        <span class="file-tag endpoint">GET /api/user/{id}/history</span>
+      </div>
+    </div>
+    <div class="feature">
+      <div class="feature-name">9.4 用户画像</div>
+      <div class="feature-desc">跟踪 relationship_stage、interest_tags、aesthetic_pref、personality_notes、question_count。</div>
+      <div class="feature-files">
+        <span class="file-tag">user_manager.py</span>
+        <span class="file-tag endpoint">GET /api/user/{id}/profile/{master_id}</span>
+        <span class="file-tag endpoint">GET /api/user/{id}/profiles</span>
+      </div>
+    </div>
+    <div class="feature">
+      <div class="feature-name">9.5 画像上下文注入</div>
+      <div class="feature-desc">get_profile_context() 生成可直接注入 prompt 的画像摘要文本。</div>
+      <div class="feature-files">
+        <span class="file-tag">user_manager.py</span>
+      </div>
+    </div>
+    <div class="feature">
+      <div class="feature-name">9.6 数据层</div>
+      <div class="feature-desc">SQLite 9 张表：users、user_profiles、chat_sessions、chat_messages、cultivation_records、stage_progress、forum_posts、forum_comments、forum_likes。含 Windows GBK 编码修复。</div>
+      <div class="feature-files">
+        <span class="file-tag">db.py</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════ 10. 长期记忆系统 ═══════════ -->
+<div class="section" id="s10">
+  <div class="section-header" onclick="this.parentElement.classList.toggle('collapsed')">
+    <div class="section-icon">🧠</div>
+    <div class="section-title">10. 长期记忆系统</div>
+    <span class="section-count">4 项</span>
+    <span class="section-toggle">▼</span>
+  </div>
+  <div class="section-body">
+    <div class="feature">
+      <div class="feature-name">10.1 记忆管理器（文件 + Redis 缓存）</div>
+      <div class="feature-desc">读穿透：Redis → JSON 文件 → 创建空白。写穿透：文件 → Redis。核心记忆 CRUD，6 种记忆类型（interest/milestone/preference/personality/event/feedback）。</div>
+      <div class="feature-files">
+        <span class="file-tag">memory.py: MemoryManager</span>
+      </div>
+    </div>
+    <div class="feature">
+      <div class="feature-name">10.2 记忆提取（LLM + 规则降级）</div>
+      <div class="feature-desc">LLM 从对话中提取记忆，失败时降级为关键词规则匹配。支持画像推断（每 5 个问题推断兴趣/性格更新）。</div>
+      <div class="feature-files">
+        <span class="file-tag">memory.py: MemoryExtractor</span>
+      </div>
+    </div>
+    <div class="feature">
+      <div class="feature-name">10.3 个性化问候生成</div>
+      <div class="feature-desc">根据缺席天数、核心记忆、教学进度、关系阶段生成个性化开场白。</div>
+      <div class="feature-files">
+        <span class="file-tag">memory.py: GreetingGenerator</span>
+      </div>
+    </div>
+    <div class="feature">
+      <div class="feature-name">10.4 记忆整理压缩</div>
+      <div class="feature-desc">记忆超阈值（默认 50 条）时，LLM 自动合并、去重、压缩。</div>
+      <div class="feature-files">
+        <span class="file-tag">memory.py: consolidate_memories()</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════ 11. 修行/练习系统 ═══════════ -->
+<div class="section" id="s11">
+  <div class="section-header" onclick="this.parentElement.classList.toggle('collapsed')">
+    <div class="section-icon">🥋</div>
+    <div class="section-title">11. 修行/练习系统</div>
+    <span class="section-count">6 项</span>
+    <span class="section-toggle">▼</span>
+  </div>
+  <div class="section-body">
+    <div class="feature">
+      <div class="feature-name">11.1 四阶段进阶</div>
+      <div class="feature-desc">入门期→成长期→精进期→传承期。每阶段有最低练习天数和提问数要求。</div>
+      <div class="feature-files">
+        <span class="file-tag">cultivation.py</span>
+      </div>
+    </div>
+    <div class="feature">
+      <div class="feature-name">11.2 每日练习分配</div>
+      <div class="feature-desc">大师专属 + 阶段专属练习模板，覆盖两个大师的教学内容。</div>
+      <div class="feature-files">
+        <span class="file-tag endpoint">POST /api/cultivation/practice/assign</span>
+      </div>
+    </div>
+    <div class="feature">
+      <div class="feature-name">11.3 练习提交与评分</div>
+      <div class="feature-desc">LLM 生成评语 + 关键词评分（0-100 分）。</div>
+      <div class="feature-files">
+        <span class="file-tag endpoint">POST /api/cultivation/practice/submit</span>
+      </div>
+    </div>
+    <div class="feature">
+      <div class="feature-name">11.4 练习历史</div>
+      <div class="feature-desc">查询用户练习记录。</div>
+      <div class="feature-files">
+        <span class="file-tag endpoint">GET /api/cultivation/practice/history</span>
+      </div>
+    </div>
+    <div class="feature">
+      <div class="feature-name">11.5 阶段转段</div>
+      <div class="feature-desc">检查转段条件→执行转段，更新用户画像。</div>
+      <div class="feature-files">
+        <span class="file-tag endpoint">GET /api/cultivation/stage</span>
+        <span class="file-tag endpoint">POST /api/cultivation/stage/transition</span>
+      </div>
+    </div>
+    <div class="feature">
+      <div class="feature-name">11.6 修行地图</div>
+      <div class="feature-desc">可视化修行进度。</div>
+      <div class="feature-files">
+        <span class="file-tag endpoint">GET /api/cultivation/map</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════ 12. 论坛/社区 ═══════════ -->
+<div class="section" id="s12">
+  <div class="section-header" onclick="this.parentElement.classList.toggle('collapsed')">
+    <div class="section-icon">🗣</div>
+    <div class="section-title">12. 论坛/社区</div>
+    <span class="section-count">4 项</span>
+    <span class="section-toggle">▼</span>
+  </div>
+  <div class="section-body">
+    <div class="feature">
+      <div class="feature-name">12.1 帖子 CRUD</div>
+      <div class="feature-desc">5 个分类（经验/攻略/问答/故事/活动），游标分页，搜索。</div>
+      <div class="feature-files">
+        <span class="file-tag">forum.py</span>
+        <span class="file-tag endpoint">GET/POST /api/forum/posts</span>
+        <span class="file-tag endpoint">GET /api/forum/posts/{id}</span>
+        <span class="file-tag endpoint">DELETE /api/forum/posts/{id}</span>
+        <span class="file-tag endpoint">GET /api/forum/search</span>
+      </div>
+    </div>
+    <div class="feature">
+      <div class="feature-name">12.2 点赞</div>
+      <div class="feature-desc">切换点赞状态。</div>
+      <div class="feature-files">
+        <span class="file-tag endpoint">POST /api/forum/posts/{id}/like</span>
+      </div>
+    </div>
+    <div class="feature">
+      <div class="feature-name">12.3 评论（支持嵌套回复）</div>
+      <div class="feature-desc">评论的增删查，支持嵌套回复。</div>
+      <div class="feature-files">
+        <span class="file-tag endpoint">GET/POST /api/forum/posts/{id}/comments</span>
+        <span class="file-tag endpoint">DELETE /api/forum/comments/{id}</span>
+      </div>
+    </div>
+    <div class="feature">
+      <div class="feature-name">12.4 Redis 缓存层</div>
+      <div class="feature-desc">可选 Redis 缓存，写操作自动失效，优雅降级。</div>
+      <div class="feature-files">
+        <span class="file-tag">forum.py</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════ 13. 实时资讯 ═══════════ -->
+<div class="section" id="s13">
+  <div class="section-header" onclick="this.parentElement.classList.toggle('collapsed')">
+    <div class="section-icon">📰</div>
+    <div class="section-title">13. 实时资讯</div>
+    <span class="section-count">3 项</span>
+    <span class="section-toggle">▼</span>
+  </div>
+  <div class="section-body">
+    <div class="feature">
+      <div class="feature-name">13.1 新闻抓取</div>
+      <div class="feature-desc">爬取 ihchina.cn HTML 获取最新非遗新闻。</div>
+      <div class="feature-files">
+        <span class="file-tag">realtime.py</span>
+        <span class="file-tag endpoint">GET /api/news</span>
+      </div>
+    </div>
+    <div class="feature">
+      <div class="feature-name">13.2 活动分类</div>
+      <div class="feature-desc">关键词匹配识别展览/工坊/演出等活动。</div>
+      <div class="feature-files">
+        <span class="file-tag endpoint">GET /api/events</span>
+      </div>
+    </div>
+    <div class="feature">
+      <div class="feature-name">13.3 数据源状态</div>
+      <div class="feature-desc">返回各数据源的可用状态。</div>
+      <div class="feature-files">
+        <span class="file-tag endpoint">GET /api/data-status</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════ 14. 前端页面 ═══════════ -->
+<div class="section" id="s14">
+  <div class="section-header" onclick="this.parentElement.classList.toggle('collapsed')">
+    <div class="section-icon">🖥</div>
+    <div class="section-title">14. 前端页面（Vue.js SPA）</div>
+    <span class="section-count">13 页 + 5 组件</span>
+    <span class="section-toggle">▼</span>
+  </div>
+  <div class="section-body">
+    <div class="feature">
+      <div class="feature-name">页面视图</div>
+      <div class="feature-desc">
+        首页 · 登录注册 · AI 探索助手 · 项目详情 · 知识问答 · 知识图谱 · 论坛 · 修行仪表盘 · 修行地图 · 用户画像<br>
+        <strong>路由守卫</strong>：知识问答、修行、画像等页面需登录
+      </div>
+      <div class="feature-files">
+        <span class="file-tag">HomeView.vue</span>
+        <span class="file-tag">LoginView.vue</span>
+        <span class="file-tag">AgentView.vue</span>
+        <span class="file-tag">DetailView.vue</span>
+        <span class="file-tag">KnowledgeView.vue</span>
+        <span class="file-tag">GraphView.vue</span>
+        <span class="file-tag">ForumView.vue</span>
+        <span class="file-tag">CultivationView.vue</span>
+        <span class="file-tag">CultivationMapView.vue</span>
+        <span class="file-tag">ProfileView.vue</span>
+        <span class="file-tag">router.js</span>
+      </div>
+    </div>
+    <div class="feature">
+      <div class="feature-name">共享组件</div>
+      <div class="feature-desc">导航栏 · 搜索栏 · Markdown 渲染器 · 高德地图组件 · 帖子详情弹窗</div>
+      <div class="feature-files">
+        <span class="file-tag">Header.vue</span>
+        <span class="file-tag">SearchBar.vue</span>
+        <span class="file-tag">MarkdownRenderer.vue</span>
+        <span class="file-tag">AmapView.vue</span>
+        <span class="file-tag">PostDetailModal.vue</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════ 15. MCP Server ═══════════ -->
+<div class="section" id="s15">
+  <div class="section-header" onclick="this.parentElement.classList.toggle('collapsed')">
+    <div class="section-icon">🔌</div>
+    <div class="section-title">15. MCP Server（Model Context Protocol）</div>
+    <span class="section-count">14 工具 + 4 提示 + 3 资源</span>
+    <span class="section-toggle">▼</span>
+  </div>
+  <div class="section-body">
+    <div class="feature">
+      <div class="feature-name">MCP 工具（14 个）</div>
+      <div class="feature-desc">
+        <strong>搜索与详情</strong>：search_heritage_projects · get_heritage_project_info · get_heritage_categories<br>
+        <strong>场馆</strong>：find_heritage_venues<br>
+        <strong>知识</strong>：ask_heritage_question · get_heritage_knowledge<br>
+        <strong>论坛</strong>：browse_heritage_forum · post_to_heritage_forum · reply_to_heritage_forum · search_heritage_forum<br>
+        <strong>旅行</strong>：plan_heritage_trip<br>
+        <strong>图谱</strong>：query_knowledge_graph · get_inheritance_chain · explore_cultural_graph
+      </div>
+      <div class="feature-files">
+        <span class="file-tag">server.py</span>
+      </div>
+    </div>
+    <div class="feature">
+      <div class="feature-name">MCP 提示模板（4 个）</div>
+      <div class="feature-desc">heritage_expert_prompt · heritage_compare · heritage_guide · heritage_deep_dive</div>
+      <div class="feature-files">
+        <span class="file-tag mcp">server.py</span>
+      </div>
+    </div>
+    <div class="feature">
+      <div class="feature-name">MCP 资源（3 个）</div>
+      <div class="feature-desc">heritage://categories · heritage://knowledge/projects · heritage://knowledge/{name}</div>
+      <div class="feature-files">
+        <span class="file-tag mcp">server.py</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════ 16. 基础设施 ═══════════ -->
+<div class="section" id="s16">
+  <div class="section-header" onclick="this.parentElement.classList.toggle('collapsed')">
+    <div class="section-icon">⚙️</div>
+    <div class="section-title">16. 基础设施与部署</div>
+    <span class="section-count">6 项</span>
+    <span class="section-toggle">▼</span>
+  </div>
+  <div class="section-body">
+    <div class="feature">
+      <div class="feature-name">16.1 环境配置</div>
+      <div class="feature-desc">Pydantic Settings，HERITAGE_ 前缀环境变量。支持 Amap、GitHub、RAG、爬虫缓存、SQLite、PostgreSQL、Neo4j、Milvus、Elasticsearch、Redis、LLM 等配置。</div>
+      <div class="feature-files">
+        <span class="file-tag">config.py</span>
+      </div>
+    </div>
+    <div class="feature">
+      <div class="feature-name">16.2 多 LLM 支持</div>
+      <div class="feature-desc">DeepSeek / OpenAI / Claude / Qwen，统一 OpenAI 兼容 API 调用。</div>
+      <div class="feature-files">
+        <span class="file-tag">config.py</span>
+        <span class="file-tag">app.py</span>
+      </div>
+    </div>
+    <div class="feature">
+      <div class="feature-name">16.3 Docker 部署</div>
+      <div class="feature-desc">Dockerfile 容器化部署。</div>
+      <div class="feature-files">
+        <span class="file-tag">Dockerfile</span>
+      </div>
+    </div>
+    <div class="feature">
+      <div class="feature-name">16.4 SPA 静态文件服务</div>
+      <div class="feature-desc">FastAPI 挂载 Vue.js dist 目录，非 API 路由全部 fallback 到 index.html。</div>
+      <div class="feature-files">
+        <span class="file-tag">app.py</span>
+      </div>
+    </div>
+    <div class="feature">
+      <div class="feature-name">16.5 Web 爬虫与缓存</div>
+      <div class="feature-desc">CacheManager 文件缓存（可配 TTL），爬取 ihchina.cn JSON API + HTML + 百度百科。</div>
+      <div class="feature-files">
+        <span class="file-tag">crawler.py</span>
+      </div>
+    </div>
+    <div class="feature">
+      <div class="feature-name">16.6 构建脚本</div>
+      <div class="feature-desc">数据集构建 · RAG 构建 · 图谱构建 · 数据迁移 · 基础设施初始化 · 人格蒸馏。</div>
+      <div class="feature-files">
+        <span class="file-tag script">scripts/build_dataset.py</span>
+        <span class="file-tag script">scripts/build_rag.py</span>
+        <span class="file-tag script">scripts/build_graph.py</span>
+        <span class="file-tag script">scripts/migrate_data.py</span>
+        <span class="file-tag script">scripts/init_infra.py</span>
+        <span class="file-tag script">scripts/distill_persona.py</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+</div><!-- .container -->
+</body>
+</html>

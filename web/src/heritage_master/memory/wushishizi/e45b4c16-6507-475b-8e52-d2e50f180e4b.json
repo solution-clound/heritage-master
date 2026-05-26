@@ -1,0 +1,44 @@
+{
+  "version": "1.0",
+  "user_id": "e45b4c16-6507-475b-8e52-d2e50f180e4b",
+  "master_id": "wushishizi",
+  "profile": {
+    "relationship_stage": "试探期",
+    "interest_tags": [],
+    "personality_notes": "",
+    "aesthetic_pref": "",
+    "question_count": 0,
+    "first_met_at": "2026-05-24T15:18:09.295607",
+    "last_talk_at": "2026-05-24T15:25:15.681908+00:00"
+  },
+  "core_memories": [],
+  "data_records": {
+    "practice_history": [],
+    "conversation_topics": [],
+    "visit_log": [
+      {
+        "date": "2026-05-24",
+        "session_id": "912c05e9-da4f-4882-9e7a-c5bdf700e392",
+        "topic_summary": ""
+      },
+      {
+        "date": "2026-05-24",
+        "session_id": "4ff9de3f-aafb-4e5d-9006-8c2c28c928bd",
+        "topic_summary": ""
+      }
+    ]
+  },
+  "teaching_progress": {
+    "current_stage": "入门期",
+    "completed_topics": [],
+    "next_topics": [],
+    "total_practice_days": 0,
+    "total_questions": 0,
+    "mastery_scores": {}
+  },
+  "meta": {
+    "last_consolidated_at": null,
+    "memory_count": 0,
+    "consolidation_count": 0
+  }
+}

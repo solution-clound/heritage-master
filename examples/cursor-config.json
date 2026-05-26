@@ -1,0 +1,11 @@
+{
+  "mcpServers": {
+    "heritage-master": {
+      "command": "python",
+      "args": ["-m", "heritage_master.server"],
+      "env": {
+        "HERITAGE_AMAP_KEY": "your_amap_api_key"
+      }
+    }
+  }
+}

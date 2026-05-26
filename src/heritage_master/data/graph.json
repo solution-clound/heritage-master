@@ -1,0 +1,4548 @@
+{
+  "nodes": {
+    "project:昆曲": {
+      "type": "project",
+      "name": "昆曲",
+      "category": "传统戏剧",
+      "level": "国家级",
+      "batch": "第一批",
+      "description": "昆曲起源于昆山腔，经魏良辅改革后形成水磨调，以曲词典雅、行腔婉转著称，被誉为百戏之祖。2001年成为首批联合国教科文组织人类口头和非物质遗产代表作。"
+    },
+    "region:江苏": {
+      "type": "region",
+      "name": "江苏"
+    },
+    "region:浙江": {
+      "type": "region",
+      "name": "浙江"
+    },
+    "region:上海": {
+      "type": "region",
+      "name": "上海"
+    },
+    "region:湖南": {
+      "type": "region",
+      "name": "湖南"
+    },
+    "person:叶汉钟": {
+      "type": "person",
+      "name": "叶汉钟",
+      "title": "国家级传承人",
+      "specialty": "潮州工夫茶艺"
+    },
+    "person:蔡正仁": {
+      "type": "person",
+      "name": "蔡正仁",
+      "title": "国家级传承人",
+      "specialty": "生角"
+    },
+    "person:汪世瑜": {
+      "type": "person",
+      "name": "汪世瑜",
+      "title": "国家级传承人",
+      "specialty": "生角"
+    },
+    "person:王芳": {
+      "type": "person",
+      "name": "王芳",
+      "title": "国家级传承人",
+      "specialty": "旦角"
+    },
+    "school:南昆（苏州）": {
+      "type": "school",
+      "name": "南昆（苏州）"
+    },
+    "school:北昆（北京）": {
+      "type": "school",
+      "name": "北昆（北京）"
+    },
+    "school:湘昆（湖南）": {
+      "type": "school",
+      "name": "湘昆（湖南）"
+    },
+    "school:永嘉昆曲（温州）": {
+      "type": "school",
+      "name": "永嘉昆曲（温州）"
+    },
+    "work:牡丹亭": {
+      "type": "work",
+      "name": "牡丹亭"
+    },
+    "work:长生殿": {
+      "type": "work",
+      "name": "长生殿"
+    },
+    "work:桃花扇": {
+      "type": "work",
+      "name": "桃花扇"
+    },
+    "work:西厢记": {
+      "type": "work",
+      "name": "西厢记"
+    },
+    "work:琵琶记": {
+      "type": "work",
+      "name": "琵琶记"
+    },
+    "work:窦娥冤": {
+      "type": "work",
+      "name": "窦娥冤"
+    },
+    "project:京剧": {
+      "type": "project",
+      "name": "京剧"
+    },
+    "project:评弹": {
+      "type": "project",
+      "name": "评弹"
+    },
+    "project:越剧": {
+      "type": "project",
+      "name": "越剧"
+    },
+    "project:苏剧": {
+      "type": "project",
+      "name": "苏剧"
+    },
+    "person:顾坚": {
+      "type": "person",
+      "name": "顾坚",
+      "title": "创始人"
+    },
+    "person:魏良辅": {
+      "type": "person",
+      "name": "魏良辅",
+      "title": "改革者"
+    },
+    "technique:传统戏剧": {
+      "type": "technique",
+      "name": "传统戏剧"
+    },
+    "region:北京": {
+      "type": "region",
+      "name": "北京"
+    },
+    "region:全国": {
+      "type": "region",
+      "name": "全国"
+    },
+    "person:梅葆玖": {
+      "type": "person",
+      "name": "梅葆玖",
+      "title": "国家级传承人",
+      "specialty": "梅派旦角"
+    },
+    "person:李世济": {
+      "type": "person",
+      "name": "李世济",
+      "title": "国家级传承人",
+      "specialty": "程派旦角"
+    },
+    "person:谭元寿": {
+      "type": "person",
+      "name": "谭元寿",
+      "title": "国家级传承人",
+      "specialty": "谭派老生"
+    },
+    "school:生角: 谭派（谭鑫培）, 余派（余叔岩）": {
+      "type": "school",
+      "name": "生角: 谭派（谭鑫培）, 余派（余叔岩）"
+    },
+    "school:旦角: 梅派（梅兰芳）, 程派（程砚秋）": {
+      "type": "school",
+      "name": "旦角: 梅派（梅兰芳）, 程派（程砚秋）"
+    },
+    "work:霸王别姬": {
+      "type": "work",
+      "name": "霸王别姬"
+    },
+    "work:贵妃醉酒": {
+      "type": "work",
+      "name": "贵妃醉酒"
+    },
+    "work:空城计": {
+      "type": "work",
+      "name": "空城计"
+    },
+    "work:四郎探母": {
+      "type": "work",
+      "name": "四郎探母"
+    },
+    "work:锁麟囊": {
+      "type": "work",
+      "name": "锁麟囊"
+    },
+    "work:穆桂英挂帅": {
+      "type": "work",
+      "name": "穆桂英挂帅"
+    },
+    "project:豫剧": {
+      "type": "project",
+      "name": "豫剧"
+    },
+    "project:黄梅戏": {
+      "type": "project",
+      "name": "黄梅戏"
+    },
+    "project:粤剧": {
+      "type": "project",
+      "name": "粤剧",
+      "category": "传统戏剧",
+      "level": "国家级",
+      "batch": "第一批",
+      "description": "粤剧是用粤语演唱的戏曲剧种，又称广东大戏，融合唱做念打，是岭南文化的重要代表。2009年入选联合国教科文组织人类非物质文化遗产代表作名录。"
+    },
+    "region:广东": {
+      "type": "region",
+      "name": "广东"
+    },
+    "region:广西": {
+      "type": "region",
+      "name": "广西"
+    },
+    "region:海南": {
+      "type": "region",
+      "name": "海南"
+    },
+    "region:香港": {
+      "type": "region",
+      "name": "香港"
+    },
+    "region:澳门": {
+      "type": "region",
+      "name": "澳门"
+    },
+    "person:红线女": {
+      "type": "person",
+      "name": "红线女",
+      "title": "国家级传承人",
+      "specialty": "红派旦角"
+    },
+    "person:罗家宝": {
+      "type": "person",
+      "name": "罗家宝",
+      "title": "国家级传承人",
+      "specialty": "虾腔生角"
+    },
+    "work:帝女花": {
+      "type": "work",
+      "name": "帝女花"
+    },
+    "work:紫钗记": {
+      "type": "work",
+      "name": "紫钗记"
+    },
+    "work:牡丹亭惊梦": {
+      "type": "work",
+      "name": "牡丹亭惊梦"
+    },
+    "work:再世红梅记": {
+      "type": "work",
+      "name": "再世红梅记"
+    },
+    "project:潮剧": {
+      "type": "project",
+      "name": "潮剧"
+    },
+    "project:雷剧": {
+      "type": "project",
+      "name": "雷剧"
+    },
+    "project:古琴艺术": {
+      "type": "project",
+      "name": "古琴艺术",
+      "category": "传统音乐",
+      "level": "国家级",
+      "batch": "第一批",
+      "description": "古琴是中国最古老的弹拨乐器之一，有三千多年历史。古琴艺术融音乐、文学、哲学于一体，是中国文人修身养性的代表。2003年入选人类口头和非物质遗产代表作。"
+    },
+    "person:龚一": {
+      "type": "person",
+      "name": "龚一",
+      "title": "国家级传承人",
+      "specialty": "古琴演奏"
+    },
+    "person:李祥霆": {
+      "type": "person",
+      "name": "李祥霆",
+      "title": "国家级传承人",
+      "specialty": "古琴演奏与教学"
+    },
+    "person:吴文光": {
+      "type": "person",
+      "name": "吴文光",
+      "title": "国家级传承人",
+      "specialty": "古琴演奏与研究"
+    },
+    "school:虞山派（常熟）": {
+      "type": "school",
+      "name": "虞山派（常熟）"
+    },
+    "school:广陵派（扬州）": {
+      "type": "school",
+      "name": "广陵派（扬州）"
+    },
+    "school:蜀派（四川）": {
+      "type": "school",
+      "name": "蜀派（四川）"
+    },
+    "school:岭南派（广东）": {
+      "type": "school",
+      "name": "岭南派（广东）"
+    },
+    "school:浦城派（福建）": {
+      "type": "school",
+      "name": "浦城派（福建）"
+    },
+    "work:流水": {
+      "type": "work",
+      "name": "流水"
+    },
+    "work:广陵散": {
+      "type": "work",
+      "name": "广陵散"
+    },
+    "work:梅花三弄": {
+      "type": "work",
+      "name": "梅花三弄"
+    },
+    "work:平沙落雁": {
+      "type": "work",
+      "name": "平沙落雁"
+    },
+    "work:阳关三叠": {
+      "type": "work",
+      "name": "阳关三叠"
+    },
+    "work:潇湘水云": {
+      "type": "work",
+      "name": "潇湘水云"
+    },
+    "project:南音": {
+      "type": "project",
+      "name": "南音"
+    },
+    "technique:传统音乐": {
+      "type": "technique",
+      "name": "传统音乐"
+    },
+    "project:广绣": {
+      "type": "project",
+      "name": "广绣",
+      "category": "传统技艺",
+      "level": "国家级",
+      "batch": "第一批",
+      "description": "广绣是中国四大名绣之一，以广州为中心的刺绣艺术，构图饱满、色彩浓艳、针法多变。与潮绣合称粤绣。"
+    },
+    "person:陈少芳": {
+      "type": "person",
+      "name": "陈少芳",
+      "title": "国家级传承人",
+      "specialty": "广绣人物、花鸟"
+    },
+    "person:许炽光": {
+      "type": "person",
+      "name": "许炽光",
+      "title": "国家级传承人",
+      "specialty": "广绣传统针法"
+    },
+    "school:广州绣（以陈少芳为代表）": {
+      "type": "school",
+      "name": "广州绣（以陈少芳为代表）"
+    },
+    "school:潮绣（以金银线垫绣著称）": {
+      "type": "school",
+      "name": "潮绣（以金银线垫绣著称）"
+    },
+    "work:百鸟朝凤": {
+      "type": "work",
+      "name": "百鸟朝凤"
+    },
+    "work:岭南佳果": {
+      "type": "work",
+      "name": "岭南佳果"
+    },
+    "work:双面绣屏风": {
+      "type": "work",
+      "name": "双面绣屏风"
+    },
+    "project:苏绣": {
+      "type": "project",
+      "name": "苏绣"
+    },
+    "project:湘绣": {
+      "type": "project",
+      "name": "湘绣"
+    },
+    "project:蜀绣": {
+      "type": "project",
+      "name": "蜀绣"
+    },
+    "project:潮绣": {
+      "type": "project",
+      "name": "潮绣"
+    },
+    "technique:传统技艺": {
+      "type": "technique",
+      "name": "传统技艺"
+    },
+    "person:姚惠芬": {
+      "type": "person",
+      "name": "姚惠芬",
+      "title": "国家级传承人",
+      "specialty": "苏绣"
+    },
+    "person:陈少峰": {
+      "type": "person",
+      "name": "陈少峰",
+      "title": "国家级传承人",
+      "specialty": "醒狮"
+    },
+    "school:苏绣（苏州）": {
+      "type": "school",
+      "name": "苏绣（苏州）"
+    },
+    "school:湘绣（湖南）": {
+      "type": "school",
+      "name": "湘绣（湖南）"
+    },
+    "school:蜀绣（四川）": {
+      "type": "school",
+      "name": "蜀绣（四川）"
+    },
+    "school:粤绣（广东）": {
+      "type": "school",
+      "name": "粤绣（广东）"
+    },
+    "work:猫": {
+      "type": "work",
+      "name": "猫"
+    },
+    "work:金鱼": {
+      "type": "work",
+      "name": "金鱼"
+    },
+    "work:牡丹": {
+      "type": "work",
+      "name": "牡丹"
+    },
+    "work:仕女图": {
+      "type": "work",
+      "name": "仕女图"
+    },
+    "person:刘爱云": {
+      "type": "person",
+      "name": "刘爱云",
+      "title": "国家级传承人",
+      "specialty": "狮虎绣"
+    },
+    "work:雄狮": {
+      "type": "work",
+      "name": "雄狮"
+    },
+    "work:饮虎": {
+      "type": "work",
+      "name": "饮虎"
+    },
+    "region:四川": {
+      "type": "region",
+      "name": "四川"
+    },
+    "person:郝淑萍": {
+      "type": "person",
+      "name": "郝淑萍",
+      "title": "国家级传承人",
+      "specialty": ""
+    },
+    "work:芙蓉鲤鱼": {
+      "type": "work",
+      "name": "芙蓉鲤鱼"
+    },
+    "work:熊猫": {
+      "type": "work",
+      "name": "熊猫"
+    },
+    "work:薛涛吟诗图": {
+      "type": "work",
+      "name": "薛涛吟诗图"
+    },
+    "project:中国剪纸": {
+      "type": "project",
+      "name": "中国剪纸",
+      "category": "传统美术",
+      "level": "国家级",
+      "batch": "第一批",
+      "description": "中国剪纸是用剪刀或刻刀在纸上剪刻花纹的民间艺术，是中国最古老的民间艺术之一。2009年入选人类非物质文化遗产代表作名录。"
+    },
+    "person:库淑兰": {
+      "type": "person",
+      "name": "库淑兰",
+      "title": "国家级传承人",
+      "specialty": "彩色剪纸"
+    },
+    "person:高凤莲": {
+      "type": "person",
+      "name": "高凤莲",
+      "title": "国家级传承人",
+      "specialty": "陕北剪纸"
+    },
+    "person:张秀芳": {
+      "type": "person",
+      "name": "张秀芳",
+      "title": "国家级传承人",
+      "specialty": "扬州剪纸"
+    },
+    "school:北方剪纸（粗犷豪放）": {
+      "type": "school",
+      "name": "北方剪纸（粗犷豪放）"
+    },
+    "school:南方剪纸（细腻精巧）": {
+      "type": "school",
+      "name": "南方剪纸（细腻精巧）"
+    },
+    "school:陕西剪纸": {
+      "type": "school",
+      "name": "陕西剪纸"
+    },
+    "school:山东剪纸": {
+      "type": "school",
+      "name": "山东剪纸"
+    },
+    "school:扬州剪纸": {
+      "type": "school",
+      "name": "扬州剪纸"
+    },
+    "work:窗花": {
+      "type": "work",
+      "name": "窗花"
+    },
+    "work:喜花": {
+      "type": "work",
+      "name": "喜花"
+    },
+    "work:鞋花": {
+      "type": "work",
+      "name": "鞋花"
+    },
+    "work:十二生肖": {
+      "type": "work",
+      "name": "十二生肖"
+    },
+    "work:福禄寿喜": {
+      "type": "work",
+      "name": "福禄寿喜"
+    },
+    "project:年画": {
+      "type": "project",
+      "name": "年画"
+    },
+    "project:皮影戏": {
+      "type": "project",
+      "name": "皮影戏"
+    },
+    "technique:传统美术": {
+      "type": "technique",
+      "name": "传统美术"
+    },
+    "project:太极拳": {
+      "type": "project",
+      "name": "太极拳",
+      "category": "传统体育、游艺与杂技",
+      "level": "国家级",
+      "batch": "第二批",
+      "description": "太极拳是中国传统武术的一种，以阴阳哲学为理论基础，动作柔和缓慢、圆活连贯。2020年入选人类非物质文化遗产代表作名录。"
+    },
+    "person:陈小旺": {
+      "type": "person",
+      "name": "陈小旺",
+      "title": "国家级传承人",
+      "specialty": "陈式太极拳"
+    },
+    "person:杨振铎": {
+      "type": "person",
+      "name": "杨振铎",
+      "title": "国家级传承人",
+      "specialty": "杨式太极拳"
+    },
+    "person:孙婉容": {
+      "type": "person",
+      "name": "孙婉容",
+      "title": "国家级传承人",
+      "specialty": "孙式太极拳"
+    },
+    "school:陈式（刚柔并济）": {
+      "type": "school",
+      "name": "陈式（刚柔并济）"
+    },
+    "school:杨式（舒展大方）": {
+      "type": "school",
+      "name": "杨式（舒展大方）"
+    },
+    "school:武式（小巧紧凑）": {
+      "type": "school",
+      "name": "武式（小巧紧凑）"
+    },
+    "school:吴式（轻柔圆活）": {
+      "type": "school",
+      "name": "吴式（轻柔圆活）"
+    },
+    "school:孙式（灵活多变）": {
+      "type": "school",
+      "name": "孙式（灵活多变）"
+    },
+    "work:陈式老架一路": {
+      "type": "work",
+      "name": "陈式老架一路"
+    },
+    "work:杨式八十五式": {
+      "type": "work",
+      "name": "杨式八十五式"
+    },
+    "work:二十四式简化太极拳": {
+      "type": "work",
+      "name": "二十四式简化太极拳"
+    },
+    "work:四十二式太极拳": {
+      "type": "work",
+      "name": "四十二式太极拳"
+    },
+    "project:中医针灸": {
+      "type": "project",
+      "name": "中医针灸"
+    },
+    "project:醒狮": {
+      "type": "project",
+      "name": "醒狮"
+    },
+    "person:陈王廷": {
+      "type": "person",
+      "name": "陈王廷",
+      "title": "创始人"
+    },
+    "technique:传统体育、游艺与杂技": {
+      "type": "technique",
+      "name": "传统体育、游艺与杂技"
+    },
+    "person:程莘农": {
+      "type": "person",
+      "name": "程莘农",
+      "title": "国医大师",
+      "specialty": "针灸"
+    },
+    "person:贺普仁": {
+      "type": "person",
+      "name": "贺普仁",
+      "title": "国医大师",
+      "specialty": "针灸"
+    },
+    "school:经络学派": {
+      "type": "school",
+      "name": "经络学派"
+    },
+    "school:穴位学派": {
+      "type": "school",
+      "name": "穴位学派"
+    },
+    "school:子午流注针法": {
+      "type": "school",
+      "name": "子午流注针法"
+    },
+    "school:灵龟八法": {
+      "type": "school",
+      "name": "灵龟八法"
+    },
+    "work:黄帝内经": {
+      "type": "work",
+      "name": "黄帝内经"
+    },
+    "work:针灸甲乙经": {
+      "type": "work",
+      "name": "针灸甲乙经"
+    },
+    "work:针灸大成": {
+      "type": "work",
+      "name": "针灸大成"
+    },
+    "work:难经": {
+      "type": "work",
+      "name": "难经"
+    },
+    "project:中医诊法": {
+      "type": "project",
+      "name": "中医诊法"
+    },
+    "project:凉茶": {
+      "type": "project",
+      "name": "凉茶"
+    },
+    "technique:传统医药": {
+      "type": "technique",
+      "name": "传统医药"
+    },
+    "project:春节": {
+      "type": "project",
+      "name": "春节",
+      "category": "民俗",
+      "level": "国家级",
+      "batch": "第一批",
+      "description": "春节是中国最重要的传统节日，俗称过年，有贴春联、放鞭炮、吃年夜饭、拜年等习俗。"
+    },
+    "project:元宵节": {
+      "type": "project",
+      "name": "元宵节"
+    },
+    "project:端午节": {
+      "type": "project",
+      "name": "端午节"
+    },
+    "project:中秋节": {
+      "type": "project",
+      "name": "中秋节"
+    },
+    "technique:民俗": {
+      "type": "technique",
+      "name": "民俗"
+    },
+    "region:陕西": {
+      "type": "region",
+      "name": "陕西"
+    },
+    "region:甘肃": {
+      "type": "region",
+      "name": "甘肃"
+    },
+    "region:河北": {
+      "type": "region",
+      "name": "河北"
+    },
+    "region:湖北": {
+      "type": "region",
+      "name": "湖北"
+    },
+    "person:汪天稳": {
+      "type": "person",
+      "name": "汪天稳",
+      "title": "国家级传承人",
+      "specialty": "陕西皮影雕刻"
+    },
+    "person:齐永衡": {
+      "type": "person",
+      "name": "齐永衡",
+      "title": "国家级传承人",
+      "specialty": "唐山皮影"
+    },
+    "school:陕西皮影": {
+      "type": "school",
+      "name": "陕西皮影"
+    },
+    "school:唐山皮影": {
+      "type": "school",
+      "name": "唐山皮影"
+    },
+    "school:湖南皮影": {
+      "type": "school",
+      "name": "湖南皮影"
+    },
+    "school:甘肃皮影": {
+      "type": "school",
+      "name": "甘肃皮影"
+    },
+    "work:火焰山": {
+      "type": "work",
+      "name": "火焰山"
+    },
+    "work:白蛇传": {
+      "type": "work",
+      "name": "白蛇传"
+    },
+    "work:三国演义": {
+      "type": "work",
+      "name": "三国演义"
+    },
+    "work:西游记": {
+      "type": "work",
+      "name": "西游记"
+    },
+    "project:剪纸": {
+      "type": "project",
+      "name": "剪纸"
+    },
+    "project:木偶戏": {
+      "type": "project",
+      "name": "木偶戏"
+    },
+    "project:景德镇陶瓷烧制技艺": {
+      "type": "project",
+      "name": "景德镇陶瓷烧制技艺",
+      "category": "传统技艺",
+      "level": "国家级",
+      "batch": "第一批",
+      "description": "景德镇陶瓷烧制技艺包括配料、成型、装饰、烧成等工序，以白如玉、明如镜、薄如纸、声如磬著称。景德镇被誉为瓷都。"
+    },
+    "region:江西": {
+      "type": "region",
+      "name": "江西"
+    },
+    "person:刘远长": {
+      "type": "person",
+      "name": "刘远长",
+      "title": "国家级传承人",
+      "specialty": "陶瓷雕塑"
+    },
+    "person:王锡良": {
+      "type": "person",
+      "name": "王锡良",
+      "title": "中国工艺美术大师",
+      "specialty": "陶瓷绘画"
+    },
+    "school:官窑（御窑厂）": {
+      "type": "school",
+      "name": "官窑（御窑厂）"
+    },
+    "school:民窑": {
+      "type": "school",
+      "name": "民窑"
+    },
+    "work:青花瓷": {
+      "type": "work",
+      "name": "青花瓷"
+    },
+    "work:粉彩瓷": {
+      "type": "work",
+      "name": "粉彩瓷"
+    },
+    "work:玲珑瓷": {
+      "type": "work",
+      "name": "玲珑瓷"
+    },
+    "work:颜色釉瓷": {
+      "type": "work",
+      "name": "颜色釉瓷"
+    },
+    "project:广彩": {
+      "type": "project",
+      "name": "广彩"
+    },
+    "project:宜兴紫砂": {
+      "type": "project",
+      "name": "宜兴紫砂"
+    },
+    "project:相声": {
+      "type": "project",
+      "name": "相声",
+      "category": "曲艺",
+      "level": "国家级",
+      "batch": "第二批",
+      "description": "相声是中国北方曲艺的一种，以说学逗唱为主要艺术手段，是中国最具影响力的曲艺形式之一。"
+    },
+    "region:天津": {
+      "type": "region",
+      "name": "天津"
+    },
+    "person:姜昆": {
+      "type": "person",
+      "name": "姜昆",
+      "title": "国家级传承人",
+      "specialty": "相声表演"
+    },
+    "person:冯巩": {
+      "type": "person",
+      "name": "冯巩",
+      "title": "国家级传承人",
+      "specialty": "相声表演"
+    },
+    "person:师胜杰": {
+      "type": "person",
+      "name": "师胜杰",
+      "title": "国家级传承人",
+      "specialty": "相声表演"
+    },
+    "school:侯派（侯宝林）": {
+      "type": "school",
+      "name": "侯派（侯宝林）"
+    },
+    "school:马派（马三立）": {
+      "type": "school",
+      "name": "马派（马三立）"
+    },
+    "school:常派（常宝堃）": {
+      "type": "school",
+      "name": "常派（常宝堃）"
+    },
+    "work:关公战秦琼": {
+      "type": "work",
+      "name": "关公战秦琼"
+    },
+    "work:逗你玩": {
+      "type": "work",
+      "name": "逗你玩"
+    },
+    "work:宇宙牌香烟": {
+      "type": "work",
+      "name": "宇宙牌香烟"
+    },
+    "work:虎口遐想": {
+      "type": "work",
+      "name": "虎口遐想"
+    },
+    "project:评书": {
+      "type": "project",
+      "name": "评书"
+    },
+    "project:快板": {
+      "type": "project",
+      "name": "快板"
+    },
+    "person:张三禄": {
+      "type": "person",
+      "name": "张三禄",
+      "title": "创始人"
+    },
+    "technique:曲艺": {
+      "type": "technique",
+      "name": "曲艺"
+    },
+    "person:王健仪": {
+      "type": "person",
+      "name": "王健仪",
+      "title": "国家级传承人",
+      "specialty": "王老吉凉茶"
+    },
+    "project:中药炮制": {
+      "type": "project",
+      "name": "中药炮制"
+    },
+    "project:妈祖信俗": {
+      "type": "project",
+      "name": "妈祖信俗",
+      "category": "民俗",
+      "level": "国家级",
+      "batch": "第一批",
+      "description": "妈祖信俗是以崇奉和颂扬妈祖的立德、行善、大爱精神为核心的传统习俗。2009年入选联合国教科文组织人类非物质文化遗产代表作名录。"
+    },
+    "region:福建": {
+      "type": "region",
+      "name": "福建"
+    },
+    "region:台湾": {
+      "type": "region",
+      "name": "台湾"
+    },
+    "region:东南亚": {
+      "type": "region",
+      "name": "东南亚"
+    },
+    "person:苏统谋": {
+      "type": "person",
+      "name": "苏统谋",
+      "title": "国家级传承人",
+      "specialty": "南音演奏"
+    },
+    "person:王心心": {
+      "type": "person",
+      "name": "王心心",
+      "title": "南音艺术家",
+      "specialty": "南音演唱"
+    },
+    "school:泉州南音": {
+      "type": "school",
+      "name": "泉州南音"
+    },
+    "school:厦门南音": {
+      "type": "school",
+      "name": "厦门南音"
+    },
+    "work:四时景": {
+      "type": "work",
+      "name": "四时景"
+    },
+    "work:梅花操": {
+      "type": "work",
+      "name": "梅花操"
+    },
+    "work:八骏马": {
+      "type": "work",
+      "name": "八骏马"
+    },
+    "work:百鸟归巢": {
+      "type": "work",
+      "name": "百鸟归巢"
+    },
+    "project:梨园戏": {
+      "type": "project",
+      "name": "梨园戏"
+    },
+    "project:藏戏": {
+      "type": "project",
+      "name": "藏戏",
+      "category": "传统戏剧",
+      "level": "国家级",
+      "batch": "第一批",
+      "description": "藏戏是藏族戏剧的统称，以歌舞形式表现故事内容，戴着面具演出。2009年入选人类非物质文化遗产代表作名录。"
+    },
+    "region:西藏": {
+      "type": "region",
+      "name": "西藏"
+    },
+    "region:青海": {
+      "type": "region",
+      "name": "青海"
+    },
+    "person:次旦多吉": {
+      "type": "person",
+      "name": "次旦多吉",
+      "title": "国家级传承人",
+      "specialty": "藏戏表演"
+    },
+    "person:班典旺久": {
+      "type": "person",
+      "name": "班典旺久",
+      "title": "国家级传承人",
+      "specialty": "藏戏表演"
+    },
+    "school:白面具派": {
+      "type": "school",
+      "name": "白面具派"
+    },
+    "school:蓝面具派": {
+      "type": "school",
+      "name": "蓝面具派"
+    },
+    "work:文成公主": {
+      "type": "work",
+      "name": "文成公主"
+    },
+    "work:诺桑王子": {
+      "type": "work",
+      "name": "诺桑王子"
+    },
+    "work:卓娃桑姆": {
+      "type": "work",
+      "name": "卓娃桑姆"
+    },
+    "work:苏吉尼玛": {
+      "type": "work",
+      "name": "苏吉尼玛"
+    },
+    "person:唐东杰布": {
+      "type": "person",
+      "name": "唐东杰布",
+      "title": "创始人"
+    },
+    "project:宣纸制作技艺": {
+      "type": "project",
+      "name": "宣纸制作技艺",
+      "category": "传统技艺",
+      "level": "国家级",
+      "batch": "第一批",
+      "description": "宣纸产于安徽泾县，以青檀皮和沙田稻草为原料，经108道工序制成。宣纸质地绵韧、不蛀不腐，能保存千年，被誉为纸中之王。"
+    },
+    "region:安徽": {
+      "type": "region",
+      "name": "安徽"
+    },
+    "person:邢春荣": {
+      "type": "person",
+      "name": "邢春荣",
+      "title": "国家级传承人",
+      "specialty": "宣纸制作"
+    },
+    "person:曹光华": {
+      "type": "person",
+      "name": "曹光华",
+      "title": "国家级传承人",
+      "specialty": "宣纸制作"
+    },
+    "school:生宣（吸水性强）": {
+      "type": "school",
+      "name": "生宣（吸水性强）"
+    },
+    "school:熟宣（加矾处理）": {
+      "type": "school",
+      "name": "熟宣（加矾处理）"
+    },
+    "work:书画用纸": {
+      "type": "work",
+      "name": "书画用纸"
+    },
+    "work:古籍修复用纸": {
+      "type": "work",
+      "name": "古籍修复用纸"
+    },
+    "project:中国书法": {
+      "type": "project",
+      "name": "中国书法"
+    },
+    "project:中国篆刻": {
+      "type": "project",
+      "name": "中国篆刻"
+    },
+    "project:龙舟说唱": {
+      "type": "project",
+      "name": "龙舟说唱"
+    },
+    "project:花儿": {
+      "type": "project",
+      "name": "花儿",
+      "category": "传统音乐",
+      "level": "国家级",
+      "batch": "第一批",
+      "description": "花儿是流传于西北地区的山歌，高亢悠长，是汉、回、藏、土等多民族共享的民间艺术。2009年入选人类非物质文化遗产代表作名录。"
+    },
+    "region:宁夏": {
+      "type": "region",
+      "name": "宁夏"
+    },
+    "region:新疆": {
+      "type": "region",
+      "name": "新疆"
+    },
+    "person:马金山": {
+      "type": "person",
+      "name": "马金山",
+      "title": "国家级传承人",
+      "specialty": "花儿演唱"
+    },
+    "person:雷通": {
+      "type": "person",
+      "name": "雷通",
+      "title": "国家级传承人",
+      "specialty": "花儿演唱"
+    },
+    "school:河湟花儿": {
+      "type": "school",
+      "name": "河湟花儿"
+    },
+    "school:洮岷花儿": {
+      "type": "school",
+      "name": "洮岷花儿"
+    },
+    "school:六盘山花儿": {
+      "type": "school",
+      "name": "六盘山花儿"
+    },
+    "work:上去高山望平川": {
+      "type": "work",
+      "name": "上去高山望平川"
+    },
+    "work:河州令": {
+      "type": "work",
+      "name": "河州令"
+    },
+    "work:尕马儿令": {
+      "type": "work",
+      "name": "尕马儿令"
+    },
+    "project:蒙古族长调民歌": {
+      "type": "project",
+      "name": "蒙古族长调民歌"
+    },
+    "person:袁雪芬": {
+      "type": "person",
+      "name": "袁雪芬",
+      "title": "越剧宗师",
+      "specialty": "袁派旦角"
+    },
+    "person:茅威涛": {
+      "type": "person",
+      "name": "茅威涛",
+      "title": "国家级传承人",
+      "specialty": "尹派小生"
+    },
+    "school:袁派（袁雪芬）": {
+      "type": "school",
+      "name": "袁派（袁雪芬）"
+    },
+    "school:尹派（尹桂芳）": {
+      "type": "school",
+      "name": "尹派（尹桂芳）"
+    },
+    "school:范派（范瑞娟）": {
+      "type": "school",
+      "name": "范派（范瑞娟）"
+    },
+    "school:傅派（傅全香）": {
+      "type": "school",
+      "name": "傅派（傅全香）"
+    },
+    "school:徐派（徐玉兰）": {
+      "type": "school",
+      "name": "徐派（徐玉兰）"
+    },
+    "work:梁山伯与祝英台": {
+      "type": "work",
+      "name": "梁山伯与祝英台"
+    },
+    "work:红楼梦": {
+      "type": "work",
+      "name": "红楼梦"
+    },
+    "work:祥林嫂": {
+      "type": "work",
+      "name": "祥林嫂"
+    },
+    "work:碧玉簪": {
+      "type": "work",
+      "name": "碧玉簪"
+    },
+    "project:沪剧": {
+      "type": "project",
+      "name": "沪剧"
+    },
+    "region:河南": {
+      "type": "region",
+      "name": "河南"
+    },
+    "region:山东": {
+      "type": "region",
+      "name": "山东"
+    },
+    "person:常香玉": {
+      "type": "person",
+      "name": "常香玉",
+      "title": "豫剧大师",
+      "specialty": "常派旦角"
+    },
+    "person:马金凤": {
+      "type": "person",
+      "name": "马金凤",
+      "title": "豫剧大师",
+      "specialty": "马派旦角"
+    },
+    "school:常派（常香玉）": {
+      "type": "school",
+      "name": "常派（常香玉）"
+    },
+    "school:陈派（陈素真）": {
+      "type": "school",
+      "name": "陈派（陈素真）"
+    },
+    "school:崔派（崔兰田）": {
+      "type": "school",
+      "name": "崔派（崔兰田）"
+    },
+    "school:马派（马金凤）": {
+      "type": "school",
+      "name": "马派（马金凤）"
+    },
+    "school:阎派（阎立品）": {
+      "type": "school",
+      "name": "阎派（阎立品）"
+    },
+    "work:花木兰": {
+      "type": "work",
+      "name": "花木兰"
+    },
+    "work:七品芝麻官": {
+      "type": "work",
+      "name": "七品芝麻官"
+    },
+    "work:朝阳沟": {
+      "type": "work",
+      "name": "朝阳沟"
+    },
+    "work:程婴救孤": {
+      "type": "work",
+      "name": "程婴救孤"
+    },
+    "project:曲剧": {
+      "type": "project",
+      "name": "曲剧"
+    },
+    "project:越调": {
+      "type": "project",
+      "name": "越调"
+    },
+    "person:严凤英": {
+      "type": "person",
+      "name": "严凤英",
+      "title": "黄梅戏宗师",
+      "specialty": "旦角"
+    },
+    "person:韩再芬": {
+      "type": "person",
+      "name": "韩再芬",
+      "title": "国家级传承人",
+      "specialty": "旦角"
+    },
+    "work:天仙配": {
+      "type": "work",
+      "name": "天仙配"
+    },
+    "work:女驸马": {
+      "type": "work",
+      "name": "女驸马"
+    },
+    "work:牛郎织女": {
+      "type": "work",
+      "name": "牛郎织女"
+    },
+    "work:罗帕记": {
+      "type": "work",
+      "name": "罗帕记"
+    },
+    "project:评剧": {
+      "type": "project",
+      "name": "评剧",
+      "category": "传统戏剧",
+      "level": "国家级",
+      "batch": "第一批",
+      "description": "评剧起源于河北唐山，由莲花落发展而来，以唱功见长、吐字清楚、唱词浅显易懂著称。"
+    },
+    "region:东北": {
+      "type": "region",
+      "name": "东北"
+    },
+    "person:新凤霞": {
+      "type": "person",
+      "name": "新凤霞",
+      "title": "评剧大师",
+      "specialty": "新派旦角"
+    },
+    "person:赵丽蓉": {
+      "type": "person",
+      "name": "赵丽蓉",
+      "title": "著名评剧表演艺术家",
+      "specialty": ""
+    },
+    "work:花为媒": {
+      "type": "work",
+      "name": "花为媒"
+    },
+    "work:刘巧儿": {
+      "type": "work",
+      "name": "刘巧儿"
+    },
+    "work:杨三姐告状": {
+      "type": "work",
+      "name": "杨三姐告状"
+    },
+    "work:秦香莲": {
+      "type": "work",
+      "name": "秦香莲"
+    },
+    "project:河北梆子": {
+      "type": "project",
+      "name": "河北梆子"
+    },
+    "project:龙舞": {
+      "type": "project",
+      "name": "龙舞",
+      "category": "传统舞蹈",
+      "level": "国家级",
+      "batch": "第一批",
+      "description": "龙舞是中国最具代表性的民间舞蹈，多人协作舞动龙形道具，祈求风调雨顺。各地龙舞风格各异，是节庆活动的重要组成部分。"
+    },
+    "school:铜梁龙舞": {
+      "type": "school",
+      "name": "铜梁龙舞"
+    },
+    "school:浦江板凳龙": {
+      "type": "school",
+      "name": "浦江板凳龙"
+    },
+    "school:长兴百叶龙": {
+      "type": "school",
+      "name": "长兴百叶龙"
+    },
+    "school:湛江人龙舞": {
+      "type": "school",
+      "name": "湛江人龙舞"
+    },
+    "project:狮舞": {
+      "type": "project",
+      "name": "狮舞"
+    },
+    "technique:传统舞蹈": {
+      "type": "technique",
+      "name": "传统舞蹈"
+    },
+    "school:南狮（广东醒狮）": {
+      "type": "school",
+      "name": "南狮（广东醒狮）"
+    },
+    "school:北狮（河北徐水舞狮）": {
+      "type": "school",
+      "name": "北狮（河北徐水舞狮）"
+    },
+    "project:武术": {
+      "type": "project",
+      "name": "武术"
+    },
+    "project:秧歌": {
+      "type": "project",
+      "name": "秧歌",
+      "category": "传统舞蹈",
+      "level": "国家级",
+      "batch": "第一批",
+      "description": "秧歌是中国北方最具代表性的民间舞蹈，集体舞蹈、锣鼓伴奏，是春节和元宵节的重要活动。"
+    },
+    "school:陕北秧歌": {
+      "type": "school",
+      "name": "陕北秧歌"
+    },
+    "school:东北秧歌": {
+      "type": "school",
+      "name": "东北秧歌"
+    },
+    "school:山东鼓子秧歌": {
+      "type": "school",
+      "name": "山东鼓子秧歌"
+    },
+    "school:河北地秧歌": {
+      "type": "school",
+      "name": "河北地秧歌"
+    },
+    "region:内蒙古": {
+      "type": "region",
+      "name": "内蒙古"
+    },
+    "region:蒙古国": {
+      "type": "region",
+      "name": "蒙古国"
+    },
+    "person:宝音德力格尔": {
+      "type": "person",
+      "name": "宝音德力格尔",
+      "title": "长调大师",
+      "specialty": ""
+    },
+    "work:辽阔的草原": {
+      "type": "work",
+      "name": "辽阔的草原"
+    },
+    "work:小黄马": {
+      "type": "work",
+      "name": "小黄马"
+    },
+    "work:走马": {
+      "type": "work",
+      "name": "走马"
+    },
+    "project:呼麦": {
+      "type": "project",
+      "name": "呼麦"
+    },
+    "project:马头琴": {
+      "type": "project",
+      "name": "马头琴"
+    },
+    "project:新疆维吾尔木卡姆艺术": {
+      "type": "project",
+      "name": "新疆维吾尔木卡姆艺术",
+      "category": "传统音乐",
+      "level": "国家级",
+      "batch": "第一批",
+      "description": "维吾尔木卡姆是集歌、舞、乐于一体的大型综合艺术形式，包含十二木卡姆体系。2005年入选人类口头和非物质遗产代表作。"
+    },
+    "project:侗族大歌": {
+      "type": "project",
+      "name": "侗族大歌",
+      "category": "传统音乐",
+      "level": "国家级",
+      "batch": "第一批",
+      "description": "侗族大歌是无指挥、无伴奏的多声部合唱，被誉为天籁之音。2009年入选人类非物质文化遗产代表作名录。"
+    },
+    "region:贵州": {
+      "type": "region",
+      "name": "贵州"
+    },
+    "person:沈鹏": {
+      "type": "person",
+      "name": "沈鹏",
+      "title": "中国书法家协会名誉主席",
+      "specialty": ""
+    },
+    "person:欧阳中石": {
+      "type": "person",
+      "name": "欧阳中石",
+      "title": "书法教育家",
+      "specialty": ""
+    },
+    "work:兰亭序（王羲之）": {
+      "type": "work",
+      "name": "兰亭序（王羲之）"
+    },
+    "work:祭侄文稿（颜真卿）": {
+      "type": "work",
+      "name": "祭侄文稿（颜真卿）"
+    },
+    "work:寒食帖（苏轼）": {
+      "type": "work",
+      "name": "寒食帖（苏轼）"
+    },
+    "person:刘江": {
+      "type": "person",
+      "name": "刘江",
+      "title": "西泠印社副社长",
+      "specialty": ""
+    },
+    "work:西泠印社藏印": {
+      "type": "work",
+      "name": "西泠印社藏印"
+    },
+    "work:齐白石印章": {
+      "type": "work",
+      "name": "齐白石印章"
+    },
+    "school:天津杨柳青年画": {
+      "type": "school",
+      "name": "天津杨柳青年画"
+    },
+    "school:山东潍坊年画": {
+      "type": "school",
+      "name": "山东潍坊年画"
+    },
+    "school:四川绵竹年画": {
+      "type": "school",
+      "name": "四川绵竹年画"
+    },
+    "school:广东佛山年画": {
+      "type": "school",
+      "name": "广东佛山年画"
+    },
+    "school:河北武强年画": {
+      "type": "school",
+      "name": "河北武强年画"
+    },
+    "project:风筝制作技艺": {
+      "type": "project",
+      "name": "风筝制作技艺",
+      "category": "传统技艺",
+      "level": "国家级",
+      "batch": "第一批",
+      "description": "风筝制作技艺包括扎、糊、绘、放四艺，山东潍坊风筝最为著名，每年举办国际风筝节。"
+    },
+    "school:潍坊风筝": {
+      "type": "school",
+      "name": "潍坊风筝"
+    },
+    "school:天津风筝魏": {
+      "type": "school",
+      "name": "天津风筝魏"
+    },
+    "school:北京风筝哈": {
+      "type": "school",
+      "name": "北京风筝哈"
+    },
+    "project:刺绣": {
+      "type": "project",
+      "name": "刺绣",
+      "category": "传统技艺",
+      "level": "国家级",
+      "batch": "第一批",
+      "description": "刺绣是用针线在织物上绣制图案的中国传统手工艺，中国四大名绣为苏绣、湘绣、蜀绣、粤绣。"
+    },
+    "school:苏绣": {
+      "type": "school",
+      "name": "苏绣"
+    },
+    "school:湘绣": {
+      "type": "school",
+      "name": "湘绣"
+    },
+    "school:蜀绣": {
+      "type": "school",
+      "name": "蜀绣"
+    },
+    "school:粤绣": {
+      "type": "school",
+      "name": "粤绣"
+    },
+    "school:京绣": {
+      "type": "school",
+      "name": "京绣"
+    },
+    "school:汴绣": {
+      "type": "school",
+      "name": "汴绣"
+    },
+    "project:织锦": {
+      "type": "project",
+      "name": "织锦"
+    },
+    "project:印染": {
+      "type": "project",
+      "name": "印染"
+    },
+    "person:邓铁涛": {
+      "type": "person",
+      "name": "邓铁涛",
+      "title": "国医大师",
+      "specialty": ""
+    },
+    "person:路志正": {
+      "type": "person",
+      "name": "路志正",
+      "title": "国医大师",
+      "specialty": ""
+    },
+    "work:伤寒杂病论": {
+      "type": "work",
+      "name": "伤寒杂病论"
+    },
+    "work:脉经": {
+      "type": "work",
+      "name": "脉经"
+    },
+    "project:庙会": {
+      "type": "project",
+      "name": "庙会",
+      "category": "民俗",
+      "level": "国家级",
+      "batch": "第一批",
+      "description": "庙会是依托寺庙的民间集会，融宗教、商贸、娱乐于一体，是春节等节日的重要活动。"
+    },
+    "school:北京地坛庙会": {
+      "type": "school",
+      "name": "北京地坛庙会"
+    },
+    "school:上海城隍庙庙会": {
+      "type": "school",
+      "name": "上海城隍庙庙会"
+    },
+    "school:南京夫子庙庙会": {
+      "type": "school",
+      "name": "南京夫子庙庙会"
+    },
+    "project:少林功夫": {
+      "type": "project",
+      "name": "少林功夫",
+      "category": "传统体育、游艺与杂技",
+      "level": "国家级",
+      "batch": "第一批",
+      "description": "少林功夫是中国最著名的武术流派，起源于河南登封少林寺，以禅武合一、刚猛著称。"
+    },
+    "work:少林长拳": {
+      "type": "work",
+      "name": "少林长拳"
+    },
+    "work:少林棍法": {
+      "type": "work",
+      "name": "少林棍法"
+    },
+    "work:易筋经": {
+      "type": "work",
+      "name": "易筋经"
+    },
+    "project:武当功夫": {
+      "type": "project",
+      "name": "武当功夫"
+    },
+    "person:达摩": {
+      "type": "person",
+      "name": "达摩",
+      "title": "创始人"
+    },
+    "project:杂技": {
+      "type": "project",
+      "name": "杂技",
+      "category": "传统体育、游艺与杂技",
+      "level": "国家级",
+      "batch": "第一批",
+      "description": "杂技是中国传统表演艺术，以惊险、巧妙著称，融力量、技巧、美感于一体。河北吴桥杂技最为著名。"
+    },
+    "school:吴桥杂技": {
+      "type": "school",
+      "name": "吴桥杂技"
+    },
+    "school:聊城杂技": {
+      "type": "school",
+      "name": "聊城杂技"
+    },
+    "school:建湖杂技": {
+      "type": "school",
+      "name": "建湖杂技"
+    },
+    "project:魔术": {
+      "type": "project",
+      "name": "魔术"
+    },
+    "project:马戏": {
+      "type": "project",
+      "name": "马戏"
+    },
+    "project:景德镇瓷器": {
+      "type": "project",
+      "name": "景德镇瓷器",
+      "category": "传统技艺",
+      "level": "国家级",
+      "batch": "第一批",
+      "description": "景德镇瓷器以白如玉、明如镜、薄如纸、声如磬著称，景德镇被誉为千年瓷都。"
+    },
+    "project:龙泉青瓷": {
+      "type": "project",
+      "name": "龙泉青瓷"
+    },
+    "project:宜兴紫砂陶制作技艺": {
+      "type": "project",
+      "name": "宜兴紫砂陶制作技艺",
+      "category": "传统技艺",
+      "level": "国家级",
+      "batch": "第一批",
+      "description": "宜兴紫砂陶制作技艺以紫砂泥为原料，手工拍打成型，透气性好，是泡茶的最佳器具。"
+    },
+    "person:汪寅仙": {
+      "type": "person",
+      "name": "汪寅仙",
+      "title": "国家级传承人",
+      "specialty": ""
+    },
+    "person:吕尧臣": {
+      "type": "person",
+      "name": "吕尧臣",
+      "title": "国家级传承人",
+      "specialty": ""
+    },
+    "work:供春壶": {
+      "type": "work",
+      "name": "供春壶"
+    },
+    "work:大彬壶": {
+      "type": "work",
+      "name": "大彬壶"
+    },
+    "work:曼生壶": {
+      "type": "work",
+      "name": "曼生壶"
+    },
+    "project:茶艺": {
+      "type": "project",
+      "name": "茶艺"
+    },
+    "project:木版水印技艺": {
+      "type": "project",
+      "name": "木版水印技艺",
+      "category": "传统技艺",
+      "level": "国家级",
+      "batch": "第一批",
+      "description": "木版水印技艺是中国传统复制技艺，能精确复制中国书画，以荣宝斋为代表。"
+    },
+    "project:雕版印刷技艺": {
+      "type": "project",
+      "name": "雕版印刷技艺",
+      "category": "传统技艺",
+      "level": "国家级",
+      "batch": "第一批",
+      "description": "雕版印刷技艺是中国四大发明之一的活化石，在木板上雕刻文字或图案后刷墨印刷。2009年入选人类非物质文化遗产代表作名录。"
+    },
+    "project:二十四节气": {
+      "type": "project",
+      "name": "二十四节气",
+      "category": "民俗",
+      "level": "国家级",
+      "batch": "第四批",
+      "description": "二十四节气是中国古代订立的一种补充历法，反映季节、气候、物候变化，指导农业生产。2016年入选人类非物质文化遗产代表作名录。"
+    },
+    "project:珠算": {
+      "type": "project",
+      "name": "珠算",
+      "category": "民俗",
+      "level": "国家级",
+      "batch": "第四批",
+      "description": "珠算是以算盘为工具进行计算的方法，是中国人发明的独特计算方式。2013年入选人类非物质文化遗产代表作名录。"
+    },
+    "project:中国蚕桑丝织技艺": {
+      "type": "project",
+      "name": "中国蚕桑丝织技艺",
+      "category": "传统技艺",
+      "level": "国家级",
+      "batch": "第一批",
+      "description": "中国蚕桑丝织技艺包括养蚕、缫丝、织绸的完整工艺，丝绸是中国古代重要发明。2009年入选人类非物质文化遗产代表作名录。"
+    },
+    "project:南京云锦织造技艺": {
+      "type": "project",
+      "name": "南京云锦织造技艺",
+      "category": "传统技艺",
+      "level": "国家级",
+      "batch": "第一批",
+      "description": "南京云锦织造技艺用大花楼木织机手工织造，图案色彩斑斓如云霞，曾为皇家御用织物。2009年入选人类非物质文化遗产代表作名录。"
+    },
+    "project:蜀锦织造技艺": {
+      "type": "project",
+      "name": "蜀锦织造技艺"
+    }
+  },
+  "edges": [
+    {
+      "from": "project:昆曲",
+      "to": "region:江苏",
+      "type": "FROM_REGION"
+    },
+    {
+      "from": "project:昆曲",
+      "to": "region:浙江",
+      "type": "FROM_REGION"
+    },
+    {
+      "from": "project:昆曲",
+      "to": "region:上海",
+      "type": "FROM_REGION"
+    },
+    {
+      "from": "project:昆曲",
+      "to": "region:湖南",
+      "type": "FROM_REGION"
+    },
+    {
+      "from": "project:昆曲",
+      "to": "person:叶汉钟",
+      "type": "HAS_INHERITOR"
+    },
+    {
+      "from": "project:昆曲",
+      "to": "person:蔡正仁",
+      "type": "HAS_INHERITOR"
+    },
+    {
+      "from": "project:昆曲",
+      "to": "person:汪世瑜",
+      "type": "HAS_INHERITOR"
+    },
+    {
+      "from": "project:昆曲",
+      "to": "person:王芳",
+      "type": "HAS_INHERITOR"
+    },
+    {
+      "from": "school:南昆（苏州）",
+      "to": "project:昆曲",
+      "type": "PART_OF"
+    },
+    {
+      "from": "school:北昆（北京）",
+      "to": "project:昆曲",
+      "type": "PART_OF"
+    },
+    {
+      "from": "school:湘昆（湖南）",
+      "to": "project:昆曲",
+      "type": "PART_OF"
+    },
+    {
+      "from": "school:永嘉昆曲（温州）",
+      "to": "project:昆曲",
+      "type": "PART_OF"
+    },
+    {
+      "from": "work:牡丹亭",
+      "to": "project:昆曲",
+      "type": "BELONGS_TO"
+    },
+    {
+      "from": "work:长生殿",
+      "to": "project:昆曲",
+      "type": "BELONGS_TO"
+    },
+    {
+      "from": "work:桃花扇",
+      "to": "project:昆曲",
+      "type": "BELONGS_TO"
+    },
+    {
+      "from": "work:西厢记",
+      "to": "project:昆曲",
+      "type": "BELONGS_TO"
+    },
+    {
+      "from": "work:琵琶记",
+      "to": "project:昆曲",
+      "type": "BELONGS_TO"
+    },
+    {
+      "from": "work:窦娥冤",
+      "to": "project:昆曲",
+      "type": "BELONGS_TO"
+    },
+    {
+      "from": "project:昆曲",
+      "to": "project:京剧",
+      "type": "RELATED_TO"
+    },
+    {
+      "from": "project:昆曲",
+      "to": "project:评弹",
+      "type": "RELATED_TO"
+    },
+    {
+      "from": "project:昆曲",
+      "to": "project:越剧",
+      "type": "RELATED_TO"
+    },
+    {
+      "from": "project:昆曲",
+      "to": "project:苏剧",
+      "type": "RELATED_TO"
+    },
+    {
+      "from": "project:昆曲",
+      "to": "person:顾坚",
+      "type": "FOUNDED_BY"
+    },
+    {
+      "from": "project:昆曲",
+      "to": "person:魏良辅",
+      "type": "REFORMED_BY"
+    },
+    {
+      "from": "project:昆曲",
+      "to": "technique:传统戏剧",
+      "type": "HAS_TECHNIQUE"
+    },
+    {
+      "from": "project:京剧",
+      "to": "region:北京",
+      "type": "FROM_REGION"
+    },
+    {
+      "from": "project:京剧",
+      "to": "region:全国",
+      "type": "FROM_REGION"
+    },
+    {
+      "from": "project:京剧",
+      "to": "person:梅葆玖",
+      "type": "HAS_INHERITOR"
+    },
+    {
+      "from": "project:京剧",
+      "to": "person:李世济",
+      "type": "HAS_INHERITOR"
+    },
+    {
+      "from": "project:京剧",
+      "to": "person:谭元寿",
+      "type": "HAS_INHERITOR"
+    },
+    {
+      "from": "school:生角: 谭派（谭鑫培）, 余派（余叔岩）",
+      "to": "project:京剧",
+      "type": "PART_OF"
+    },
+    {
+      "from": "school:旦角: 梅派（梅兰芳）, 程派（程砚秋）",
+      "to": "project:京剧",
+      "type": "PART_OF"
+    },
+    {
+      "from": "work:霸王别姬",
+      "to": "project:京剧",
+      "type": "BELONGS_TO"
+    },
+    {
+      "from": "work:贵妃醉酒",
+      "to": "project:京剧",
+      "type": "BELONGS_TO"
+    },
+    {
+      "from": "work:空城计",
+      "to": "project:京剧",
+      "type": "BELONGS_TO"
+    },
+    {
+      "from": "work:四郎探母",
+      "to": "project:京剧",
+      "type": "BELONGS_TO"
+    },
+    {
+      "from": "work:锁麟囊",
+      "to": "project:京剧",
+      "type": "BELONGS_TO"
+    },
+    {
+      "from": "work:穆桂英挂帅",
+      "to": "project:京剧",
+      "type": "BELONGS_TO"
+    },
+    {
+      "from": "project:京剧",
+      "to": "project:昆曲",
+      "type": "RELATED_TO"
+    },
+    {
+      "from": "project:京剧",
+      "to": "project:豫剧",
+      "type": "RELATED_TO"
+    },
+    {
+      "from": "project:京剧",
+      "to": "project:越剧",
+      "type": "RELATED_TO"
+    },
+    {
+      "from": "project:京剧",
+      "to": "project:黄梅戏",
+      "type": "RELATED_TO"
+    },
+    {
+      "from": "project:京剧",
+      "to": "technique:传统戏剧",
+      "type": "HAS_TECHNIQUE"
+    },
+    {
+      "from": "project:粤剧",
+      "to": "region:广东",
+      "type": "FROM_REGION"
+    },
+    {
+      "from": "project:粤剧",
+      "to": "region:广西",
+      "type": "FROM_REGION"
+    },
+    {
+      "from": "project:粤剧",
+      "to": "region:海南",
+      "type": "FROM_REGION"
+    },
+    {
+      "from": "project:粤剧",
+      "to": "region:香港",
+      "type": "FROM_REGION"
+    },
+    {
+      "from": "project:粤剧",
+      "to": "region:澳门",
+      "type": "FROM_REGION"
+    },
+    {
+      "from": "project:粤剧",
+      "to": "person:红线女",
+      "type": "HAS_INHERITOR"
+    },
+    {
+      "from": "project:粤剧",
+      "to": "person:罗家宝",
+      "type": "HAS_INHERITOR"
+    },
+    {
+      "from": "work:帝女花",
+      "to": "project:粤剧",
+      "type": "BELONGS_TO"
+    },
+    {
+      "from": "work:紫钗记",
+      "to": "project:粤剧",
+      "type": "BELONGS_TO"
+    },
+    {
+      "from": "work:牡丹亭惊梦",
+      "to": "project:粤剧",
+      "type": "BELONGS_TO"
+    },
+    {
+      "from": "work:再世红梅记",
+      "to": "project:粤剧",
+      "type": "BELONGS_TO"
+    },
+    {
+      "from": "project:粤剧",
+      "to": "project:昆曲",
+      "type": "RELATED_TO"
+    },
+    {
+      "from": "project:粤剧",
+      "to": "project:潮剧",
+      "type": "RELATED_TO"
+    },
+    {
+      "from": "project:粤剧",
+      "to": "project:雷剧",
+      "type": "RELATED_TO"
+    },
+    {
+      "from": "project:粤剧",
+      "to": "technique:传统戏剧",
+      "type": "HAS_TECHNIQUE"
+    },
+    {
+      "from": "project:古琴艺术",
+      "to": "region:全国",
+      "type": "FROM_REGION"
+    },
+    {
+      "from": "project:古琴艺术",
+      "to": "person:龚一",
+      "type": "HAS_INHERITOR"
+    },
+    {
+      "from": "project:古琴艺术",
+      "to": "person:李祥霆",
+      "type": "HAS_INHERITOR"
+    },
+    {
+      "from": "project:古琴艺术",
+      "to": "person:吴文光",
+      "type": "HAS_INHERITOR"
+    },
+    {
+      "from": "school:虞山派（常熟）",
+      "to": "project:古琴艺术",
+      "type": "PART_OF"
+    },
+    {
+      "from": "school:广陵派（扬州）",
+      "to": "project:古琴艺术",
+      "type": "PART_OF"
+    },
+    {
+      "from": "school:蜀派（四川）",
+      "to": "project:古琴艺术",
+      "type": "PART_OF"
+    },
+    {
+      "from": "school:岭南派（广东）",
+      "to": "project:古琴艺术",
+      "type": "PART_OF"
+    },
+    {
+      "from": "school:浦城派（福建）",
+      "to": "project:古琴艺术",
+      "type": "PART_OF"
+    },
+    {
+      "from": "work:流水",
+      "to": "project:古琴艺术",
+      "type": "BELONGS_TO"
+    },
+    {
+      "from": "work:广陵散",
+      "to": "project:古琴艺术",
+      "type": "BELONGS_TO"
+    },
+    {
+      "from": "work:梅花三弄",
+      "to": "project:古琴艺术",
+      "type": "BELONGS_TO"
+    },
+    {
+      "from": "work:平沙落雁",
+      "to": "project:古琴艺术",
+      "type": "BELONGS_TO"
+    },
+    {
+      "from": "work:阳关三叠",
+      "to": "project:古琴艺术",
+      "type": "BELONGS_TO"
+    },
+    {
+      "from": "work:潇湘水云",
+      "to": "project:古琴艺术",
+      "type": "BELONGS_TO"
+    },
+    {
+      "from": "project:古琴艺术",
+      "to": "project:南音",
+      "type": "RELATED_TO"
+    },
+    {
+      "from": "project:古琴艺术",
+      "to": "project:昆曲",
+      "type": "RELATED_TO"
+    },
+    {
+      "from": "project:古琴艺术",
+      "to": "technique:传统音乐",
+      "type": "HAS_TECHNIQUE"
+    },
+    {
+      "from": "project:广绣",
+      "to": "region:广东",
+      "type": "FROM_REGION"
+    },
+    {
+      "from": "project:广绣",
+      "to": "person:陈少芳",
+      "type": "HAS_INHERITOR"
+    },
+    {
+      "from": "project:广绣",
+      "to": "person:许炽光",
+      "type": "HAS_INHERITOR"
+    },
+    {
+      "from": "school:广州绣（以陈少芳为代表）",
+      "to": "project:广绣",
+      "type": "PART_OF"
+    },
+    {
+      "from": "school:潮绣（以金银线垫绣著称）",
+      "to": "project:广绣",
+      "type": "PART_OF"
+    },
+    {
+      "from": "work:百鸟朝凤",
+      "to": "project:广绣",
+      "type": "BELONGS_TO"
+    },
+    {
+      "from": "work:岭南佳果",
+      "to": "project:广绣",
+      "type": "BELONGS_TO"
+    },
+    {
+      "from": "work:双面绣屏风",
+      "to": "project:广绣",
+      "type": "BELONGS_TO"
+    },
+    {
+      "from": "project:广绣",
+      "to": "project:苏绣",
+      "type": "RELATED_TO"
+    },
+    {
+      "from": "project:广绣",
+      "to": "project:湘绣",
+      "type": "RELATED_TO"
+    },
+    {
+      "from": "project:广绣",
+      "to": "project:蜀绣",
+      "type": "RELATED_TO"
+    },
+    {
+      "from": "project:广绣",
+      "to": "project:潮绣",
+      "type": "RELATED_TO"
+    },
+    {
+      "from": "project:广绣",
+      "to": "technique:传统技艺",
+      "type": "HAS_TECHNIQUE"
+    },
+    {
+      "from": "project:苏绣",
+      "to": "region:江苏",
+      "type": "FROM_REGION"
+    },
+    {
+      "from": "project:苏绣",
+      "to": "person:姚惠芬",
+      "type": "HAS_INHERITOR"
+    },
+    {
+      "from": "project:苏绣",
+      "to": "person:陈少峰",
+      "type": "HAS_INHERITOR"
+    },
+    {
+      "from": "school:苏绣（苏州）",
+      "to": "project:苏绣",
+      "type": "PART_OF"
+    },
+    {
+      "from": "school:湘绣（湖南）",
+      "to": "project:苏绣",
+      "type": "PART_OF"
+    },
+    {
+      "from": "school:蜀绣（四川）",
+      "to": "project:苏绣",
+      "type": "PART_OF"
+    },
+    {
+      "from": "school:粤绣（广东）",
+      "to": "project:苏绣",
+      "type": "PART_OF"
+    },
+    {
+      "from": "work:猫",
+      "to": "project:苏绣",
+      "type": "BELONGS_TO"
+    },
+    {
+      "from": "work:金鱼",
+      "to": "project:苏绣",
+      "type": "BELONGS_TO"
+    },
+    {
+      "from": "work:牡丹",
+      "to": "project:苏绣",
+      "type": "BELONGS_TO"
+    },
+    {
+      "from": "work:仕女图",
+      "to": "project:苏绣",
+      "type": "BELONGS_TO"
+    },
+    {
+      "from": "project:苏绣",
+      "to": "project:广绣",
+      "type": "RELATED_TO"
+    },
+    {
+      "from": "project:苏绣",
+      "to": "project:湘绣",
+      "type": "RELATED_TO"
+    },
+    {
+      "from": "project:苏绣",
+      "to": "project:蜀绣",
+      "type": "RELATED_TO"
+    },
+    {
+      "from": "project:苏绣",
+      "to": "technique:传统技艺",
+      "type": "HAS_TECHNIQUE"
+    },
+    {
+      "from": "project:湘绣",
+      "to": "region:湖南",
+      "type": "FROM_REGION"
+    },
+    {
+      "from": "project:湘绣",
+      "to": "person:刘爱云",
+      "type": "HAS_INHERITOR"
+    },
+    {
+      "from": "work:雄狮",
+      "to": "project:湘绣",
+      "type": "BELONGS_TO"
+    },
+    {
+      "from": "work:饮虎",
+      "to": "project:湘绣",
+      "type": "BELONGS_TO"
+    },
+    {
+      "from": "work:百鸟朝凤",
+      "to": "project:湘绣",
+      "type": "BELONGS_TO"
+    },
+    {
+      "from": "project:湘绣",
+      "to": "project:广绣",
+      "type": "RELATED_TO"
+    },
+    {
+      "from": "project:湘绣",
+      "to": "project:苏绣",
+      "type": "RELATED_TO"
+    },
+    {
+      "from": "project:湘绣",
+      "to": "project:蜀绣",
+      "type": "RELATED_TO"
+    },
+    {
+      "from": "project:湘绣",
+      "to": "technique:传统技艺",
+      "type": "HAS_TECHNIQUE"
+    },
+    {
+      "from": "project:蜀绣",
+      "to": "region:四川",
+      "type": "FROM_REGION"
+    },
+    {
+      "from": "project:蜀绣",
+      "to": "person:郝淑萍",
+      "type": "HAS_INHERITOR"
+    },
+    {
+      "from": "work:芙蓉鲤鱼",
+      "to": "project:蜀绣",
+      "type": "BELONGS_TO"
+    },
+    {
+      "from": "work:熊猫",
+      "to": "project:蜀绣",
+      "type": "BELONGS_TO"
+    },
+    {
+      "from": "work:薛涛吟诗图",
+      "to": "project:蜀绣",
+      "type": "BELONGS_TO"
+    },
+    {
+      "from": "project:蜀绣",
+      "to": "project:广绣",
+      "type": "RELATED_TO"
+    },
+    {
+      "from": "project:蜀绣",
+      "to": "project:苏绣",
+      "type": "RELATED_TO"
+    },
+    {
+      "from": "project:蜀绣",
+      "to": "project:湘绣",
+      "type": "RELATED_TO"
+    },
+    {
+      "from": "project:蜀绣",
+      "to": "technique:传统技艺",
+      "type": "HAS_TECHNIQUE"
+    },
+    {
+      "from": "project:中国剪纸",
+      "to": "region:全国",
+      "type": "FROM_REGION"
+    },
+    {
+      "from": "project:中国剪纸",
+      "to": "person:库淑兰",
+      "type": "HAS_INHERITOR"
+    },
+    {
+      "from": "project:中国剪纸",
+      "to": "person:高凤莲",
+      "type": "HAS_INHERITOR"
+    },
+    {
+      "from": "project:中国剪纸",
+      "to": "person:张秀芳",
+      "type": "HAS_INHERITOR"
+    },
+    {
+      "from": "school:北方剪纸（粗犷豪放）",
+      "to": "project:中国剪纸",
+      "type": "PART_OF"
+    },
+    {
+      "from": "school:南方剪纸（细腻精巧）",
+      "to": "project:中国剪纸",
+      "type": "PART_OF"
+    },
+    {
+      "from": "school:陕西剪纸",
+      "to": "project:中国剪纸",
+      "type": "PART_OF"
+    },
+    {
+      "from": "school:山东剪纸",
+      "to": "project:中国剪纸",
+      "type": "PART_OF"
+    },
+    {
+      "from": "school:扬州剪纸",
+      "to": "project:中国剪纸",
+      "type": "PART_OF"
+    },
+    {
+      "from": "work:窗花",
+      "to": "project:中国剪纸",
+      "type": "BELONGS_TO"
+    },
+    {
+      "from": "work:喜花",
+      "to": "project:中国剪纸",
+      "type": "BELONGS_TO"
+    },
+    {
+      "from": "work:鞋花",
+      "to": "project:中国剪纸",
+      "type": "BELONGS_TO"
+    },
+    {
+      "from": "work:十二生肖",
+      "to": "project:中国剪纸",
+      "type": "BELONGS_TO"
+    },
+    {
+      "from": "work:福禄寿喜",
+      "to": "project:中国剪纸",
+      "type": "BELONGS_TO"
+    },
+    {
+      "from": "project:中国剪纸",
+      "to": "project:年画",
+      "type": "RELATED_TO"
+    },
+    {
+      "from": "project:中国剪纸",
+      "to": "project:皮影戏",
+      "type": "RELATED_TO"
+    },
+    {
+      "from": "project:中国剪纸",
+      "to": "technique:传统美术",
+      "type": "HAS_TECHNIQUE"
+    },
+    {
+      "from": "project:太极拳",
+      "to": "region:全国",
+      "type": "FROM_REGION"
+    },
+    {
+      "from": "project:太极拳",
+      "to": "person:陈小旺",
+      "type": "HAS_INHERITOR"
+    },
+    {
+      "from": "project:太极拳",
+      "to": "person:杨振铎",
+      "type": "HAS_INHERITOR"
+    },
+    {
+      "from": "project:太极拳",
+      "to": "person:孙婉容",
+      "type": "HAS_INHERITOR"
+    },
+    {
+      "from": "school:陈式（刚柔并济）",
+      "to": "project:太极拳",
+      "type": "PART_OF"
+    },
+    {
+      "from": "school:杨式（舒展大方）",
+      "to": "project:太极拳",
+      "type": "PART_OF"
+    },
+    {
+      "from": "school:武式（小巧紧凑）",
+      "to": "project:太极拳",
+      "type": "PART_OF"
+    },
+    {
+      "from": "school:吴式（轻柔圆活）",
+      "to": "project:太极拳",
+      "type": "PART_OF"
+    },
+    {
+      "from": "school:孙式（灵活多变）",
+      "to": "project:太极拳",
+      "type": "PART_OF"
+    },
+    {
+      "from": "work:陈式老架一路",
+      "to": "project:太极拳",
+      "type": "BELONGS_TO"
+    },
+    {
+      "from": "work:杨式八十五式",
+      "to": "project:太极拳",
+      "type": "BELONGS_TO"
+    },
+    {
+      "from": "work:二十四式简化太极拳",
+      "to": "project:太极拳",
+      "type": "BELONGS_TO"
+    },
+    {
+      "from": "work:四十二式太极拳",
+      "to": "project:太极拳",
+      "type": "BELONGS_TO"
+    },
+    {
+      "from": "project:太极拳",
+      "to": "project:中医针灸",
+      "type": "RELATED_TO"
+    },
+    {
+      "from": "project:太极拳",
+      "to": "project:醒狮",
+      "type": "RELATED_TO"
+    },
+    {
+      "from": "project:太极拳",
+      "to": "person:陈王廷",
+      "type": "FOUNDED_BY"
+    },
+    {
+      "from": "project:太极拳",
+      "to": "technique:传统体育、游艺与杂技",
+      "type": "HAS_TECHNIQUE"
+    },
+    {
+      "from": "project:中医针灸",
+      "to": "region:全国",
+      "type": "FROM_REGION"
+    },
+    {
+      "from": "project:中医针灸",
+      "to": "person:程莘农",
+      "type": "HAS_INHERITOR"
+    },
+    {
+      "from": "project:中医针灸",
+      "to": "person:贺普仁",
+      "type": "HAS_INHERITOR"
+    },
+    {
+      "from": "school:经络学派",
+      "to": "project:中医针灸",
+      "type": "PART_OF"
+    },
+    {
+      "from": "school:穴位学派",
+      "to": "project:中医针灸",
+      "type": "PART_OF"
+    },
+    {
+      "from": "school:子午流注针法",
+      "to": "project:中医针灸",
+      "type": "PART_OF"
+    },
+    {
+      "from": "school:灵龟八法",
+      "to": "project:中医针灸",
+      "type": "PART_OF"
+    },
+    {
+      "from": "work:黄帝内经",
+      "to": "project:中医针灸",
+      "type": "BELONGS_TO"
+    },
+    {
+      "from": "work:针灸甲乙经",
+      "to": "project:中医针灸",
+      "type": "BELONGS_TO"
+    },
+    {
+      "from": "work:针灸大成",
+      "to": "project:中医针灸",
+      "type": "BELONGS_TO"
+    },
+    {
+      "from": "work:难经",
+      "to": "project:中医针灸",
+      "type": "BELONGS_TO"
+    },
+    {
+      "from": "project:中医针灸",
+      "to": "project:中医诊法",
+      "type": "RELATED_TO"
+    },
+    {
+      "from": "project:中医针灸",
+      "to": "project:凉茶",
+      "type": "RELATED_TO"
+    },
+    {
+      "from": "project:中医针灸",
+      "to": "technique:传统医药",
+      "type": "HAS_TECHNIQUE"
+    },
+    {
+      "from": "project:春节",
+      "to": "region:全国",
+      "type": "FROM_REGION"
+    },
+    {
+      "from": "project:春节",
+      "to": "project:元宵节",
+      "type": "RELATED_TO"
+    },
+    {
+      "from": "project:春节",
+      "to": "project:端午节",
+      "type": "RELATED_TO"
+    },
+    {
+      "from": "project:春节",
+      "to": "project:中秋节",
+      "type": "RELATED_TO"
+    },
+    {
+      "from": "project:春节",
+      "to": "technique:民俗",
+      "type": "HAS_TECHNIQUE"
+    },
+    {
+      "from": "project:端午节",
+      "to": "region:全国",
+      "type": "FROM_REGION"
+    },
+    {
+      "from": "project:端午节",
+      "to": "project:春节",
+      "type": "RELATED_TO"
+    },
+    {
+      "from": "project:端午节",
+      "to": "project:中秋节",
+      "type": "RELATED_TO"
+    },
+    {
+      "from": "project:端午节",
+      "to": "technique:民俗",
+      "type": "HAS_TECHNIQUE"
+    },
+    {
+      "from": "project:皮影戏",
+      "to": "region:陕西",
+      "type": "FROM_REGION"
+    },
+    {
+      "from": "project:皮影戏",
+      "to": "region:甘肃",
+      "type": "FROM_REGION"
+    },
+    {
+      "from": "project:皮影戏",
+      "to": "region:河北",
+      "type": "FROM_REGION"
+    },
+    {
+      "from": "project:皮影戏",
+      "to": "region:湖南",
+      "type": "FROM_REGION"
+    },
+    {
+      "from": "project:皮影戏",
+      "to": "region:湖北",
+      "type": "FROM_REGION"
+    },
+    {
+      "from": "project:皮影戏",
+      "to": "person:汪天稳",
+      "type": "HAS_INHERITOR"
+    },
+    {
+      "from": "project:皮影戏",
+      "to": "person:齐永衡",
+      "type": "HAS_INHERITOR"
+    },
+    {
+      "from": "school:陕西皮影",
+      "to": "project:皮影戏",
+      "type": "PART_OF"
+    },
+    {
+      "from": "school:唐山皮影",
+      "to": "project:皮影戏",
+      "type": "PART_OF"
+    },
+    {
+      "from": "school:湖南皮影",
+      "to": "project:皮影戏",
+      "type": "PART_OF"
+    },
+    {
+      "from": "school:甘肃皮影",
+      "to": "project:皮影戏",
+      "type": "PART_OF"
+    },
+    {
+      "from": "work:火焰山",
+      "to": "project:皮影戏",
+      "type": "BELONGS_TO"
+    },
+    {
+      "from": "work:白蛇传",
+      "to": "project:皮影戏",
+      "type": "BELONGS_TO"
+    },
+    {
+      "from": "work:三国演义",
+      "to": "project:皮影戏",
+      "type": "BELONGS_TO"
+    },
+    {
+      "from": "work:西游记",
+      "to": "project:皮影戏",
+      "type": "BELONGS_TO"
+    },
+    {
+      "from": "project:皮影戏",
+      "to": "project:剪纸",
+      "type": "RELATED_TO"
+    },
+    {
+      "from": "project:皮影戏",
+      "to": "project:木偶戏",
+      "type": "RELATED_TO"
+    },
+    {
+      "from": "project:皮影戏",
+      "to": "technique:传统戏剧",
+      "type": "HAS_TECHNIQUE"
+    },
+    {
+      "from": "project:景德镇陶瓷烧制技艺",
+      "to": "region:江西",
+      "type": "FROM_REGION"
+    },
+    {
+      "from": "project:景德镇陶瓷烧制技艺",
+      "to": "person:刘远长",
+      "type": "HAS_INHERITOR"
+    },
+    {
+      "from": "project:景德镇陶瓷烧制技艺",
+      "to": "person:王锡良",
+      "type": "HAS_INHERITOR"
+    },
+    {
+      "from": "school:官窑（御窑厂）",
+      "to": "project:景德镇陶瓷烧制技艺",
+      "type": "PART_OF"
+    },
+    {
+      "from": "school:民窑",
+      "to": "project:景德镇陶瓷烧制技艺",
+      "type": "PART_OF"
+    },
+    {
+      "from": "work:青花瓷",
+      "to": "project:景德镇陶瓷烧制技艺",
+      "type": "BELONGS_TO"
+    },
+    {
+      "from": "work:粉彩瓷",
+      "to": "project:景德镇陶瓷烧制技艺",
+      "type": "BELONGS_TO"
+    },
+    {
+      "from": "work:玲珑瓷",
+      "to": "project:景德镇陶瓷烧制技艺",
+      "type": "BELONGS_TO"
+    },
+    {
+      "from": "work:颜色釉瓷",
+      "to": "project:景德镇陶瓷烧制技艺",
+      "type": "BELONGS_TO"
+    },
+    {
+      "from": "project:景德镇陶瓷烧制技艺",
+      "to": "project:广彩",
+      "type": "RELATED_TO"
+    },
+    {
+      "from": "project:景德镇陶瓷烧制技艺",
+      "to": "project:宜兴紫砂",
+      "type": "RELATED_TO"
+    },
+    {
+      "from": "project:景德镇陶瓷烧制技艺",
+      "to": "technique:传统技艺",
+      "type": "HAS_TECHNIQUE"
+    },
+    {
+      "from": "project:相声",
+      "to": "region:北京",
+      "type": "FROM_REGION"
+    },
+    {
+      "from": "project:相声",
+      "to": "region:天津",
+      "type": "FROM_REGION"
+    },
+    {
+      "from": "project:相声",
+      "to": "person:姜昆",
+      "type": "HAS_INHERITOR"
+    },
+    {
+      "from": "project:相声",
+      "to": "person:冯巩",
+      "type": "HAS_INHERITOR"
+    },
+    {
+      "from": "project:相声",
+      "to": "person:师胜杰",
+      "type": "HAS_INHERITOR"
+    },
+    {
+      "from": "school:侯派（侯宝林）",
+      "to": "project:相声",
+      "type": "PART_OF"
+    },
+    {
+      "from": "school:马派（马三立）",
+      "to": "project:相声",
+      "type": "PART_OF"
+    },
+    {
+      "from": "school:常派（常宝堃）",
+      "to": "project:相声",
+      "type": "PART_OF"
+    },
+    {
+      "from": "work:关公战秦琼",
+      "to": "project:相声",
+      "type": "BELONGS_TO"
+    },
+    {
+      "from": "work:逗你玩",
+      "to": "project:相声",
+      "type": "BELONGS_TO"
+    },
+    {
+      "from": "work:宇宙牌香烟",
+      "to": "project:相声",
+      "type": "BELONGS_TO"
+    },
+    {
+      "from": "work:虎口遐想",
+      "to": "project:相声",
+      "type": "BELONGS_TO"
+    },
+    {
+      "from": "project:相声",
+      "to": "project:评书",
+      "type": "RELATED_TO"
+    },
+    {
+      "from": "project:相声",
+      "to": "project:快板",
+      "type": "RELATED_TO"
+    },
+    {
+      "from": "project:相声",
+      "to": "person:张三禄",
+      "type": "FOUNDED_BY"
+    },
+    {
+      "from": "project:相声",
+      "to": "technique:曲艺",
+      "type": "HAS_TECHNIQUE"
+    },
+    {
+      "from": "project:凉茶",
+      "to": "region:广东",
+      "type": "FROM_REGION"
+    },
+    {
+      "from": "project:凉茶",
+      "to": "region:广西",
+      "type": "FROM_REGION"
+    },
+    {
+      "from": "project:凉茶",
+      "to": "person:王健仪",
+      "type": "HAS_INHERITOR"
+    },
+    {
+      "from": "project:凉茶",
+      "to": "project:中医诊法",
+      "type": "RELATED_TO"
+    },
+    {
+      "from": "project:凉茶",
+      "to": "project:中药炮制",
+      "type": "RELATED_TO"
+    },
+    {
+      "from": "project:凉茶",
+      "to": "technique:传统医药",
+      "type": "HAS_TECHNIQUE"
+    },
+    {
+      "from": "project:妈祖信俗",
+      "to": "region:福建",
+      "type": "FROM_REGION"
+    },
+    {
+      "from": "project:妈祖信俗",
+      "to": "region:台湾",
+      "type": "FROM_REGION"
+    },
+    {
+      "from": "project:妈祖信俗",
+      "to": "region:广东",
+      "type": "FROM_REGION"
+    },
+    {
+      "from": "project:妈祖信俗",
+      "to": "project:春节",
+      "type": "RELATED_TO"
+    },
+    {
+      "from": "project:妈祖信俗",
+      "to": "project:元宵节",
+      "type": "RELATED_TO"
+    },
+    {
+      "from": "project:妈祖信俗",
+      "to": "technique:民俗",
+      "type": "HAS_TECHNIQUE"
+    },
+    {
+      "from": "project:南音",
+      "to": "region:福建",
+      "type": "FROM_REGION"
+    },
+    {
+      "from": "project:南音",
+      "to": "region:台湾",
+      "type": "FROM_REGION"
+    },
+    {
+      "from": "project:南音",
+      "to": "region:东南亚",
+      "type": "FROM_REGION"
+    },
+    {
+      "from": "project:南音",
+      "to": "person:苏统谋",
+      "type": "HAS_INHERITOR"
+    },
+    {
+      "from": "project:南音",
+      "to": "person:王心心",
+      "type": "HAS_INHERITOR"
+    },
+    {
+      "from": "school:泉州南音",
+      "to": "project:南音",
+      "type": "PART_OF"
+    },
+    {
+      "from": "school:厦门南音",
+      "to": "project:南音",
+      "type": "PART_OF"
+    },
+    {
+      "from": "work:四时景",
+      "to": "project:南音",
+      "type": "BELONGS_TO"
+    },
+    {
+      "from": "work:梅花操",
+      "to": "project:南音",
+      "type": "BELONGS_TO"
+    },
+    {
+      "from": "work:八骏马",
+      "to": "project:南音",
+      "type": "BELONGS_TO"
+    },
+    {
+      "from": "work:百鸟归巢",
+      "to": "project:南音",
+      "type": "BELONGS_TO"
+    },
+    {
+      "from": "project:南音",
+      "to": "project:古琴艺术",
+      "type": "RELATED_TO"
+    },
+    {
+      "from": "project:南音",
+      "to": "project:梨园戏",
+      "type": "RELATED_TO"
+    },
+    {
+      "from": "project:南音",
+      "to": "technique:传统音乐",
+      "type": "HAS_TECHNIQUE"
+    },
+    {
+      "from": "project:藏戏",
+      "to": "region:西藏",
+      "type": "FROM_REGION"
+    },
+    {
+      "from": "project:藏戏",
+      "to": "region:青海",
+      "type": "FROM_REGION"
+    },
+    {
+      "from": "project:藏戏",
+      "to": "region:四川",
+      "type": "FROM_REGION"
+    },
+    {
+      "from": "project:藏戏",
+      "to": "region:甘肃",
+      "type": "FROM_REGION"
+    },
+    {
+      "from": "project:藏戏",
+      "to": "person:次旦多吉",
+      "type": "HAS_INHERITOR"
+    },
+    {
+      "from": "project:藏戏",
+      "to": "person:班典旺久",
+      "type": "HAS_INHERITOR"
+    },
+    {
+      "from": "school:白面具派",
+      "to": "project:藏戏",
+      "type": "PART_OF"
+    },
+    {
+      "from": "school:蓝面具派",
+      "to": "project:藏戏",
+      "type": "PART_OF"
+    },
+    {
+      "from": "work:文成公主",
+      "to": "project:藏戏",
+      "type": "BELONGS_TO"
+    },
+    {
+      "from": "work:诺桑王子",
+      "to": "project:藏戏",
+      "type": "BELONGS_TO"
+    },
+    {
+      "from": "work:卓娃桑姆",
+      "to": "project:藏戏",
+      "type": "BELONGS_TO"
+    },
+    {
+      "from": "work:苏吉尼玛",
+      "to": "project:藏戏",
+      "type": "BELONGS_TO"
+    },
+    {
+      "from": "project:藏戏",
+      "to": "project:昆曲",
+      "type": "RELATED_TO"
+    },
+    {
+      "from": "project:藏戏",
+      "to": "project:京剧",
+      "type": "RELATED_TO"
+    },
+    {
+      "from": "project:藏戏",
+      "to": "person:唐东杰布",
+      "type": "FOUNDED_BY"
+    },
+    {
+      "from": "project:藏戏",
+      "to": "technique:传统戏剧",
+      "type": "HAS_TECHNIQUE"
+    },
+    {
+      "from": "project:宣纸制作技艺",
+      "to": "region:安徽",
+      "type": "FROM_REGION"
+    },
+    {
+      "from": "project:宣纸制作技艺",
+      "to": "person:邢春荣",
+      "type": "HAS_INHERITOR"
+    },
+    {
+      "from": "project:宣纸制作技艺",
+      "to": "person:曹光华",
+      "type": "HAS_INHERITOR"
+    },
+    {
+      "from": "school:生宣（吸水性强）",
+      "to": "project:宣纸制作技艺",
+      "type": "PART_OF"
+    },
+    {
+      "from": "school:熟宣（加矾处理）",
+      "to": "project:宣纸制作技艺",
+      "type": "PART_OF"
+    },
+    {
+      "from": "work:书画用纸",
+      "to": "project:宣纸制作技艺",
+      "type": "BELONGS_TO"
+    },
+    {
+      "from": "work:古籍修复用纸",
+      "to": "project:宣纸制作技艺",
+      "type": "BELONGS_TO"
+    },
+    {
+      "from": "project:宣纸制作技艺",
+      "to": "project:中国书法",
+      "type": "RELATED_TO"
+    },
+    {
+      "from": "project:宣纸制作技艺",
+      "to": "project:中国篆刻",
+      "type": "RELATED_TO"
+    },
+    {
+      "from": "project:宣纸制作技艺",
+      "to": "technique:传统技艺",
+      "type": "HAS_TECHNIQUE"
+    },
+    {
+      "from": "project:醒狮",
+      "to": "region:广东",
+      "type": "FROM_REGION"
+    },
+    {
+      "from": "project:醒狮",
+      "to": "region:广西",
+      "type": "FROM_REGION"
+    },
+    {
+      "from": "project:醒狮",
+      "to": "project:太极拳",
+      "type": "RELATED_TO"
+    },
+    {
+      "from": "project:醒狮",
+      "to": "project:龙舟说唱",
+      "type": "RELATED_TO"
+    },
+    {
+      "from": "project:醒狮",
+      "to": "technique:传统体育、游艺与杂技",
+      "type": "HAS_TECHNIQUE"
+    },
+    {
+      "from": "project:花儿",
+      "to": "region:甘肃",
+      "type": "FROM_REGION"
+    },
+    {
+      "from": "project:花儿",
+      "to": "region:青海",
+      "type": "FROM_REGION"
+    },
+    {
+      "from": "project:花儿",
+      "to": "region:宁夏",
+      "type": "FROM_REGION"
+    },
+    {
+      "from": "project:花儿",
+      "to": "region:新疆",
+      "type": "FROM_REGION"
+    },
+    {
+      "from": "project:花儿",
+      "to": "person:马金山",
+      "type": "HAS_INHERITOR"
+    },
+    {
+      "from": "project:花儿",
+      "to": "person:雷通",
+      "type": "HAS_INHERITOR"
+    },
+    {
+      "from": "school:河湟花儿",
+      "to": "project:花儿",
+      "type": "PART_OF"
+    },
+    {
+      "from": "school:洮岷花儿",
+      "to": "project:花儿",
+      "type": "PART_OF"
+    },
+    {
+      "from": "school:六盘山花儿",
+      "to": "project:花儿",
+      "type": "PART_OF"
+    },
+    {
+      "from": "work:上去高山望平川",
+      "to": "project:花儿",
+      "type": "BELONGS_TO"
+    },
+    {
+      "from": "work:河州令",
+      "to": "project:花儿",
+      "type": "BELONGS_TO"
+    },
+    {
+      "from": "work:尕马儿令",
+      "to": "project:花儿",
+      "type": "BELONGS_TO"
+    },
+    {
+      "from": "project:花儿",
+      "to": "project:蒙古族长调民歌",
+      "type": "RELATED_TO"
+    },
+    {
+      "from": "project:花儿",
+      "to": "technique:传统音乐",
+      "type": "HAS_TECHNIQUE"
+    },
+    {
+      "from": "project:越剧",
+      "to": "region:浙江",
+      "type": "FROM_REGION"
+    },
+    {
+      "from": "project:越剧",
+      "to": "region:上海",
+      "type": "FROM_REGION"
+    },
+    {
+      "from": "project:越剧",
+      "to": "region:江苏",
+      "type": "FROM_REGION"
+    },
+    {
+      "from": "project:越剧",
+      "to": "person:袁雪芬",
+      "type": "HAS_INHERITOR"
+    },
+    {
+      "from": "project:越剧",
+      "to": "person:茅威涛",
+      "type": "HAS_INHERITOR"
+    },
+    {
+      "from": "school:袁派（袁雪芬）",
+      "to": "project:越剧",
+      "type": "PART_OF"
+    },
+    {
+      "from": "school:尹派（尹桂芳）",
+      "to": "project:越剧",
+      "type": "PART_OF"
+    },
+    {
+      "from": "school:范派（范瑞娟）",
+      "to": "project:越剧",
+      "type": "PART_OF"
+    },
+    {
+      "from": "school:傅派（傅全香）",
+      "to": "project:越剧",
+      "type": "PART_OF"
+    },
+    {
+      "from": "school:徐派（徐玉兰）",
+      "to": "project:越剧",
+      "type": "PART_OF"
+    },
+    {
+      "from": "work:梁山伯与祝英台",
+      "to": "project:越剧",
+      "type": "BELONGS_TO"
+    },
+    {
+      "from": "work:红楼梦",
+      "to": "project:越剧",
+      "type": "BELONGS_TO"
+    },
+    {
+      "from": "work:西厢记",
+      "to": "project:越剧",
+      "type": "BELONGS_TO"
+    },
+    {
+      "from": "work:祥林嫂",
+      "to": "project:越剧",
+      "type": "BELONGS_TO"
+    },
+    {
+      "from": "work:碧玉簪",
+      "to": "project:越剧",
+      "type": "BELONGS_TO"
+    },
+    {
+      "from": "project:越剧",
+      "to": "project:昆曲",
+      "type": "RELATED_TO"
+    },
+    {
+      "from": "project:越剧",
+      "to": "project:黄梅戏",
+      "type": "RELATED_TO"
+    },
+    {
+      "from": "project:越剧",
+      "to": "project:沪剧",
+      "type": "RELATED_TO"
+    },
+    {
+      "from": "project:越剧",
+      "to": "technique:传统戏剧",
+      "type": "HAS_TECHNIQUE"
+    },
+    {
+      "from": "project:豫剧",
+      "to": "region:河南",
+      "type": "FROM_REGION"
+    },
+    {
+      "from": "project:豫剧",
+      "to": "region:河北",
+      "type": "FROM_REGION"
+    },
+    {
+      "from": "project:豫剧",
+      "to": "region:山东",
+      "type": "FROM_REGION"
+    },
+    {
+      "from": "project:豫剧",
+      "to": "region:安徽",
+      "type": "FROM_REGION"
+    },
+    {
+      "from": "project:豫剧",
+      "to": "person:常香玉",
+      "type": "HAS_INHERITOR"
+    },
+    {
+      "from": "project:豫剧",
+      "to": "person:马金凤",
+      "type": "HAS_INHERITOR"
+    },
+    {
+      "from": "school:常派（常香玉）",
+      "to": "project:豫剧",
+      "type": "PART_OF"
+    },
+    {
+      "from": "school:陈派（陈素真）",
+      "to": "project:豫剧",
+      "type": "PART_OF"
+    },
+    {
+      "from": "school:崔派（崔兰田）",
+      "to": "project:豫剧",
+      "type": "PART_OF"
+    },
+    {
+      "from": "school:马派（马金凤）",
+      "to": "project:豫剧",
+      "type": "PART_OF"
+    },
+    {
+      "from": "school:阎派（阎立品）",
+      "to": "project:豫剧",
+      "type": "PART_OF"
+    },
+    {
+      "from": "work:花木兰",
+      "to": "project:豫剧",
+      "type": "BELONGS_TO"
+    },
+    {
+      "from": "work:穆桂英挂帅",
+      "to": "project:豫剧",
+      "type": "BELONGS_TO"
+    },
+    {
+      "from": "work:七品芝麻官",
+      "to": "project:豫剧",
+      "type": "BELONGS_TO"
+    },
+    {
+      "from": "work:朝阳沟",
+      "to": "project:豫剧",
+      "type": "BELONGS_TO"
+    },
+    {
+      "from": "work:程婴救孤",
+      "to": "project:豫剧",
+      "type": "BELONGS_TO"
+    },
+    {
+      "from": "project:豫剧",
+      "to": "project:京剧",
+      "type": "RELATED_TO"
+    },
+    {
+      "from": "project:豫剧",
+      "to": "project:曲剧",
+      "type": "RELATED_TO"
+    },
+    {
+      "from": "project:豫剧",
+      "to": "project:越调",
+      "type": "RELATED_TO"
+    },
+    {
+      "from": "project:豫剧",
+      "to": "technique:传统戏剧",
+      "type": "HAS_TECHNIQUE"
+    },
+    {
+      "from": "project:黄梅戏",
+      "to": "region:安徽",
+      "type": "FROM_REGION"
+    },
+    {
+      "from": "project:黄梅戏",
+      "to": "region:湖北",
+      "type": "FROM_REGION"
+    },
+    {
+      "from": "project:黄梅戏",
+      "to": "region:江西",
+      "type": "FROM_REGION"
+    },
+    {
+      "from": "project:黄梅戏",
+      "to": "person:严凤英",
+      "type": "HAS_INHERITOR"
+    },
+    {
+      "from": "project:黄梅戏",
+      "to": "person:韩再芬",
+      "type": "HAS_INHERITOR"
+    },
+    {
+      "from": "work:天仙配",
+      "to": "project:黄梅戏",
+      "type": "BELONGS_TO"
+    },
+    {
+      "from": "work:女驸马",
+      "to": "project:黄梅戏",
+      "type": "BELONGS_TO"
+    },
+    {
+      "from": "work:牛郎织女",
+      "to": "project:黄梅戏",
+      "type": "BELONGS_TO"
+    },
+    {
+      "from": "work:罗帕记",
+      "to": "project:黄梅戏",
+      "type": "BELONGS_TO"
+    },
+    {
+      "from": "project:黄梅戏",
+      "to": "project:越剧",
+      "type": "RELATED_TO"
+    },
+    {
+      "from": "project:黄梅戏",
+      "to": "project:京剧",
+      "type": "RELATED_TO"
+    },
+    {
+      "from": "project:黄梅戏",
+      "to": "technique:传统戏剧",
+      "type": "HAS_TECHNIQUE"
+    },
+    {
+      "from": "project:评剧",
+      "to": "region:河北",
+      "type": "FROM_REGION"
+    },
+    {
+      "from": "project:评剧",
+      "to": "region:天津",
+      "type": "FROM_REGION"
+    },
+    {
+      "from": "project:评剧",
+      "to": "region:北京",
+      "type": "FROM_REGION"
+    },
+    {
+      "from": "project:评剧",
+      "to": "region:东北",
+      "type": "FROM_REGION"
+    },
+    {
+      "from": "project:评剧",
+      "to": "person:新凤霞",
+      "type": "HAS_INHERITOR"
+    },
+    {
+      "from": "project:评剧",
+      "to": "person:赵丽蓉",
+      "type": "HAS_INHERITOR"
+    },
+    {
+      "from": "work:花为媒",
+      "to": "project:评剧",
+      "type": "BELONGS_TO"
+    },
+    {
+      "from": "work:刘巧儿",
+      "to": "project:评剧",
+      "type": "BELONGS_TO"
+    },
+    {
+      "from": "work:杨三姐告状",
+      "to": "project:评剧",
+      "type": "BELONGS_TO"
+    },
+    {
+      "from": "work:秦香莲",
+      "to": "project:评剧",
+      "type": "BELONGS_TO"
+    },
+    {
+      "from": "project:评剧",
+      "to": "project:京剧",
+      "type": "RELATED_TO"
+    },
+    {
+      "from": "project:评剧",
+      "to": "project:河北梆子",
+      "type": "RELATED_TO"
+    },
+    {
+      "from": "project:评剧",
+      "to": "technique:传统戏剧",
+      "type": "HAS_TECHNIQUE"
+    },
+    {
+      "from": "project:龙舞",
+      "to": "region:全国",
+      "type": "FROM_REGION"
+    },
+    {
+      "from": "school:铜梁龙舞",
+      "to": "project:龙舞",
+      "type": "PART_OF"
+    },
+    {
+      "from": "school:浦江板凳龙",
+      "to": "project:龙舞",
+      "type": "PART_OF"
+    },
+    {
+      "from": "school:长兴百叶龙",
+      "to": "project:龙舞",
+      "type": "PART_OF"
+    },
+    {
+      "from": "school:湛江人龙舞",
+      "to": "project:龙舞",
+      "type": "PART_OF"
+    },
+    {
+      "from": "project:龙舞",
+      "to": "project:狮舞",
+      "type": "RELATED_TO"
+    },
+    {
+      "from": "project:龙舞",
+      "to": "project:春节",
+      "type": "RELATED_TO"
+    },
+    {
+      "from": "project:龙舞",
+      "to": "technique:传统舞蹈",
+      "type": "HAS_TECHNIQUE"
+    },
+    {
+      "from": "project:狮舞",
+      "to": "region:全国",
+      "type": "FROM_REGION"
+    },
+    {
+      "from": "school:南狮（广东醒狮）",
+      "to": "project:狮舞",
+      "type": "PART_OF"
+    },
+    {
+      "from": "school:北狮（河北徐水舞狮）",
+      "to": "project:狮舞",
+      "type": "PART_OF"
+    },
+    {
+      "from": "project:狮舞",
+      "to": "project:龙舞",
+      "type": "RELATED_TO"
+    },
+    {
+      "from": "project:狮舞",
+      "to": "project:武术",
+      "type": "RELATED_TO"
+    },
+    {
+      "from": "project:狮舞",
+      "to": "technique:传统舞蹈",
+      "type": "HAS_TECHNIQUE"
+    },
+    {
+      "from": "project:秧歌",
+      "to": "region:全国",
+      "type": "FROM_REGION"
+    },
+    {
+      "from": "school:陕北秧歌",
+      "to": "project:秧歌",
+      "type": "PART_OF"
+    },
+    {
+      "from": "school:东北秧歌",
+      "to": "project:秧歌",
+      "type": "PART_OF"
+    },
+    {
+      "from": "school:山东鼓子秧歌",
+      "to": "project:秧歌",
+      "type": "PART_OF"
+    },
+    {
+      "from": "school:河北地秧歌",
+      "to": "project:秧歌",
+      "type": "PART_OF"
+    },
+    {
+      "from": "project:秧歌",
+      "to": "project:龙舞",
+      "type": "RELATED_TO"
+    },
+    {
+      "from": "project:秧歌",
+      "to": "project:狮舞",
+      "type": "RELATED_TO"
+    },
+    {
+      "from": "project:秧歌",
+      "to": "technique:传统舞蹈",
+      "type": "HAS_TECHNIQUE"
+    },
+    {
+      "from": "project:蒙古族长调民歌",
+      "to": "region:内蒙古",
+      "type": "FROM_REGION"
+    },
+    {
+      "from": "project:蒙古族长调民歌",
+      "to": "region:新疆",
+      "type": "FROM_REGION"
+    },
+    {
+      "from": "project:蒙古族长调民歌",
+      "to": "region:蒙古国",
+      "type": "FROM_REGION"
+    },
+    {
+      "from": "project:蒙古族长调民歌",
+      "to": "person:宝音德力格尔",
+      "type": "HAS_INHERITOR"
+    },
+    {
+      "from": "work:辽阔的草原",
+      "to": "project:蒙古族长调民歌",
+      "type": "BELONGS_TO"
+    },
+    {
+      "from": "work:小黄马",
+      "to": "project:蒙古族长调民歌",
+      "type": "BELONGS_TO"
+    },
+    {
+      "from": "work:走马",
+      "to": "project:蒙古族长调民歌",
+      "type": "BELONGS_TO"
+    },
+    {
+      "from": "project:蒙古族长调民歌",
+      "to": "project:呼麦",
+      "type": "RELATED_TO"
+    },
+    {
+      "from": "project:蒙古族长调民歌",
+      "to": "project:马头琴",
+      "type": "RELATED_TO"
+    },
+    {
+      "from": "project:蒙古族长调民歌",
+      "to": "technique:传统音乐",
+      "type": "HAS_TECHNIQUE"
+    },
+    {
+      "from": "project:新疆维吾尔木卡姆艺术",
+      "to": "region:新疆",
+      "type": "FROM_REGION"
+    },
+    {
+      "from": "project:新疆维吾尔木卡姆艺术",
+      "to": "project:蒙古族长调民歌",
+      "type": "RELATED_TO"
+    },
+    {
+      "from": "project:新疆维吾尔木卡姆艺术",
+      "to": "technique:传统音乐",
+      "type": "HAS_TECHNIQUE"
+    },
+    {
+      "from": "project:侗族大歌",
+      "to": "region:贵州",
+      "type": "FROM_REGION"
+    },
+    {
+      "from": "project:侗族大歌",
+      "to": "region:湖南",
+      "type": "FROM_REGION"
+    },
+    {
+      "from": "project:侗族大歌",
+      "to": "region:广西",
+      "type": "FROM_REGION"
+    },
+    {
+      "from": "project:侗族大歌",
+      "to": "project:南音",
+      "type": "RELATED_TO"
+    },
+    {
+      "from": "project:侗族大歌",
+      "to": "technique:传统音乐",
+      "type": "HAS_TECHNIQUE"
+    },
+    {
+      "from": "project:中国书法",
+      "to": "region:全国",
+      "type": "FROM_REGION"
+    },
+    {
+      "from": "project:中国书法",
+      "to": "person:沈鹏",
+      "type": "HAS_INHERITOR"
+    },
+    {
+      "from": "project:中国书法",
+      "to": "person:欧阳中石",
+      "type": "HAS_INHERITOR"
+    },
+    {
+      "from": "work:兰亭序（王羲之）",
+      "to": "project:中国书法",
+      "type": "BELONGS_TO"
+    },
+    {
+      "from": "work:祭侄文稿（颜真卿）",
+      "to": "project:中国书法",
+      "type": "BELONGS_TO"
+    },
+    {
+      "from": "work:寒食帖（苏轼）",
+      "to": "project:中国书法",
+      "type": "BELONGS_TO"
+    },
+    {
+      "from": "project:中国书法",
+      "to": "project:中国篆刻",
+      "type": "RELATED_TO"
+    },
+    {
+      "from": "project:中国书法",
+      "to": "project:宣纸制作技艺",
+      "type": "RELATED_TO"
+    },
+    {
+      "from": "project:中国书法",
+      "to": "technique:传统美术",
+      "type": "HAS_TECHNIQUE"
+    },
+    {
+      "from": "project:中国篆刻",
+      "to": "region:全国",
+      "type": "FROM_REGION"
+    },
+    {
+      "from": "project:中国篆刻",
+      "to": "person:刘江",
+      "type": "HAS_INHERITOR"
+    },
+    {
+      "from": "work:西泠印社藏印",
+      "to": "project:中国篆刻",
+      "type": "BELONGS_TO"
+    },
+    {
+      "from": "work:齐白石印章",
+      "to": "project:中国篆刻",
+      "type": "BELONGS_TO"
+    },
+    {
+      "from": "project:中国篆刻",
+      "to": "project:中国书法",
+      "type": "RELATED_TO"
+    },
+    {
+      "from": "project:中国篆刻",
+      "to": "technique:传统美术",
+      "type": "HAS_TECHNIQUE"
+    },
+    {
+      "from": "project:年画",
+      "to": "region:天津",
+      "type": "FROM_REGION"
+    },
+    {
+      "from": "project:年画",
+      "to": "region:山东",
+      "type": "FROM_REGION"
+    },
+    {
+      "from": "project:年画",
+      "to": "region:四川",
+      "type": "FROM_REGION"
+    },
+    {
+      "from": "project:年画",
+      "to": "region:广东",
+      "type": "FROM_REGION"
+    },
+    {
+      "from": "project:年画",
+      "to": "region:河北",
+      "type": "FROM_REGION"
+    },
+    {
+      "from": "school:天津杨柳青年画",
+      "to": "project:年画",
+      "type": "PART_OF"
+    },
+    {
+      "from": "school:山东潍坊年画",
+      "to": "project:年画",
+      "type": "PART_OF"
+    },
+    {
+      "from": "school:四川绵竹年画",
+      "to": "project:年画",
+      "type": "PART_OF"
+    },
+    {
+      "from": "school:广东佛山年画",
+      "to": "project:年画",
+      "type": "PART_OF"
+    },
+    {
+      "from": "school:河北武强年画",
+      "to": "project:年画",
+      "type": "PART_OF"
+    },
+    {
+      "from": "project:年画",
+      "to": "project:剪纸",
+      "type": "RELATED_TO"
+    },
+    {
+      "from": "project:年画",
+      "to": "project:皮影戏",
+      "type": "RELATED_TO"
+    },
+    {
+      "from": "project:年画",
+      "to": "technique:传统美术",
+      "type": "HAS_TECHNIQUE"
+    },
+    {
+      "from": "project:风筝制作技艺",
+      "to": "region:山东",
+      "type": "FROM_REGION"
+    },
+    {
+      "from": "project:风筝制作技艺",
+      "to": "region:天津",
+      "type": "FROM_REGION"
+    },
+    {
+      "from": "project:风筝制作技艺",
+      "to": "region:北京",
+      "type": "FROM_REGION"
+    },
+    {
+      "from": "project:风筝制作技艺",
+      "to": "region:江苏",
+      "type": "FROM_REGION"
+    },
+    {
+      "from": "school:潍坊风筝",
+      "to": "project:风筝制作技艺",
+      "type": "PART_OF"
+    },
+    {
+      "from": "school:天津风筝魏",
+      "to": "project:风筝制作技艺",
+      "type": "PART_OF"
+    },
+    {
+      "from": "school:北京风筝哈",
+      "to": "project:风筝制作技艺",
+      "type": "PART_OF"
+    },
+    {
+      "from": "project:风筝制作技艺",
+      "to": "project:年画",
+      "type": "RELATED_TO"
+    },
+    {
+      "from": "project:风筝制作技艺",
+      "to": "project:剪纸",
+      "type": "RELATED_TO"
+    },
+    {
+      "from": "project:风筝制作技艺",
+      "to": "technique:传统技艺",
+      "type": "HAS_TECHNIQUE"
+    },
+    {
+      "from": "project:刺绣",
+      "to": "region:全国",
+      "type": "FROM_REGION"
+    },
+    {
+      "from": "school:苏绣",
+      "to": "project:刺绣",
+      "type": "PART_OF"
+    },
+    {
+      "from": "school:湘绣",
+      "to": "project:刺绣",
+      "type": "PART_OF"
+    },
+    {
+      "from": "school:蜀绣",
+      "to": "project:刺绣",
+      "type": "PART_OF"
+    },
+    {
+      "from": "school:粤绣",
+      "to": "project:刺绣",
+      "type": "PART_OF"
+    },
+    {
+      "from": "school:京绣",
+      "to": "project:刺绣",
+      "type": "PART_OF"
+    },
+    {
+      "from": "school:汴绣",
+      "to": "project:刺绣",
+      "type": "PART_OF"
+    },
+    {
+      "from": "project:刺绣",
+      "to": "project:织锦",
+      "type": "RELATED_TO"
+    },
+    {
+      "from": "project:刺绣",
+      "to": "project:印染",
+      "type": "RELATED_TO"
+    },
+    {
+      "from": "project:刺绣",
+      "to": "technique:传统技艺",
+      "type": "HAS_TECHNIQUE"
+    },
+    {
+      "from": "project:中医诊法",
+      "to": "region:全国",
+      "type": "FROM_REGION"
+    },
+    {
+      "from": "project:中医诊法",
+      "to": "person:邓铁涛",
+      "type": "HAS_INHERITOR"
+    },
+    {
+      "from": "project:中医诊法",
+      "to": "person:路志正",
+      "type": "HAS_INHERITOR"
+    },
+    {
+      "from": "work:黄帝内经",
+      "to": "project:中医诊法",
+      "type": "BELONGS_TO"
+    },
+    {
+      "from": "work:伤寒杂病论",
+      "to": "project:中医诊法",
+      "type": "BELONGS_TO"
+    },
+    {
+      "from": "work:脉经",
+      "to": "project:中医诊法",
+      "type": "BELONGS_TO"
+    },
+    {
+      "from": "project:中医诊法",
+      "to": "project:中医针灸",
+      "type": "RELATED_TO"
+    },
+    {
+      "from": "project:中医诊法",
+      "to": "project:中药炮制",
+      "type": "RELATED_TO"
+    },
+    {
+      "from": "project:中医诊法",
+      "to": "technique:传统医药",
+      "type": "HAS_TECHNIQUE"
+    },
+    {
+      "from": "project:中秋节",
+      "to": "region:全国",
+      "type": "FROM_REGION"
+    },
+    {
+      "from": "project:中秋节",
+      "to": "project:春节",
+      "type": "RELATED_TO"
+    },
+    {
+      "from": "project:中秋节",
+      "to": "project:端午节",
+      "type": "RELATED_TO"
+    },
+    {
+      "from": "project:中秋节",
+      "to": "project:元宵节",
+      "type": "RELATED_TO"
+    },
+    {
+      "from": "project:中秋节",
+      "to": "technique:民俗",
+      "type": "HAS_TECHNIQUE"
+    },
+    {
+      "from": "project:元宵节",
+      "to": "region:全国",
+      "type": "FROM_REGION"
+    },
+    {
+      "from": "project:元宵节",
+      "to": "project:春节",
+      "type": "RELATED_TO"
+    },
+    {
+      "from": "project:元宵节",
+      "to": "project:中秋节",
+      "type": "RELATED_TO"
+    },
+    {
+      "from": "project:元宵节",
+      "to": "technique:民俗",
+      "type": "HAS_TECHNIQUE"
+    },
+    {
+      "from": "project:庙会",
+      "to": "region:全国",
+      "type": "FROM_REGION"
+    },
+    {
+      "from": "school:北京地坛庙会",
+      "to": "project:庙会",
+      "type": "PART_OF"
+    },
+    {
+      "from": "school:上海城隍庙庙会",
+      "to": "project:庙会",
+      "type": "PART_OF"
+    },
+    {
+      "from": "school:南京夫子庙庙会",
+      "to": "project:庙会",
+      "type": "PART_OF"
+    },
+    {
+      "from": "project:庙会",
+      "to": "project:春节",
+      "type": "RELATED_TO"
+    },
+    {
+      "from": "project:庙会",
+      "to": "project:元宵节",
+      "type": "RELATED_TO"
+    },
+    {
+      "from": "project:庙会",
+      "to": "technique:民俗",
+      "type": "HAS_TECHNIQUE"
+    },
+    {
+      "from": "project:少林功夫",
+      "to": "region:河南",
+      "type": "FROM_REGION"
+    },
+    {
+      "from": "work:少林长拳",
+      "to": "project:少林功夫",
+      "type": "BELONGS_TO"
+    },
+    {
+      "from": "work:少林棍法",
+      "to": "project:少林功夫",
+      "type": "BELONGS_TO"
+    },
+    {
+      "from": "work:易筋经",
+      "to": "project:少林功夫",
+      "type": "BELONGS_TO"
+    },
+    {
+      "from": "project:少林功夫",
+      "to": "project:太极拳",
+      "type": "RELATED_TO"
+    },
+    {
+      "from": "project:少林功夫",
+      "to": "project:武当功夫",
+      "type": "RELATED_TO"
+    },
+    {
+      "from": "project:少林功夫",
+      "to": "person:达摩",
+      "type": "FOUNDED_BY"
+    },
+    {
+      "from": "project:少林功夫",
+      "to": "technique:传统体育、游艺与杂技",
+      "type": "HAS_TECHNIQUE"
+    },
+    {
+      "from": "project:杂技",
+      "to": "region:全国",
+      "type": "FROM_REGION"
+    },
+    {
+      "from": "school:吴桥杂技",
+      "to": "project:杂技",
+      "type": "PART_OF"
+    },
+    {
+      "from": "school:聊城杂技",
+      "to": "project:杂技",
+      "type": "PART_OF"
+    },
+    {
+      "from": "school:建湖杂技",
+      "to": "project:杂技",
+      "type": "PART_OF"
+    },
+    {
+      "from": "project:杂技",
+      "to": "project:魔术",
+      "type": "RELATED_TO"
+    },
+    {
+      "from": "project:杂技",
+      "to": "project:马戏",
+      "type": "RELATED_TO"
+    },
+    {
+      "from": "project:杂技",
+      "to": "technique:传统体育、游艺与杂技",
+      "type": "HAS_TECHNIQUE"
+    },
+    {
+      "from": "project:景德镇瓷器",
+      "to": "region:江西",
+      "type": "FROM_REGION"
+    },
+    {
+      "from": "project:景德镇瓷器",
+      "to": "person:刘远长",
+      "type": "HAS_INHERITOR"
+    },
+    {
+      "from": "project:景德镇瓷器",
+      "to": "person:王锡良",
+      "type": "HAS_INHERITOR"
+    },
+    {
+      "from": "work:青花瓷",
+      "to": "project:景德镇瓷器",
+      "type": "BELONGS_TO"
+    },
+    {
+      "from": "work:粉彩瓷",
+      "to": "project:景德镇瓷器",
+      "type": "BELONGS_TO"
+    },
+    {
+      "from": "work:玲珑瓷",
+      "to": "project:景德镇瓷器",
+      "type": "BELONGS_TO"
+    },
+    {
+      "from": "project:景德镇瓷器",
+      "to": "project:宜兴紫砂",
+      "type": "RELATED_TO"
+    },
+    {
+      "from": "project:景德镇瓷器",
+      "to": "project:龙泉青瓷",
+      "type": "RELATED_TO"
+    },
+    {
+      "from": "project:景德镇瓷器",
+      "to": "technique:传统技艺",
+      "type": "HAS_TECHNIQUE"
+    },
+    {
+      "from": "project:宜兴紫砂陶制作技艺",
+      "to": "region:江苏",
+      "type": "FROM_REGION"
+    },
+    {
+      "from": "project:宜兴紫砂陶制作技艺",
+      "to": "person:汪寅仙",
+      "type": "HAS_INHERITOR"
+    },
+    {
+      "from": "project:宜兴紫砂陶制作技艺",
+      "to": "person:吕尧臣",
+      "type": "HAS_INHERITOR"
+    },
+    {
+      "from": "work:供春壶",
+      "to": "project:宜兴紫砂陶制作技艺",
+      "type": "BELONGS_TO"
+    },
+    {
+      "from": "work:大彬壶",
+      "to": "project:宜兴紫砂陶制作技艺",
+      "type": "BELONGS_TO"
+    },
+    {
+      "from": "work:曼生壶",
+      "to": "project:宜兴紫砂陶制作技艺",
+      "type": "BELONGS_TO"
+    },
+    {
+      "from": "project:宜兴紫砂陶制作技艺",
+      "to": "project:景德镇瓷器",
+      "type": "RELATED_TO"
+    },
+    {
+      "from": "project:宜兴紫砂陶制作技艺",
+      "to": "project:茶艺",
+      "type": "RELATED_TO"
+    },
+    {
+      "from": "project:宜兴紫砂陶制作技艺",
+      "to": "technique:传统技艺",
+      "type": "HAS_TECHNIQUE"
+    },
+    {
+      "from": "project:木版水印技艺",
+      "to": "region:北京",
+      "type": "FROM_REGION"
+    },
+    {
+      "from": "project:木版水印技艺",
+      "to": "project:中国书法",
+      "type": "RELATED_TO"
+    },
+    {
+      "from": "project:木版水印技艺",
+      "to": "project:中国篆刻",
+      "type": "RELATED_TO"
+    },
+    {
+      "from": "project:木版水印技艺",
+      "to": "technique:传统技艺",
+      "type": "HAS_TECHNIQUE"
+    },
+    {
+      "from": "project:雕版印刷技艺",
+      "to": "region:江苏",
+      "type": "FROM_REGION"
+    },
+    {
+      "from": "project:雕版印刷技艺",
+      "to": "region:福建",
+      "type": "FROM_REGION"
+    },
+    {
+      "from": "project:雕版印刷技艺",
+      "to": "project:宣纸制作技艺",
+      "type": "RELATED_TO"
+    },
+    {
+      "from": "project:雕版印刷技艺",
+      "to": "project:中国书法",
+      "type": "RELATED_TO"
+    },
+    {
+      "from": "project:雕版印刷技艺",
+      "to": "technique:传统技艺",
+      "type": "HAS_TECHNIQUE"
+    },
+    {
+      "from": "project:二十四节气",
+      "to": "region:全国",
+      "type": "FROM_REGION"
+    },
+    {
+      "from": "project:二十四节气",
+      "to": "project:春节",
+      "type": "RELATED_TO"
+    },
+    {
+      "from": "project:二十四节气",
+      "to": "project:中秋节",
+      "type": "RELATED_TO"
+    },
+    {
+      "from": "project:二十四节气",
+      "to": "technique:民俗",
+      "type": "HAS_TECHNIQUE"
+    },
+    {
+      "from": "project:珠算",
+      "to": "region:全国",
+      "type": "FROM_REGION"
+    },
+    {
+      "from": "project:珠算",
+      "to": "project:中国书法",
+      "type": "RELATED_TO"
+    },
+    {
+      "from": "project:珠算",
+      "to": "technique:民俗",
+      "type": "HAS_TECHNIQUE"
+    },
+    {
+      "from": "project:中国蚕桑丝织技艺",
+      "to": "region:浙江",
+      "type": "FROM_REGION"
+    },
+    {
+      "from": "project:中国蚕桑丝织技艺",
+      "to": "region:江苏",
+      "type": "FROM_REGION"
+    },
+    {
+      "from": "project:中国蚕桑丝织技艺",
+      "to": "region:四川",
+      "type": "FROM_REGION"
+    },
+    {
+      "from": "project:中国蚕桑丝织技艺",
+      "to": "project:刺绣",
+      "type": "RELATED_TO"
+    },
+    {
+      "from": "project:中国蚕桑丝织技艺",
+      "to": "project:印染",
+      "type": "RELATED_TO"
+    },
+    {
+      "from": "project:中国蚕桑丝织技艺",
+      "to": "technique:传统技艺",
+      "type": "HAS_TECHNIQUE"
+    },
+    {
+      "from": "project:南京云锦织造技艺",
+      "to": "region:江苏",
+      "type": "FROM_REGION"
+    },
+    {
+      "from": "project:南京云锦织造技艺",
+      "to": "project:中国蚕桑丝织技艺",
+      "type": "RELATED_TO"
+    },
+    {
+      "from": "project:南京云锦织造技艺",
+      "to": "project:蜀锦织造技艺",
+      "type": "RELATED_TO"
+    },
+    {
+      "from": "project:南京云锦织造技艺",
+      "to": "technique:传统技艺",
+      "type": "HAS_TECHNIQUE"
+    },
+    {
+      "from": "person:陈少芳",
+      "to": "project:广绣",
+      "type": "PRACTICES"
+    },
+    {
+      "from": "person:许炽光",
+      "to": "project:广绣",
+      "type": "PRACTICES"
+    },
+    {
+      "from": "person:姚惠芬",
+      "to": "project:苏绣",
+      "type": "PRACTICES"
+    },
+    {
+      "from": "person:陈少峰",
+      "to": "project:苏绣",
+      "type": "PRACTICES"
+    },
+    {
+      "from": "person:库淑兰",
+      "to": "project:剪纸",
+      "type": "PRACTICES"
+    },
+    {
+      "from": "person:高凤莲",
+      "to": "project:剪纸",
+      "type": "PRACTICES"
+    },
+    {
+      "from": "person:张秀芳",
+      "to": "project:剪纸",
+      "type": "PRACTICES"
+    },
+    {
+      "from": "person:陈小旺",
+      "to": "project:太极拳",
+      "type": "PRACTICES"
+    },
+    {
+      "from": "person:杨振铎",
+      "to": "project:太极拳",
+      "type": "PRACTICES"
+    },
+    {
+      "from": "person:孙婉容",
+      "to": "project:太极拳",
+      "type": "PRACTICES"
+    },
+    {
+      "from": "person:程莘农",
+      "to": "project:中医针灸",
+      "type": "PRACTICES"
+    },
+    {
+      "from": "person:贺普仁",
+      "to": "project:中医针灸",
+      "type": "PRACTICES"
+    },
+    {
+      "from": "person:姜昆",
+      "to": "project:相声",
+      "type": "PRACTICES"
+    },
+    {
+      "from": "person:冯巩",
+      "to": "project:相声",
+      "type": "PRACTICES"
+    },
+    {
+      "from": "person:师胜杰",
+      "to": "project:相声",
+      "type": "PRACTICES"
+    },
+    {
+      "from": "person:王健仪",
+      "to": "project:凉茶",
+      "type": "PRACTICES"
+    },
+    {
+      "from": "person:苏统谋",
+      "to": "project:南音",
+      "type": "PRACTICES"
+    },
+    {
+      "from": "person:王心心",
+      "to": "project:南音",
+      "type": "PRACTICES"
+    },
+    {
+      "from": "person:次旦多吉",
+      "to": "project:藏戏",
+      "type": "PRACTICES"
+    },
+    {
+      "from": "person:班典旺久",
+      "to": "project:藏戏",
+      "type": "PRACTICES"
+    },
+    {
+      "from": "person:邢春荣",
+      "to": "project:宣纸制作技艺",
+      "type": "PRACTICES"
+    },
+    {
+      "from": "person:曹光华",
+      "to": "project:宣纸制作技艺",
+      "type": "PRACTICES"
+    },
+    {
+      "from": "person:马金山",
+      "to": "project:花儿",
+      "type": "PRACTICES"
+    },
+    {
+      "from": "person:雷通",
+      "to": "project:花儿",
+      "type": "PRACTICES"
+    }
+  ]
+}

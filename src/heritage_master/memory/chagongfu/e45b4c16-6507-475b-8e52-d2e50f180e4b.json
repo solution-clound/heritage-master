@@ -1,0 +1,33 @@
+{
+  "version": "1.0",
+  "user_id": "e45b4c16-6507-475b-8e52-d2e50f180e4b",
+  "master_id": "chagongfu",
+  "profile": {
+    "relationship_stage": "试探期",
+    "interest_tags": [],
+    "personality_notes": "",
+    "aesthetic_pref": "",
+    "question_count": 0,
+    "first_met_at": "2026-05-25T06:30:55.360327+00:00",
+    "last_talk_at": "2026-05-25T06:30:55.360327+00:00"
+  },
+  "core_memories": [],
+  "data_records": {
+    "practice_history": [],
+    "conversation_topics": [],
+    "visit_log": []
+  },
+  "teaching_progress": {
+    "current_stage": "入门期",
+    "completed_topics": [],
+    "next_topics": [],
+    "total_practice_days": 0,
+    "total_questions": 0,
+    "mastery_scores": {}
+  },
+  "meta": {
+    "last_consolidated_at": null,
+    "memory_count": 0,
+    "consolidation_count": 0
+  }
+}

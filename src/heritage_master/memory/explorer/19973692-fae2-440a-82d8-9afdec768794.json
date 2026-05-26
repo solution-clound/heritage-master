@@ -1,0 +1,261 @@
+{
+  "version": "1.0",
+  "user_id": "19973692-fae2-440a-82d8-9afdec768794",
+  "master_id": "explorer",
+  "profile": {
+    "relationship_stage": "试探期",
+    "interest_tags": [
+      "紫砂壶",
+      "茶文化",
+      "潮州工夫茶",
+      "品茶修行",
+      "茶艺"
+    ],
+    "personality_notes": "用户对茶文化的兴趣广泛且深入，喜欢从技艺、器物到精神层面逐步探索，性格沉静、有耐心，追求内在修养。",
+    "aesthetic_pref": "偏好传统、内敛、有仪式感的茶道美学，注重细节和修行体验。",
+    "question_count": 5,
+    "first_met_at": "2026-05-25T14:19:28.197684",
+    "last_talk_at": "2026-05-25T14:19:56.706392"
+  },
+  "core_memories": [
+    {
+      "id": "mem_55caf0ea",
+      "type": "interest",
+      "content": "用户对昆曲表现出浓厚兴趣并主动询问相关介绍",
+      "importance": 7,
+      "created_at": "2026-05-25T14:16:29.736726+00:00",
+      "last_referenced": null,
+      "reference_count": 0,
+      "source": "conversation",
+      "tags": [
+        "昆曲",
+        "传统戏剧",
+        "非物质文化遗产"
+      ]
+    },
+    {
+      "id": "mem_41dec5b6",
+      "type": "interest",
+      "content": "用户对传统音乐特别是古琴表现出浓厚兴趣，并主动询问相关介绍",
+      "importance": 8,
+      "created_at": "2026-05-25T14:17:59.960979+00:00",
+      "last_referenced": null,
+      "reference_count": 0,
+      "source": "conversation",
+      "tags": [
+        "传统音乐",
+        "古琴",
+        "非遗"
+      ]
+    },
+    {
+      "id": "mem_c06ed461",
+      "type": "interest",
+      "content": "用户对广绣表现出浓厚兴趣并主动询问学习途径",
+      "importance": 7,
+      "created_at": "2026-05-25T14:18:05.708558+00:00",
+      "last_referenced": null,
+      "reference_count": 0,
+      "source": "conversation",
+      "tags": [
+        "广绣",
+        "非遗",
+        "刺绣",
+        "广东文化"
+      ]
+    },
+    {
+      "id": "mem_87cc643b",
+      "type": "interest",
+      "content": "用户对非遗传承表现出普遍兴趣和认可",
+      "importance": 3,
+      "created_at": "2026-05-25T14:18:09.224830+00:00",
+      "last_referenced": null,
+      "reference_count": 0,
+      "source": "conversation",
+      "tags": [
+        "非遗",
+        "文化传承"
+      ]
+    },
+    {
+      "id": "mem_2d35e93e",
+      "type": "interest",
+      "content": "用户对昆曲表现出浓厚兴趣并主动询问相关介绍",
+      "importance": 8,
+      "created_at": "2026-05-25T14:18:16.936855+00:00",
+      "last_referenced": null,
+      "reference_count": 0,
+      "source": "conversation",
+      "tags": [
+        "昆曲",
+        "传统戏剧",
+        "非遗"
+      ]
+    },
+    {
+      "id": "mem_6db7fe38",
+      "type": "interest",
+      "content": "用户对茶艺特别是潮州工夫茶表现出浓厚兴趣",
+      "importance": 9,
+      "created_at": "2026-05-25T14:19:35.662733+00:00",
+      "last_referenced": null,
+      "reference_count": 0,
+      "source": "conversation",
+      "tags": [
+        "茶艺",
+        "潮州工夫茶",
+        "兴趣"
+      ]
+    },
+    {
+      "id": "mem_30ab1e40",
+      "type": "interest",
+      "content": "用户对紫砂壶泥料表现出浓厚兴趣并主动询问相关讲究",
+      "importance": 7,
+      "created_at": "2026-05-25T14:19:48.533189+00:00",
+      "last_referenced": null,
+      "reference_count": 0,
+      "source": "conversation",
+      "tags": [
+        "紫砂壶",
+        "泥料",
+        "茶具"
+      ]
+    },
+    {
+      "id": "mem_6c25ec58",
+      "type": "interest",
+      "content": "用户对茶艺相关话题有持续兴趣，包括紫砂壶细节",
+      "importance": 6,
+      "created_at": "2026-05-25T14:19:48.540723+00:00",
+      "last_referenced": null,
+      "reference_count": 0,
+      "source": "conversation",
+      "tags": [
+        "茶艺",
+        "紫砂壶",
+        "非遗"
+      ]
+    },
+    {
+      "id": "mem_d8681323",
+      "type": "interest",
+      "content": "用户主动询问泡茶技巧，对茶艺学习有实际需求",
+      "importance": 7,
+      "created_at": "2026-05-25T14:19:56.655634+00:00",
+      "last_referenced": null,
+      "reference_count": 0,
+      "source": "conversation",
+      "tags": [
+        "茶艺",
+        "泡茶技巧",
+        "学习需求"
+      ]
+    },
+    {
+      "id": "mem_0d0eaee4",
+      "type": "interest",
+      "content": "用户对茶文化有广泛兴趣，不限于特定茶类或技艺",
+      "importance": 7,
+      "created_at": "2026-05-25T14:20:04.819804+00:00",
+      "last_referenced": null,
+      "reference_count": 0,
+      "source": "conversation",
+      "tags": [
+        "茶文化",
+        "广泛兴趣"
+      ]
+    }
+  ],
+  "data_records": {
+    "practice_history": [],
+    "conversation_topics": [
+      {
+        "topic": "非遗",
+        "count": 8,
+        "last_discussed": "2026-05-25"
+      },
+      {
+        "topic": "文化",
+        "count": 8,
+        "last_discussed": "2026-05-25"
+      },
+      {
+        "topic": "传承",
+        "count": 1,
+        "last_discussed": "2026-05-25"
+      },
+      {
+        "topic": "技艺",
+        "count": 3,
+        "last_discussed": "2026-05-25"
+      },
+      {
+        "topic": "工夫茶",
+        "count": 2,
+        "last_discussed": "2026-05-25"
+      },
+      {
+        "topic": "潮州",
+        "count": 2,
+        "last_discussed": "2026-05-25"
+      },
+      {
+        "topic": "紫砂壶",
+        "count": 1,
+        "last_discussed": "2026-05-25"
+      },
+      {
+        "topic": "冲泡",
+        "count": 1,
+        "last_discussed": "2026-05-25"
+      }
+    ],
+    "visit_log": [
+      {
+        "date": "2026-05-25",
+        "session_id": "86032e75-2101-4af8-833a-605cad4e65bd",
+        "topic_summary": ""
+      },
+      {
+        "date": "2026-05-25",
+        "session_id": "86032e75-2101-4af8-833a-605cad4e65bd",
+        "topic_summary": "我喜欢茶艺，特别是潮州工夫茶"
+      },
+      {
+        "date": "2026-05-25",
+        "session_id": "86032e75-2101-4af8-833a-605cad4e65bd",
+        "topic_summary": "紫砂壶的泥料有什么讲究？"
+      },
+      {
+        "date": "2026-05-25",
+        "session_id": "86032e75-2101-4af8-833a-605cad4e65bd",
+        "topic_summary": "我觉得品茶是一种修行"
+      },
+      {
+        "date": "2026-05-25",
+        "session_id": "86032e75-2101-4af8-833a-605cad4e65bd",
+        "topic_summary": "能教我怎么泡好一壶茶吗？"
+      },
+      {
+        "date": "2026-05-25",
+        "session_id": "86032e75-2101-4af8-833a-605cad4e65bd",
+        "topic_summary": "我对茶文化很感兴趣"
+      }
+    ]
+  },
+  "teaching_progress": {
+    "current_stage": "入门期",
+    "completed_topics": [],
+    "next_topics": [],
+    "total_practice_days": 0,
+    "total_questions": 0,
+    "mastery_scores": {}
+  },
+  "meta": {
+    "last_consolidated_at": null,
+    "memory_count": 10,
+    "consolidation_count": 0
+  }
+}

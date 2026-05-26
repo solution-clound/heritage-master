@@ -1,0 +1,339 @@
+{
+  "version": "1.0",
+  "user_id": "70fcc0d0-803b-4513-a92c-342f0dea4347",
+  "master_id": "explorer",
+  "profile": {
+    "relationship_stage": "试探期",
+    "interest_tags": [],
+    "personality_notes": "",
+    "aesthetic_pref": "",
+    "question_count": 5,
+    "first_met_at": "2026-05-26T02:41:03.538909",
+    "last_talk_at": "2026-05-26T12:43:00.302903+00:00"
+  },
+  "core_memories": [
+    {
+      "id": "mem_b7097283",
+      "type": "interest",
+      "content": "用户对广州一日非遗主题旅游感兴趣，希望了解广府文化",
+      "importance": 5,
+      "created_at": "2026-05-26T02:41:11.361481+00:00",
+      "last_referenced": null,
+      "reference_count": 0,
+      "source": "conversation",
+      "tags": [
+        "广州",
+        "非遗",
+        "旅游",
+        "广府文化"
+      ]
+    },
+    {
+      "id": "mem_b062f5b6",
+      "type": "interest",
+      "content": "用户对传统戏剧类非遗项目表现出兴趣，询问了传统戏剧有哪些",
+      "importance": 6,
+      "created_at": "2026-05-26T02:41:38.596763+00:00",
+      "last_referenced": null,
+      "reference_count": 0,
+      "source": "conversation",
+      "tags": [
+        "传统戏剧",
+        "非遗",
+        "昆曲",
+        "潮剧"
+      ]
+    },
+    {
+      "id": "mem_4cf50fc6",
+      "type": "interest",
+      "content": "用户对广州非遗主题一日游感兴趣，希望了解广府文化",
+      "importance": 7,
+      "created_at": "2026-05-26T02:41:53.642010+00:00",
+      "last_referenced": null,
+      "reference_count": 0,
+      "source": "conversation",
+      "tags": [
+        "广州",
+        "非遗",
+        "广府文化",
+        "旅游"
+      ]
+    },
+    {
+      "id": "mem_6affa219",
+      "type": "interest",
+      "content": "用户对非遗主题旅游感兴趣，希望了解广府文化",
+      "importance": 7,
+      "created_at": "2026-05-26T02:52:42.167413+00:00",
+      "last_referenced": null,
+      "reference_count": 0,
+      "source": "conversation",
+      "tags": [
+        "非遗",
+        "旅游",
+        "广府文化"
+      ]
+    },
+    {
+      "id": "mem_a7e977e1",
+      "type": "interest",
+      "content": "用户对传统戏剧类非遗项目表现出兴趣",
+      "importance": 6,
+      "created_at": "2026-05-26T02:52:42.177342+00:00",
+      "last_referenced": null,
+      "reference_count": 0,
+      "source": "conversation",
+      "tags": [
+        "传统戏剧",
+        "非遗"
+      ]
+    },
+    {
+      "id": "mem_41a80332",
+      "type": "interest",
+      "content": "用户对广州非遗主题一日游感兴趣",
+      "importance": 7,
+      "created_at": "2026-05-26T02:52:42.188699+00:00",
+      "last_referenced": null,
+      "reference_count": 0,
+      "source": "conversation",
+      "tags": [
+        "广州",
+        "一日游",
+        "非遗"
+      ]
+    },
+    {
+      "id": "mem_0427cb7a",
+      "type": "interest",
+      "content": "用户对传统戏剧类非遗项目感兴趣，主动询问了传统戏剧有哪些",
+      "importance": 7,
+      "created_at": "2026-05-26T03:33:29.576632+00:00",
+      "last_referenced": null,
+      "reference_count": 0,
+      "source": "conversation",
+      "tags": [
+        "传统戏剧",
+        "非遗类型"
+      ]
+    },
+    {
+      "id": "mem_d4f1e761",
+      "type": "interest",
+      "content": "用户对广府文化及广州非遗主题一日游感兴趣，希望了解相关旅游路线",
+      "importance": 8,
+      "created_at": "2026-05-26T03:33:29.583145+00:00",
+      "last_referenced": null,
+      "reference_count": 0,
+      "source": "conversation",
+      "tags": [
+        "广府文化",
+        "广州非遗",
+        "旅游"
+      ]
+    },
+    {
+      "id": "mem_ed915b1d",
+      "type": "interest",
+      "content": "用户对潮州非遗表现出兴趣，之前聊到潮州时有过互动",
+      "importance": 6,
+      "created_at": "2026-05-26T03:33:29.590143+00:00",
+      "last_referenced": null,
+      "reference_count": 0,
+      "source": "conversation",
+      "tags": [
+        "潮州",
+        "潮州非遗"
+      ]
+    },
+    {
+      "id": "mem_2a87b48c",
+      "type": "preference",
+      "content": "用户偏好体验式、沉浸式的非遗了解方式（如一日游）而非单纯知识获取",
+      "importance": 7,
+      "created_at": "2026-05-26T03:33:29.598146+00:00",
+      "last_referenced": null,
+      "reference_count": 0,
+      "source": "conversation",
+      "tags": [
+        "体验式学习",
+        "旅游偏好"
+      ]
+    },
+    {
+      "id": "mem_422222ce",
+      "type": "interest",
+      "content": "用户对广州非遗主题一日游表现出浓厚兴趣，希望系统了解广府文化",
+      "importance": 7,
+      "created_at": "2026-05-26T12:43:00.229509+00:00",
+      "last_referenced": null,
+      "reference_count": 0,
+      "source": "conversation",
+      "tags": [
+        "广州非遗",
+        "一日游",
+        "广府文化"
+      ]
+    },
+    {
+      "id": "mem_bc68484c",
+      "type": "interest",
+      "content": "用户对传统戏剧类非遗项目感兴趣，主动询问并希望深入了解",
+      "importance": 6,
+      "created_at": "2026-05-26T12:43:00.239509+00:00",
+      "last_referenced": null,
+      "reference_count": 0,
+      "source": "conversation",
+      "tags": [
+        "传统戏剧",
+        "非遗",
+        "广府文化"
+      ]
+    },
+    {
+      "id": "mem_204f2cfb",
+      "type": "preference",
+      "content": "用户偏好体验式、沉浸式的非遗了解方式，如一日游路线而非单纯知识获取",
+      "importance": 8,
+      "created_at": "2026-05-26T12:43:00.246509+00:00",
+      "last_referenced": null,
+      "reference_count": 0,
+      "source": "conversation",
+      "tags": [
+        "体验式学习",
+        "沉浸式",
+        "旅游"
+      ]
+    },
+    {
+      "id": "mem_957a37c0",
+      "type": "interest",
+      "content": "用户对潮州非遗表现出兴趣，之前聊到潮州时有过互动",
+      "importance": 5,
+      "created_at": "2026-05-26T12:43:00.255583+00:00",
+      "last_referenced": null,
+      "reference_count": 0,
+      "source": "conversation",
+      "tags": [
+        "潮州非遗",
+        "潮州"
+      ]
+    }
+  ],
+  "data_records": {
+    "practice_history": [],
+    "conversation_topics": [
+      {
+        "topic": "非遗",
+        "count": 6,
+        "last_discussed": "2026-05-26"
+      },
+      {
+        "topic": "文化",
+        "count": 5,
+        "last_discussed": "2026-05-26"
+      },
+      {
+        "topic": "潮州",
+        "count": 2,
+        "last_discussed": "2026-05-26"
+      },
+      {
+        "topic": "醒狮",
+        "count": 2,
+        "last_discussed": "2026-05-26"
+      },
+      {
+        "topic": "技艺",
+        "count": 4,
+        "last_discussed": "2026-05-26"
+      },
+      {
+        "topic": "工艺",
+        "count": 1,
+        "last_discussed": "2026-05-26"
+      },
+      {
+        "topic": "传承",
+        "count": 1,
+        "last_discussed": "2026-05-26"
+      }
+    ],
+    "visit_log": [
+      {
+        "date": "2026-05-26",
+        "session_id": "f72744e3-69cf-43eb-b97c-809148f8582d",
+        "topic_summary": ""
+      },
+      {
+        "date": "2026-05-26",
+        "session_id": "f72744e3-69cf-43eb-b97c-809148f8582d",
+        "topic_summary": "日常对话"
+      },
+      {
+        "date": "2026-05-26",
+        "session_id": "fc2986f2-ee2f-4998-86c2-a33e8e0e833b",
+        "topic_summary": ""
+      },
+      {
+        "date": "2026-05-26",
+        "session_id": "fc2986f2-ee2f-4998-86c2-a33e8e0e833b",
+        "topic_summary": "日常对话"
+      },
+      {
+        "date": "2026-05-26",
+        "session_id": "63912556-e0be-49ae-b03c-4ce555c42a3a",
+        "topic_summary": ""
+      },
+      {
+        "date": "2026-05-26",
+        "session_id": "63912556-e0be-49ae-b03c-4ce555c42a3a",
+        "topic_summary": "日常对话"
+      },
+      {
+        "date": "2026-05-26",
+        "session_id": "1a0686de-34d3-4bd6-ad43-321a426f8ddf",
+        "topic_summary": ""
+      },
+      {
+        "date": "2026-05-26",
+        "session_id": "1a0686de-34d3-4bd6-ad43-321a426f8ddf",
+        "topic_summary": "日常对话"
+      },
+      {
+        "date": "2026-05-26",
+        "session_id": "847e48d3-6598-4213-981f-36333abdf494",
+        "topic_summary": ""
+      },
+      {
+        "date": "2026-05-26",
+        "session_id": "847e48d3-6598-4213-981f-36333abdf494",
+        "topic_summary": "日常对话"
+      },
+      {
+        "date": "2026-05-26",
+        "session_id": "03333cb0-8df1-47bc-9235-d0d7d8a1377b",
+        "topic_summary": ""
+      },
+      {
+        "date": "2026-05-26",
+        "session_id": "03333cb0-8df1-47bc-9235-d0d7d8a1377b",
+        "topic_summary": "日常对话"
+      }
+    ]
+  },
+  "teaching_progress": {
+    "current_stage": "入门期",
+    "completed_topics": [],
+    "next_topics": [],
+    "total_practice_days": 0,
+    "total_questions": 0,
+    "mastery_scores": {}
+  },
+  "meta": {
+    "last_consolidated_at": null,
+    "memory_count": 14,
+    "consolidation_count": 0
+  }
+}
