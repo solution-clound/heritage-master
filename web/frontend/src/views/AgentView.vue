@@ -52,7 +52,8 @@
           <div
             v-for="(msg, i) in messages"
             :key="i"
-            :class="['msg', msg.role]"
+            :class="['msg', msg.role, { 'msg-selected': i === selectedMsgIdx }]"
+            @click="selectMsg(i)"
           >
             <div class="msg-avatar">{{ msg.role === 'user' ? '👤' : '🧭' }}</div>
             <div class="msg-bubble">
@@ -62,6 +63,7 @@
                 <span class="typing-dot"></span>
               </div>
               <MarkdownRenderer v-else :content="msg.content" />
+              <span v-if="msg.panels && msg.panels.length > 0" class="msg-canvas-hint">🎨</span>
             </div>
           </div>
         </div>
@@ -135,11 +137,19 @@
               <div class="venue-list">
                 <div v-for="v in panel.data" :key="v.id" class="venue-item" @click="showVenueDetail(v)">
                   <div class="venue-name">{{ v.name }}</div>
-                  <div class="venue-address">{{ v.address }}</div>
+                  <div v-if="v.address && v.address.length" class="venue-address">{{ v.address }}</div>
                   <div class="venue-meta">
                     <span v-if="v.rating" class="venue-rating">★ {{ v.rating }}</span>
-                    <span v-if="v.tel" class="venue-tel">{{ v.tel }}</span>
+                    <span v-if="v.tel && v.tel.length" class="venue-tel">{{ Array.isArray(v.tel) ? v.tel.join(', ') : v.tel }}</span>
+                    <span v-if="v.type" class="venue-type">{{ v.type.split(';')[0] }}</span>
                   </div>
+                  <a
+                    v-if="v.lng && v.lat"
+                    class="venue-nav-btn"
+                    :href="amapUri(v)"
+                    target="_blank"
+                    @click.stop
+                  >🧭 导航</a>
                 </div>
               </div>
             </template>
@@ -169,9 +179,54 @@
                 <MarkdownRenderer :content="panel.data.itinerary" />
               </div>
             </template>
+
+            <!-- 知识图谱查询结果 -->
+            <template v-else-if="panel.type === 'knowledge_graph'">
+              <div class="canvas-card-header">
+                <span class="canvas-card-icon">🔗</span>
+                <h3>知识图谱</h3>
+                <span class="canvas-card-count">{{ panel.data.length }} 个节点</span>
+              </div>
+              <div class="graph-results">
+                <div v-for="node in panel.data" :key="node.node_id" class="graph-node-item">
+                  <div class="graph-node-type">{{ node.type }}</div>
+                  <div class="graph-node-name">{{ node.name }}</div>
+                  <div v-if="node.title" class="graph-node-title">{{ node.title }}</div>
+                  <div v-if="node.specialty" class="graph-node-specialty">{{ node.specialty }}</div>
+                  <div v-if="node.description" class="graph-node-desc">{{ node.description }}</div>
+                </div>
+              </div>
+            </template>
+
+            <!-- 师承链 -->
+            <template v-else-if="panel.type === 'inheritance_chain'">
+              <div class="canvas-card-header">
+                <span class="canvas-card-icon">👨‍🏫</span>
+                <h3>师承谱系</h3>
+                <span class="canvas-card-count">{{ panel.data.length }} 代</span>
+              </div>
+              <div class="chain-list">
+                <div
+                  v-for="(c, idx) in panel.data"
+                  :key="idx"
+                  class="chain-item"
+                  :style="{ paddingLeft: idx * 24 + 'px' }"
+                >
+                  <span class="chain-arrow">{{ idx === 0 ? '👤' : '└─' }}</span>
+                  <span class="chain-name">{{ c.name }}</span>
+                  <span v-if="c.title" class="chain-title">（{{ c.title }}）</span>
+                  <span v-if="c.specialty" class="chain-specialty"> — {{ c.specialty }}</span>
+                </div>
+              </div>
+            </template>
           </div>
         </div>
       </div>
+    </div>
+
+    <!-- 图片预览 -->
+    <div v-if="previewPhoto" class="photo-preview-overlay" @click="previewPhoto = null">
+      <img :src="previewPhoto" class="photo-preview-img" @click.stop />
     </div>
 
     <!-- 场馆详情弹窗 -->
@@ -185,9 +240,9 @@
             <span class="venue-modal-label">地址</span>
             <span>{{ venueDetail.address }}</span>
           </div>
-          <div v-if="venueDetail.tel" class="venue-modal-row">
+          <div v-if="venueDetail.tel && venueDetail.tel.length" class="venue-modal-row">
             <span class="venue-modal-label">电话</span>
-            <span>{{ venueDetail.tel }}</span>
+            <span>{{ Array.isArray(venueDetail.tel) ? venueDetail.tel.join(', ') : venueDetail.tel }}</span>
           </div>
           <div v-if="venueDetail.business_hours" class="venue-modal-row">
             <span class="venue-modal-label">营业时间</span>
@@ -202,8 +257,20 @@
             <span>{{ venueDetail.district }}</span>
           </div>
         </div>
+        <a
+          v-if="venueDetail.lng || venueDetail.address"
+          class="venue-modal-nav"
+          :href="amapUri(venueDetail)"
+          target="_blank"
+        >🧭 导航到此场馆</a>
         <div v-if="venueDetail.photos && venueDetail.photos.length" class="venue-modal-photos">
-          <img v-for="(photo, pi) in venueDetail.photos" :key="pi" :src="photo" alt="场馆照片" />
+          <img
+            v-for="(photo, pi) in venueDetail.photos"
+            :key="pi"
+            :src="photo"
+            alt="场馆照片"
+            @click="openPhoto(photo)"
+          />
         </div>
       </div>
     </div>
@@ -235,6 +302,8 @@ const sessionId = ref('')
 const userInterests = ref([])
 const greetingText = ref('')
 const savedTripIds = ref(new Set())
+const selectedMsgIdx = ref(-1)
+const previewPhoto = ref(null)
 
 // ── 对话历史管理 ──
 const conversations = ref([])
@@ -299,6 +368,7 @@ const persistCurrent = () => {
   conversations.value[idx].messages = messages.value.map(m => ({
     role: m.role,
     content: m.content,
+    panels: m.panels || [],
   }))
   conversations.value[idx].panels = panels.value
   conversations.value[idx].title = getTitle(messages.value)
@@ -339,6 +409,7 @@ const newChat = () => {
   currentId.value = id
   messages.value = []
   panels.value = []
+  selectedMsgIdx.value = -1
   saveConversations()
 }
 
@@ -362,7 +433,10 @@ const switchConversation = async (id) => {
   }
 
   messages.value = (conv.messages || []).map(m => ({ ...m }))
-  panels.value = conv.panels || []
+  // 恢复最后一条有 panels 的消息的画布
+  const lastWithPanels = [...messages.value].reverse().find(m => m.panels && m.panels.length > 0)
+  panels.value = lastWithPanels ? lastWithPanels.panels : (conv.panels || [])
+  selectedMsgIdx.value = lastWithPanels ? messages.value.lastIndexOf(lastWithPanels) : -1
   sidebarOpen.value = false
   scrollToBottom()
 }
@@ -483,9 +557,11 @@ const sendMessage = async () => {
     messages.value[assistantIdx].content = resp.reply || '暂无回复'
     messages.value[assistantIdx].loading = false
 
-    // 更新画布面板
+    // 存储 panels 到消息上
     if (resp.panels && resp.panels.length > 0) {
+      messages.value[assistantIdx].panels = resp.panels
       panels.value = resp.panels
+      selectedMsgIdx.value = assistantIdx
     }
 
     // 持久化
@@ -503,8 +579,28 @@ const goDetail = (name) => {
   router.push(`/project/${encodeURIComponent(name)}`)
 }
 
+const selectMsg = (idx) => {
+  const msg = messages.value[idx]
+  if (msg.role === 'assistant' && msg.panels && msg.panels.length > 0) {
+    panels.value = msg.panels
+    selectedMsgIdx.value = idx
+  }
+}
+
+const openPhoto = (url) => {
+  previewPhoto.value = url
+}
+
 const showVenueDetail = (venue) => {
   venueDetail.value = venue
+}
+
+const amapUri = (v) => {
+  const name = encodeURIComponent(v.name || '')
+  if (v.lng && v.lat) {
+    return `https://uri.amap.com/marker?position=${v.lng},${v.lat}&name=${name}`
+  }
+  return `https://uri.amap.com/search?keyword=${name}`
 }
 
 const saveTrip = async (panel) => {
@@ -539,11 +635,14 @@ watch(() => userAuth.getUserId(), (newId, oldId) => {
       const latest = conversations.value[0]
       currentId.value = latest.id
       messages.value = (latest.messages || []).map(m => ({ ...m }))
-      panels.value = latest.panels || []
+      const lastWithPanels = [...messages.value].reverse().find(m => m.panels && m.panels.length > 0)
+      panels.value = lastWithPanels ? lastWithPanels.panels : (latest.panels || [])
+      selectedMsgIdx.value = lastWithPanels ? messages.value.lastIndexOf(lastWithPanels) : -1
     } else {
       currentId.value = ''
       messages.value = []
       panels.value = []
+      selectedMsgIdx.value = -1
     }
   }
 })
@@ -574,7 +673,9 @@ onMounted(async () => {
       } catch {}
     }
     messages.value = (latest.messages || []).map(m => ({ ...m }))
-    panels.value = latest.panels || []
+    const lastWithPanels = [...messages.value].reverse().find(m => m.panels && m.panels.length > 0)
+    panels.value = lastWithPanels ? lastWithPanels.panels : (latest.panels || [])
+    selectedMsgIdx.value = lastWithPanels ? messages.value.lastIndexOf(lastWithPanels) : -1
   }
   inputEl.value?.focus()
 })
@@ -864,12 +965,27 @@ onUnmounted(() => {
   background: #f7f7f7;
   color: #333;
   border-top-left-radius: 4px;
+  cursor: pointer;
+  position: relative;
 }
 
 .msg.user .msg-bubble {
   background: var(--primary, #8B4513);
   color: #fff;
   border-top-right-radius: 4px;
+}
+
+.msg.assistant.msg-selected .msg-bubble {
+  border-left: 3px solid var(--primary, #8B4513);
+  background: #f0ebe6;
+}
+
+.msg-canvas-hint {
+  position: absolute;
+  top: 6px;
+  right: 8px;
+  font-size: 12px;
+  opacity: 0.4;
 }
 
 /* ─── 打字动画 ─── */
@@ -1123,6 +1239,67 @@ onUnmounted(() => {
   color: #666;
 }
 
+.venue-type {
+  font-size: 11px;
+  color: #999;
+  background: #f5f5f5;
+  padding: 1px 6px;
+  border-radius: 3px;
+}
+
+/* ─── 图片预览 ─── */
+.photo-preview-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.85);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 300;
+  cursor: pointer;
+}
+
+.photo-preview-img {
+  max-width: 90vw;
+  max-height: 90vh;
+  object-fit: contain;
+  border-radius: 8px;
+  cursor: default;
+}
+
+.venue-nav-btn {
+  display: inline-block;
+  margin-top: 6px;
+  font-size: 12px;
+  color: var(--primary, #8B4513);
+  text-decoration: none;
+  padding: 2px 8px;
+  border: 1px solid var(--primary, #8B4513);
+  border-radius: 4px;
+  transition: all 0.2s;
+}
+
+.venue-nav-btn:hover {
+  background: var(--primary, #8B4513);
+  color: #fff;
+}
+
+.venue-modal-nav {
+  display: inline-block;
+  margin-top: 16px;
+  font-size: 14px;
+  color: #fff;
+  background: var(--primary, #8B4513);
+  text-decoration: none;
+  padding: 8px 20px;
+  border-radius: 8px;
+  transition: opacity 0.2s;
+}
+
+.venue-modal-nav:hover {
+  opacity: 0.9;
+}
+
 /* ─── 场馆卡片可点击 ─── */
 .venue-item {
   cursor: pointer;
@@ -1230,6 +1407,12 @@ onUnmounted(() => {
   object-fit: cover;
   border-radius: 8px;
   flex-shrink: 0;
+  cursor: pointer;
+  transition: opacity 0.2s;
+}
+
+.venue-modal-photos img:hover {
+  opacity: 0.85;
 }
 
 /* ─── 旅行路线 ─── */
@@ -1260,6 +1443,86 @@ onUnmounted(() => {
 .save-trip-btn:disabled {
   background: #aaa;
   cursor: default;
+}
+
+/* ─── 知识图谱结果 ─── */
+.graph-results {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.graph-node-item {
+  background: #faf7f4;
+  border-radius: 8px;
+  padding: 10px 12px;
+  border-left: 3px solid var(--primary, #8B4513);
+}
+
+.graph-node-type {
+  display: inline-block;
+  font-size: 11px;
+  color: #fff;
+  background: var(--primary, #8B4513);
+  padding: 1px 6px;
+  border-radius: 4px;
+  margin-bottom: 4px;
+}
+
+.graph-node-name {
+  font-size: 15px;
+  font-weight: 600;
+  color: #333;
+}
+
+.graph-node-title {
+  font-size: 12px;
+  color: #8B4513;
+  margin-top: 2px;
+}
+
+.graph-node-specialty {
+  font-size: 12px;
+  color: #666;
+}
+
+.graph-node-desc {
+  font-size: 13px;
+  color: #555;
+  margin-top: 4px;
+  line-height: 1.5;
+}
+
+/* ─── 师承链 ─── */
+.chain-list {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.chain-item {
+  font-size: 14px;
+  line-height: 1.8;
+  color: #333;
+}
+
+.chain-arrow {
+  margin-right: 4px;
+  color: var(--primary, #8B4513);
+}
+
+.chain-name {
+  font-weight: 600;
+}
+
+.chain-title {
+  font-size: 12px;
+  color: #8B4513;
+}
+
+.chain-specialty {
+  font-size: 12px;
+  color: #666;
 }
 
 /* ─── 响应式 ─── */

@@ -116,14 +116,21 @@ function renderMarkers() {
 
         const marker = new AMap.Marker({
           position: pos,
+          cursor: 'pointer',
           label: {
             content: `<div class="amap-marker-label" style="border-color:${badgeBg}">
               <span class="day-badge" style="background:${badgeBg}">${badgeText}</span>
               <span class="venue-name">${roleIcon} ${v.name}</span>
+              <span class="nav-hint">🧭</span>
             </div>`,
             direction: 'top',
           },
           title: v.name,
+          extData: v,
+        })
+        marker.on('click', () => {
+          const name = encodeURIComponent(v.name || '')
+          window.open(`https://uri.amap.com/marker?position=${v.lng},${v.lat}&name=${name}`, '_blank')
         })
         allMarkers.push(marker)
       })
@@ -150,7 +157,20 @@ function renderMarkers() {
 
       const marker = new AMap.Marker({
         position: pos,
+        cursor: 'pointer',
         title: v.name,
+        extData: v,
+        label: {
+          content: `<div class="amap-marker-label">
+            <span class="venue-name">${v.name}</span>
+            <span class="nav-hint">🧭</span>
+          </div>`,
+          direction: 'top',
+        },
+      })
+      marker.on('click', () => {
+        const name = encodeURIComponent(v.name || '')
+        window.open(`https://uri.amap.com/marker?position=${v.lng},${v.lat}&name=${name}`, '_blank')
       })
       allMarkers.push(marker)
     })
@@ -270,5 +290,11 @@ onUnmounted(() => {
 :deep(.venue-name) {
   color: #333;
   font-weight: 500;
+}
+
+:deep(.nav-hint) {
+  font-size: 10px;
+  opacity: 0.6;
+  margin-left: 2px;
 }
 </style>

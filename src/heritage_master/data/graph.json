@@ -1785,7 +1785,7 @@
       "type": "FROM_REGION"
     },
     {
-      "from": "project:昆曲",
+      "from": "project:茶艺",
       "to": "person:叶汉钟",
       "type": "HAS_INHERITOR"
     },

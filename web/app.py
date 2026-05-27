@@ -226,6 +226,49 @@ async def _execute_agent_tool(tool_name: str, arguments: dict) -> tuple:
         route_data = result.get("route_data")
         return {"city": arguments["city"], "days": arguments.get("days", 2), "itinerary": text, "route_data": route_data}, "trip_plan", text
 
+    elif tool_name == "query_knowledge_graph":
+        from heritage_master.data.knowledge_graph import search_nodes, get_node, get_neighbors
+        results = search_nodes(
+            arguments["query"],
+            node_type=arguments.get("node_type") or None,
+            limit=10,
+        )
+        if not results:
+            return None, None, "未找到相关的图谱节点"
+        lines = [f"找到 {len(results)} 个相关节点："]
+        for r in results:
+            ntype = r.get("type", "")
+            name = r.get("name", r.get("node_id", ""))
+            desc = r.get("description", "")
+            title = r.get("title", "")
+            specialty = r.get("specialty", "")
+            line = f"- [{ntype}] {name}"
+            if title:
+                line += f"（{title}）"
+            if specialty:
+                line += f" — {specialty}"
+            if desc:
+                line += f"\n  {desc[:100]}"
+            lines.append(line)
+        text = "\n".join(lines)
+        return results, "knowledge_graph", text
+
+    elif tool_name == "get_inheritance_chain":
+        from heritage_master.data.knowledge_graph import get_inheritance_chain as _get_chain
+        person_name = arguments["person_name"]
+        person_id = person_name if ":" in person_name else f"person:{person_name}"
+        chain = _get_chain(person_id)
+        if not chain:
+            return None, None, f"未找到「{person_name}」的师承记录"
+        lines = [f"「{person_name}」的师承链："]
+        for i, c in enumerate(chain):
+            name = c.get("name", "")
+            title = c.get("title", "")
+            prefix = "  " * i + ("└─ " if i > 0 else "")
+            lines.append(f"{prefix}{name}" + (f"（{title}）" if title else ""))
+        text = "\n".join(lines)
+        return chain, "inheritance_chain", text
+
     return None, None, "工具调用失败"
 
 

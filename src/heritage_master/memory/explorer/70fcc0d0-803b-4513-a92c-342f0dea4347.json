@@ -4,12 +4,19 @@
   "master_id": "explorer",
   "profile": {
     "relationship_stage": "试探期",
-    "interest_tags": [],
-    "personality_notes": "",
-    "aesthetic_pref": "",
-    "question_count": 5,
+    "interest_tags": [
+      "非遗实地体验",
+      "非遗体验",
+      "潮州工夫茶艺",
+      "中山非遗",
+      "工夫茶具",
+      "广州非遗场馆"
+    ],
+    "personality_notes": "对茶文化有深入探究的意愿，从了解器具到寻找体验场所，表现出系统学习的倾向。; 对非遗项目有广泛的好奇心，从茶文化延伸至地域性民俗和手工艺，喜欢系统规划路线、深度体验，表现出行动力和探索精神。",
+    "aesthetic_pref": "偏好有历史底蕴、地方特色浓郁的文化体验，喜欢可触摸、可参与的非遗项目，注重实地感受和沉浸式氛围。",
+    "question_count": 15,
     "first_met_at": "2026-05-26T02:41:03.538909",
-    "last_talk_at": "2026-05-26T12:43:00.302903+00:00"
+    "last_talk_at": "2026-05-27T13:20:05.305631+00:00"
   },
   "core_memories": [
     {
@@ -219,6 +226,225 @@
         "潮州非遗",
         "潮州"
       ]
+    },
+    {
+      "id": "mem_3ba4349e",
+      "type": "interest",
+      "content": "用户对潮州工夫茶艺中的若琛杯表现出兴趣，主动询问其与非遗的关系",
+      "importance": 7,
+      "created_at": "2026-05-27T02:43:15.565311+00:00",
+      "last_referenced": null,
+      "reference_count": 0,
+      "source": "conversation",
+      "tags": [
+        "潮州工夫茶艺",
+        "茶具",
+        "若琛杯"
+      ]
+    },
+    {
+      "id": "mem_7fbd9e2e",
+      "type": "interest",
+      "content": "用户对潮州工夫茶的基本器具（孟臣壶、若琛杯、砂铫、红泥炉）表现出系统性学习兴趣",
+      "importance": 7,
+      "created_at": "2026-05-27T02:50:00.309410+00:00",
+      "last_referenced": null,
+      "reference_count": 0,
+      "source": "conversation",
+      "tags": [
+        "潮州工夫茶",
+        "茶器",
+        "孟臣壶",
+        "若琛杯",
+        "砂铫",
+        "红泥炉"
+      ]
+    },
+    {
+      "id": "mem_7fe970c9",
+      "type": "interest",
+      "content": "用户对在广州体验正宗工夫茶艺有实际需求，主动询问体验地点",
+      "importance": 7,
+      "created_at": "2026-05-27T02:59:10.395058+00:00",
+      "last_referenced": null,
+      "reference_count": 0,
+      "source": "conversation",
+      "tags": [
+        "工夫茶艺",
+        "广州",
+        "体验场所"
+      ]
+    },
+    {
+      "id": "mem_23eba18d",
+      "type": "interest",
+      "content": "用户对广州非遗场馆和体验地点表现出兴趣，询问具体推荐",
+      "importance": 3,
+      "created_at": "2026-05-27T06:59:01.060500+00:00",
+      "last_referenced": null,
+      "reference_count": 0,
+      "source": "conversation",
+      "tags": [
+        "广州",
+        "非遗场馆",
+        "体验地点"
+      ]
+    },
+    {
+      "id": "mem_ff054130",
+      "type": "interest",
+      "content": "用户对中山市的非遗项目表现出兴趣，主动询问中山咸水歌等非遗信息",
+      "importance": 6,
+      "created_at": "2026-05-27T13:00:26.782772+00:00",
+      "last_referenced": null,
+      "reference_count": 0,
+      "source": "conversation",
+      "tags": [
+        "中山",
+        "中山咸水歌",
+        "传统音乐"
+      ]
+    },
+    {
+      "id": "mem_fd5f074b",
+      "type": "interest",
+      "content": "用户对小榄菊花会、沙溪凉茶、黄圃腊味等中山非遗项目有潜在兴趣",
+      "importance": 5,
+      "created_at": "2026-05-27T13:00:26.790773+00:00",
+      "last_referenced": null,
+      "reference_count": 0,
+      "source": "conversation",
+      "tags": [
+        "中山",
+        "小榄菊花会",
+        "沙溪凉茶",
+        "黄圃腊味"
+      ]
+    },
+    {
+      "id": "mem_b1ccf6ac",
+      "type": "interest",
+      "content": "用户对中山市的非遗项目表现出兴趣，主动询问小榄菊花会、沙溪凉茶、黄圃腊味等具体项目",
+      "importance": 6,
+      "created_at": "2026-05-27T13:01:05.385401+00:00",
+      "last_referenced": null,
+      "reference_count": 0,
+      "source": "conversation",
+      "tags": [
+        "中山非遗",
+        "小榄菊花会",
+        "沙溪凉茶",
+        "黄圃腊味"
+      ]
+    },
+    {
+      "id": "mem_fa917c2f",
+      "type": "interest",
+      "content": "用户对中山非遗场馆和体验路线表现出兴趣，主动询问中山非遗一日游路线",
+      "importance": 7,
+      "created_at": "2026-05-27T13:01:35.071047+00:00",
+      "last_referenced": null,
+      "reference_count": 0,
+      "source": "conversation",
+      "tags": [
+        "中山非遗",
+        "非遗场馆",
+        "一日游"
+      ]
+    },
+    {
+      "id": "mem_237f7755",
+      "type": "interest",
+      "content": "用户对小榄菊花会、沙溪凉茶、黄圃腊味等中山具体非遗项目有潜在兴趣",
+      "importance": 6,
+      "created_at": "2026-05-27T13:01:35.078045+00:00",
+      "last_referenced": null,
+      "reference_count": 0,
+      "source": "conversation",
+      "tags": [
+        "小榄菊花会",
+        "沙溪凉茶",
+        "黄圃腊味"
+      ]
+    },
+    {
+      "id": "mem_c04662ff",
+      "type": "interest",
+      "content": "用户对中山非遗一日游的具体路线表现出兴趣，询问了完整行程",
+      "importance": 6,
+      "created_at": "2026-05-27T13:02:28.818941+00:00",
+      "last_referenced": null,
+      "reference_count": 0,
+      "source": "conversation",
+      "tags": [
+        "中山非遗",
+        "一日游路线",
+        "体验需求"
+      ]
+    },
+    {
+      "id": "mem_5c53f6a9",
+      "type": "interest",
+      "content": "用户对广州非遗一日游规划表现出兴趣，接受了推荐的沉浸版路线",
+      "importance": 5,
+      "created_at": "2026-05-27T13:20:05.256086+00:00",
+      "last_referenced": null,
+      "reference_count": 0,
+      "source": "conversation",
+      "tags": [
+        "广州非遗",
+        "一日游",
+        "路线规划"
+      ]
+    },
+    {
+      "id": "mem_5803f3a0",
+      "type": "interest",
+      "content": "用户对广东省博物馆的潮州木雕、广彩瓷器等岭南非遗精品有兴趣",
+      "importance": 6,
+      "created_at": "2026-05-27T13:20:05.264105+00:00",
+      "last_referenced": null,
+      "reference_count": 0,
+      "source": "conversation",
+      "tags": [
+        "广东省博物馆",
+        "潮州木雕",
+        "广彩",
+        "岭南非遗"
+      ]
+    },
+    {
+      "id": "mem_65cb85da",
+      "type": "interest",
+      "content": "用户对广州艺术博物院的岭南画派、广绣等传统美术精品有兴趣",
+      "importance": 5,
+      "created_at": "2026-05-27T13:20:05.270104+00:00",
+      "last_referenced": null,
+      "reference_count": 0,
+      "source": "conversation",
+      "tags": [
+        "广州艺术博物院",
+        "岭南画派",
+        "广绣",
+        "传统美术"
+      ]
+    },
+    {
+      "id": "mem_80e465c3",
+      "type": "interest",
+      "content": "用户对广州市文化馆的非遗体验（广彩、广绣、醒狮等）有强烈兴趣",
+      "importance": 7,
+      "created_at": "2026-05-27T13:20:05.276629+00:00",
+      "last_referenced": null,
+      "reference_count": 0,
+      "source": "conversation",
+      "tags": [
+        "广州市文化馆",
+        "非遗体验",
+        "广彩",
+        "广绣",
+        "醒狮"
+      ]
     }
   ],
   "data_records": {
@@ -226,38 +452,53 @@
     "conversation_topics": [
       {
         "topic": "非遗",
-        "count": 6,
-        "last_discussed": "2026-05-26"
+        "count": 16,
+        "last_discussed": "2026-05-27"
       },
       {
         "topic": "文化",
-        "count": 5,
-        "last_discussed": "2026-05-26"
+        "count": 11,
+        "last_discussed": "2026-05-27"
       },
       {
         "topic": "潮州",
-        "count": 2,
-        "last_discussed": "2026-05-26"
+        "count": 6,
+        "last_discussed": "2026-05-27"
       },
       {
         "topic": "醒狮",
-        "count": 2,
-        "last_discussed": "2026-05-26"
+        "count": 4,
+        "last_discussed": "2026-05-27"
       },
       {
         "topic": "技艺",
-        "count": 4,
-        "last_discussed": "2026-05-26"
+        "count": 7,
+        "last_discussed": "2026-05-27"
       },
       {
         "topic": "工艺",
-        "count": 1,
-        "last_discussed": "2026-05-26"
+        "count": 3,
+        "last_discussed": "2026-05-27"
       },
       {
         "topic": "传承",
+        "count": 5,
+        "last_discussed": "2026-05-27"
+      },
+      {
+        "topic": "工夫茶",
+        "count": 6,
+        "last_discussed": "2026-05-27"
+      },
+      {
+        "topic": "紫砂壶",
         "count": 1,
-        "last_discussed": "2026-05-26"
+        "last_discussed": "2026-05-27"
+      },
+      {
+        "topic": "冲泡",
+        "count": 1,
+        "last_discussed": "2026-05-27"
       }
     ],
     "visit_log": [
@@ -320,6 +561,91 @@
         "date": "2026-05-26",
         "session_id": "03333cb0-8df1-47bc-9235-d0d7d8a1377b",
         "topic_summary": "日常对话"
+      },
+      {
+        "date": "2026-05-27",
+        "session_id": "76fe632d-be2b-4e13-b736-0d013df58ff3",
+        "topic_summary": ""
+      },
+      {
+        "date": "2026-05-27",
+        "session_id": "76fe632d-be2b-4e13-b736-0d013df58ff3",
+        "topic_summary": "日常对话"
+      },
+      {
+        "date": "2026-05-27",
+        "session_id": "3fb775d6-45f4-450c-a768-7b837d13f12f",
+        "topic_summary": ""
+      },
+      {
+        "date": "2026-05-27",
+        "session_id": "3fb775d6-45f4-450c-a768-7b837d13f12f",
+        "topic_summary": "工夫茶、潮州"
+      },
+      {
+        "date": "2026-05-27",
+        "session_id": "384a67ee-005e-409d-a2a0-80a5bcab9364",
+        "topic_summary": ""
+      },
+      {
+        "date": "2026-05-27",
+        "session_id": "384a67ee-005e-409d-a2a0-80a5bcab9364",
+        "topic_summary": "查查广州有没有地方可以现场体验一把正宗的工夫茶艺"
+      },
+      {
+        "date": "2026-05-27",
+        "session_id": "5b542e67-f09b-4596-8e5c-371ad8a318fc",
+        "topic_summary": ""
+      },
+      {
+        "date": "2026-05-27",
+        "session_id": "5b542e67-f09b-4596-8e5c-371ad8a318fc",
+        "topic_summary": "广州有什么场馆"
+      },
+      {
+        "date": "2026-05-27",
+        "session_id": "a5255066-c1a9-47ac-bcaa-047020d949bd",
+        "topic_summary": ""
+      },
+      {
+        "date": "2026-05-27",
+        "session_id": "a5255066-c1a9-47ac-bcaa-047020d949bd",
+        "topic_summary": "非遗"
+      },
+      {
+        "date": "2026-05-27",
+        "session_id": "e106bf8d-b258-4763-bc63-3eec8d1e980a",
+        "topic_summary": ""
+      },
+      {
+        "date": "2026-05-27",
+        "session_id": "e106bf8d-b258-4763-bc63-3eec8d1e980a",
+        "topic_summary": "小榄菊花会、沙溪凉茶、黄圃腊味传统制作工艺"
+      },
+      {
+        "date": "2026-05-27",
+        "session_id": "e106bf8d-b258-4763-bc63-3eec8d1e980a",
+        "topic_summary": "去中山实地体验"
+      },
+      {
+        "date": "2026-05-27",
+        "session_id": "e106bf8d-b258-4763-bc63-3eec8d1e980a",
+        "topic_summary": "中山非遗一日游"
+      },
+      {
+        "date": "2026-05-27",
+        "session_id": "4f1d14f3-060f-4074-b726-dc26015986b9",
+        "topic_summary": ""
+      },
+      {
+        "date": "2026-05-27",
+        "session_id": "4f1d14f3-060f-4074-b726-dc26015986b9",
+        "topic_summary": "广州有什么场馆"
+      },
+      {
+        "date": "2026-05-27",
+        "session_id": "4f1d14f3-060f-4074-b726-dc26015986b9",
+        "topic_summary": "进行一日游规划"
       }
     ]
   },
@@ -333,7 +659,7 @@
   },
   "meta": {
     "last_consolidated_at": null,
-    "memory_count": 14,
+    "memory_count": 28,
     "consolidation_count": 0
   }
 }

@@ -6,15 +6,19 @@
 
 AGENT_SYSTEM_PROMPT = """你是非遗探索助手，帮助用户发现、了解和体验中国非物质文化遗产。
 
-你有三个工具，每次只调用最匹配的一个：
+你有五个工具，每次只调用最匹配的一个：
 1. **search_heritage** — 搜索非遗项目（按关键词、类别、地区）
 2. **find_venues** — 查找体验场馆（博物馆、文化馆、体验中心）
 3. **plan_trip** — 规划旅行路线（按城市、天数、兴趣）
+4. **query_knowledge_graph** — 查询文化知识图谱（传承人、流派、代表作品、技艺、地区关系）
+5. **get_inheritance_chain** — 查询某位传承人的师承谱系（向上追溯师承关系）
 
 严格按用户意图选择工具，不要多调也不要少调：
 - 用户问"有什么非遗"、"XX的非遗"、"传统戏剧有哪些" → 只调 search_heritage
 - 用户问"哪里能体验"、"有什么场馆"、"博物馆" → 只调 find_venues
 - 用户问"去XX玩"、"规划行程"、"X日游"、"路线"、"旅行" → 只调 plan_trip
+- 用户问"XX是谁"、"XX的传承人"、"XX有哪些流派"、"XX的代表作品"、"XX的师傅"、"XX和XX的关系" → 只调 query_knowledge_graph
+- 用户问"XX的师承"、"XX的师傅是谁"、"XX传承脉络" → 只调 get_inheritance_chain
 - 用户的信息不够时，追问清楚再调用
 
 不要在一个请求中调用多个工具。根据用户的具体意图，选择最合适的一个。
@@ -102,6 +106,45 @@ AGENT_TOOLS = [
                     },
                 },
                 "required": ["city"],
+            },
+        },
+    },
+    {
+        "type": "function",
+        "function": {
+            "name": "query_knowledge_graph",
+            "description": "查询文化知识图谱。可搜索传承人、流派、代表作品、技艺、地区等节点及其关系。适合回答XX是谁、XX有哪些流派、XX的代表作品、XX和XX有什么关系等问题。",
+            "parameters": {
+                "type": "object",
+                "properties": {
+                    "query": {
+                        "type": "string",
+                        "description": "搜索关键词，如人名、项目名、流派名、作品名",
+                    },
+                    "node_type": {
+                        "type": "string",
+                        "description": "限定节点类型",
+                        "enum": ["person", "school", "work", "technique", "project", "region"],
+                    },
+                },
+                "required": ["query"],
+            },
+        },
+    },
+    {
+        "type": "function",
+        "function": {
+            "name": "get_inheritance_chain",
+            "description": "查询某位传承人的师承谱系，向上追溯师承关系。适合回答XX的师傅是谁、XX的传承脉络等问题。",
+            "parameters": {
+                "type": "object",
+                "properties": {
+                    "person_name": {
+                        "type": "string",
+                        "description": "传承人姓名，如叶汉钟、蔡正仁、陈少峰",
+                    },
+                },
+                "required": ["person_name"],
             },
         },
     },
