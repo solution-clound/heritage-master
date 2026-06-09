@@ -174,7 +174,7 @@
     ],
     "masterpieces": ["双面绣猫", "仿真绣耶稣像", "仕女图"],
     "inheritors": [
-      {"name": "陈少峰", "title": "国家级传承人", "specialty": "醒狮"},
+      {"name": "黄钦添", "title": "国家级传承人", "specialty": "醒狮"},
       {"name": "顾文霞", "title": "国家级传承人", "specialty": "花鸟绣"}
     ],
     "related": ["广绣", "湘绣", "蜀绣", "顾绣"],
@@ -766,7 +766,7 @@
     "masterpieces": ["猫", "金鱼", "牡丹", "仕女图"],
     "inheritors": [
       {"name": "姚惠芬", "title": "国家级传承人", "specialty": "苏绣"},
-      {"name": "陈少峰", "title": "国家级传承人", "specialty": "醒狮"}
+      {"name": "黄钦添", "title": "国家级传承人", "specialty": "醒狮"}
     ],
     "related": ["广绣", "湘绣", "蜀绣"],
     "status": "活跃（苏州镇湖刺绣一条街）",

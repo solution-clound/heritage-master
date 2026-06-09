@@ -5,22 +5,23 @@
   "profile": {
     "relationship_stage": "试探期",
     "interest_tags": [
-      "鸭屎香",
-      "潮州工夫茶",
-      "茶汤品鉴",
       "若琛杯",
-      "蜜兰香",
-      "老丛茶",
-      "茶性",
-      "八仙",
       "茶道入门",
-      "回甘与喉韵"
+      "蜜兰香",
+      "潮州工夫茶",
+      "八仙",
+      "回甘与喉韵",
+      "昆曲",
+      "茶汤品鉴",
+      "鸭屎香",
+      "茶性",
+      "老丛茶"
     ],
-    "personality_notes": "用户对茶有初步兴趣但缺乏深入理解，回答简短，可能性格直率或尚未沉下心来，需要引导和耐心。; 用户虽初时回答直接简单，但在引导后能静心感受并准确描述茶汤体验，显示出可塑性，需要耐心引导以深化对茶的理解。; 用户对茶具和茶香有直觉性的好奇，虽初时回答简短直率，但在引导下能静心感受茶汤，显示出愿意沉下心来学习的潜力，需要持续耐心引导。; 在情绪低落时能接受引导，愿意通过品茶静心，有向内探索的倾向。",
-    "aesthetic_pref": "偏好沉静、温和的茶汤体验，对老茶、稳重的茶性有直觉好感，适合通过茶汤而非言语来化解情绪。",
-    "question_count": 20,
+    "personality_notes": "用户对茶有初步兴趣但缺乏深入理解，回答简短，可能性格直率或尚未沉下心来，需要引导和耐心。; 用户虽初时回答直接简单，但在引导后能静心感受并准确描述茶汤体验，显示出可塑性，需要耐心引导以深化对茶的理解。; 用户对茶具和茶香有直觉性的好奇，虽初时回答简短直率，但在引导下能静心感受茶汤，显示出愿意沉下心来学习的潜力，需要持续耐心引导。; 在情绪低落时能接受引导，愿意通过品茶静心，有向内探索的倾向。; 在情绪低落时能接受引导，愿意通过品茶静心，有向内探索的倾向。话题跳跃，思绪易散，但能跟随引导重新聚焦。",
+    "aesthetic_pref": "偏好含蓄、有节奏感的传统艺术形式，如茶道与昆曲，欣赏‘起承转合’的韵律与意境。",
+    "question_count": 26,
     "first_met_at": "2026-05-26T02:41:22.333654",
-    "last_talk_at": "2026-05-27T02:44:54.861918"
+    "last_talk_at": "2026-06-09T02:33:50.340909+00:00"
   },
   "core_memories": [
     {
@@ -628,6 +629,79 @@
         "放下分析",
         "静心感受"
       ]
+    },
+    {
+      "id": "mem_5233071c",
+      "type": "feedback",
+      "content": "用户第二杯茶开始感受到喉底回甘，从嘴上说好转为喉咙说好，体感有所进步",
+      "importance": 6,
+      "created_at": "2026-06-08T16:36:12.273792+00:00",
+      "last_referenced": null,
+      "reference_count": 0,
+      "source": "conversation",
+      "tags": [
+        "喉底",
+        "回甘",
+        "体感进步"
+      ]
+    },
+    {
+      "id": "mem_52ca3c95",
+      "type": "preference",
+      "content": "用户对温和稳重的茶汤开始产生体感反应，适合继续引导其感受喉韵",
+      "importance": 5,
+      "created_at": "2026-06-08T16:36:12.275802+00:00",
+      "last_referenced": null,
+      "reference_count": 0,
+      "source": "conversation",
+      "tags": [
+        "喉韵",
+        "温和茶汤"
+      ]
+    },
+    {
+      "id": "mem_55cb06fa",
+      "type": "interest",
+      "content": "用户在论坛提到昆曲话题，可能对传统文化艺术有兴趣",
+      "importance": 3,
+      "created_at": "2026-06-08T16:38:07.956578+00:00",
+      "last_referenced": null,
+      "reference_count": 0,
+      "source": "conversation",
+      "tags": [
+        "昆曲",
+        "戏曲",
+        "传统文化"
+      ]
+    },
+    {
+      "id": "mem_5dde9e5a",
+      "type": "personality",
+      "content": "用户愿意主动探索不同传统文化话题，兴趣面较广",
+      "importance": 3,
+      "created_at": "2026-06-08T16:38:07.957578+00:00",
+      "last_referenced": null,
+      "reference_count": 0,
+      "source": "conversation",
+      "tags": [
+        "兴趣广泛",
+        "主动提问"
+      ]
+    },
+    {
+      "id": "mem_dcb11192",
+      "type": "interest",
+      "content": "用户在论坛主动询问昆曲话题，对传统文化艺术有探索兴趣",
+      "importance": 5,
+      "created_at": "2026-06-08T16:40:29.332709+00:00",
+      "last_referenced": null,
+      "reference_count": 0,
+      "source": "conversation",
+      "tags": [
+        "昆曲",
+        "传统文化",
+        "艺术兴趣"
+      ]
     }
   ],
   "data_records": {
@@ -645,8 +719,8 @@
       },
       {
         "topic": "潮州",
-        "count": 1,
-        "last_discussed": "2026-05-27"
+        "count": 2,
+        "last_discussed": "2026-06-08"
       },
       {
         "topic": "鸭屎香",
@@ -663,6 +737,101 @@
       {
         "date": "2026-05-26",
         "session_id": "1680fb26-cbc7-4e16-bd55-fa50af9beff3",
+        "topic_summary": "工夫茶、潮州"
+      },
+      {
+        "date": "2026-06-08",
+        "session_id": "b4610600-a15a-419e-b66b-c7b912b796a0",
+        "topic_summary": ""
+      },
+      {
+        "date": "2026-06-08",
+        "session_id": "b4610600-a15a-419e-b66b-c7b912b796a0",
+        "topic_summary": ""
+      },
+      {
+        "date": "2026-06-08",
+        "session_id": "b4610600-a15a-419e-b66b-c7b912b796a0",
+        "topic_summary": ""
+      },
+      {
+        "date": "2026-06-08",
+        "session_id": "b4610600-a15a-419e-b66b-c7b912b796a0",
+        "topic_summary": ""
+      },
+      {
+        "date": "2026-06-08",
+        "session_id": "b4610600-a15a-419e-b66b-c7b912b796a0",
+        "topic_summary": ""
+      },
+      {
+        "date": "2026-06-08",
+        "session_id": "b4610600-a15a-419e-b66b-c7b912b796a0",
+        "topic_summary": ""
+      },
+      {
+        "date": "2026-06-08",
+        "session_id": "b4610600-a15a-419e-b66b-c7b912b796a0",
+        "topic_summary": ""
+      },
+      {
+        "date": "2026-06-08",
+        "session_id": "b4610600-a15a-419e-b66b-c7b912b796a0",
+        "topic_summary": ""
+      },
+      {
+        "date": "2026-06-08",
+        "session_id": "b4610600-a15a-419e-b66b-c7b912b796a0",
+        "topic_summary": ""
+      },
+      {
+        "date": "2026-06-08",
+        "session_id": "b4610600-a15a-419e-b66b-c7b912b796a0",
+        "topic_summary": ""
+      },
+      {
+        "date": "2026-06-08",
+        "session_id": "b4610600-a15a-419e-b66b-c7b912b796a0",
+        "topic_summary": ""
+      },
+      {
+        "date": "2026-06-08",
+        "session_id": "b4610600-a15a-419e-b66b-c7b912b796a0",
+        "topic_summary": ""
+      },
+      {
+        "date": "2026-06-08",
+        "session_id": "b4610600-a15a-419e-b66b-c7b912b796a0",
+        "topic_summary": ""
+      },
+      {
+        "date": "2026-06-08",
+        "session_id": "b4610600-a15a-419e-b66b-c7b912b796a0",
+        "topic_summary": ""
+      },
+      {
+        "date": "2026-06-08",
+        "session_id": "b4610600-a15a-419e-b66b-c7b912b796a0",
+        "topic_summary": ""
+      },
+      {
+        "date": "2026-06-08",
+        "session_id": "b4610600-a15a-419e-b66b-c7b912b796a0",
+        "topic_summary": ""
+      },
+      {
+        "date": "2026-06-08",
+        "session_id": "b4610600-a15a-419e-b66b-c7b912b796a0",
+        "topic_summary": ""
+      },
+      {
+        "date": "2026-06-09",
+        "session_id": "b144c02d-4586-4f8b-8a75-e2e9d8e5dc8e",
+        "topic_summary": ""
+      },
+      {
+        "date": "2026-06-09",
+        "session_id": "b144c02d-4586-4f8b-8a75-e2e9d8e5dc8e",
         "topic_summary": ""
       }
     ]
@@ -677,7 +846,7 @@
   },
   "meta": {
     "last_consolidated_at": null,
-    "memory_count": 41,
+    "memory_count": 46,
     "consolidation_count": 0
   }
 }

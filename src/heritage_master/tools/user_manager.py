@@ -87,10 +87,26 @@ def update_user_active(user_id: str) -> None:
 # ============================================================
 
 def start_session(user_id: str, master_id: str) -> str:
-    """开始一个新的对话会话，返回 session_id"""
-    session_id = str(uuid.uuid4())
-    now = datetime.utcnow().isoformat()
+    """开始一个新的对话会话，返回 session_id
+
+    按日复用：同一天、同一用户、同一大师共用一个会话。
+    如果今天已有会话，直接返回该 session_id。
+    """
+    today = datetime.utcnow().date().isoformat()
     with get_conn() as conn:
+        # 检查今天是否已有该大师的会话
+        existing = conn.execute(
+            """SELECT id FROM chat_sessions
+               WHERE user_id=? AND master_id=? AND DATE(started_at)=?
+               ORDER BY started_at DESC LIMIT 1""",
+            (user_id, master_id, today),
+        ).fetchone()
+        if existing:
+            return existing["id"]
+
+        # 创建新会话
+        session_id = str(uuid.uuid4())
+        now = datetime.utcnow().isoformat()
         conn.execute(
             "INSERT INTO chat_sessions (id, user_id, master_id, started_at) VALUES (?, ?, ?, ?)",
             (session_id, user_id, master_id, now),
@@ -102,10 +118,12 @@ def start_session(user_id: str, master_id: str) -> str:
 
 
 def end_session(session_id: str) -> None:
-    """结束对话会话"""
-    now = datetime.utcnow().isoformat()
-    with get_conn() as conn:
-        conn.execute("UPDATE chat_sessions SET ended_at=? WHERE id=?", (now, session_id))
+    """结束对话会话
+
+    按日会话模式下，不设置 ended_at（保持当天可复用）。
+    """
+    # 不再设置 ended_at，保持会话当天活跃
+    pass
 
 
 def get_session(session_id: str) -> Optional[Dict[str, Any]]:
@@ -170,11 +188,15 @@ def get_user_messages(user_id: str, master_id: str, limit: int = 50) -> List[Dic
 
 
 def get_user_sessions(user_id: str, master_id: str = "", limit: int = 20) -> List[Dict[str, Any]]:
-    """获取用户的对话会话列表（含消息数和首条用户消息作为标题）"""
+    """获取用户的对话会话列表（含消息数和首条用户消息作为标题）
+
+    按日模式下，每个会话对应一天，返回时附带日期信息。
+    """
     with get_conn() as conn:
         if master_id:
             rows = conn.execute(
                 """SELECT s.id, s.master_id, s.started_at, s.ended_at, s.topic_summary,
+                          DATE(s.started_at) as talk_date,
                           (SELECT COUNT(*) FROM chat_messages WHERE session_id=s.id) as msg_count,
                           (SELECT content FROM chat_messages WHERE session_id=s.id AND role='user' ORDER BY id ASC LIMIT 1) as first_msg
                    FROM chat_sessions s
@@ -185,6 +207,7 @@ def get_user_sessions(user_id: str, master_id: str = "", limit: int = 20) -> Lis
         else:
             rows = conn.execute(
                 """SELECT s.id, s.master_id, s.started_at, s.ended_at, s.topic_summary,
+                          DATE(s.started_at) as talk_date,
                           (SELECT COUNT(*) FROM chat_messages WHERE session_id=s.id) as msg_count,
                           (SELECT content FROM chat_messages WHERE session_id=s.id AND role='user' ORDER BY id ASC LIMIT 1) as first_msg
                    FROM chat_sessions s

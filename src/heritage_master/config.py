@@ -71,6 +71,9 @@ class Settings(BaseSettings):
     memory_consolidation_threshold: int = Field(default=50, description="记忆条数达到此阈值触发整理")
     memory_cache_ttl: int = Field(default=600, description="记忆缓存过期时间（秒）")
 
+    # JWT 认证
+    jwt_secret: str = Field(default="", description="JWT 签名密钥")
+
     # LLM 大模型（支持多模型切换）
     llm_provider: str = Field(default="deepseek", description="LLM Provider (deepseek/openai/claude/qwen)")
     llm_api_key: str = Field(default="", description="LLM API Key")

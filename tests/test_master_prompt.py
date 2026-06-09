@@ -81,7 +81,7 @@ def test_masters_are_real_people():
     cgm = get_master("chagongfu")
     wsn = get_master("wushishizi")
     assert cgm["name"] == "叶汉钟"
-    assert wsn["name"] == "陈少峰"
+    assert wsn["name"] == "黄钦添"
     assert "潮州工夫茶" in cgm["intro"]
     assert "醒狮" in wsn["intro"]
 
@@ -159,7 +159,7 @@ def test_build_qa_prompt_with_news():
 def test_build_qa_prompt_with_master_id():
     """测试指定大师的问答 prompt"""
     messages = build_qa_prompt("什么是昆曲？", master_id="wushishizi")
-    assert "陈少峰" in messages[0]["content"] or "醒狮" in messages[0]["content"]
+    assert "黄钦添" in messages[0]["content"] or "醒狮" in messages[0]["content"]
 
 
 def test_build_compare_prompt():

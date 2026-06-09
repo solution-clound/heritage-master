@@ -392,9 +392,9 @@
       "title": "国家级传承人",
       "specialty": "苏绣"
     },
-    "person:陈少峰": {
+    "person:黄钦添": {
       "type": "person",
-      "name": "陈少峰",
+      "name": "黄钦添",
       "title": "国家级传承人",
       "specialty": "醒狮"
     },
@@ -1761,6 +1761,26 @@
     "project:蜀锦织造技艺": {
       "type": "project",
       "name": "蜀锦织造技艺"
+    },
+    "project:广东醒狮": {
+      "type": "project",
+      "name": "广东醒狮",
+      "category": "传统体育、游艺与杂技",
+      "level": "国家级",
+      "batch": "第一批",
+      "description": "醒狮是融武术、舞蹈、音乐等为一体的民俗文化，源自广东佛山，象征驱邪避害、吉祥如意。"
+    },
+    "person:黄钦": {
+      "type": "person",
+      "name": "黄钦",
+      "title": "佛山醒狮世家传人",
+      "specialty": "南狮套路、采青技法"
+    },
+    "person:黄德华": {
+      "type": "person",
+      "name": "黄德华",
+      "title": "佛山武术名家",
+      "specialty": "南拳、醒狮基础功"
     }
   },
   "edges": [
@@ -2217,11 +2237,6 @@
     {
       "from": "project:苏绣",
       "to": "person:姚惠芬",
-      "type": "HAS_INHERITOR"
-    },
-    {
-      "from": "project:苏绣",
-      "to": "person:陈少峰",
       "type": "HAS_INHERITOR"
     },
     {
@@ -4440,11 +4455,6 @@
       "type": "PRACTICES"
     },
     {
-      "from": "person:陈少峰",
-      "to": "project:苏绣",
-      "type": "PRACTICES"
-    },
-    {
       "from": "person:库淑兰",
       "to": "project:剪纸",
       "type": "PRACTICES"
@@ -4543,6 +4553,26 @@
       "from": "person:雷通",
       "to": "project:花儿",
       "type": "PRACTICES"
+    },
+    {
+      "from": "person:黄钦添",
+      "to": "project:广东醒狮",
+      "type": "PRACTICES"
+    },
+    {
+      "from": "project:广东醒狮",
+      "to": "person:黄钦添",
+      "type": "HAS_INHERITOR"
+    },
+    {
+      "from": "person:黄钦添",
+      "to": "person:黄钦",
+      "type": "INHERITS_FROM"
+    },
+    {
+      "from": "person:黄钦",
+      "to": "person:黄德华",
+      "type": "INHERITS_FROM"
     }
   ]
 }

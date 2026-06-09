@@ -25,6 +25,17 @@ MEMORY_DIR = Path(settings.memory_dir)
 # 记忆类型枚举
 MEMORY_TYPES = ("interest", "milestone", "preference", "personality", "event", "feedback")
 
+# 阶段名称规范化
+_STAGE_ALIASES = {"试探期": "入门期", "初期": "入门期", "初识": "入门期"}
+_VALID_STAGES = {"入门期", "成长期", "精进期", "传承期"}
+
+
+def _normalize_stage(stage: str) -> str:
+    """将非标准阶段名映射到标准四阶段"""
+    if stage in _VALID_STAGES:
+        return stage
+    return _STAGE_ALIASES.get(stage, "入门期")
+
 
 def _now_iso() -> str:
     return datetime.now(timezone.utc).isoformat()
@@ -37,7 +48,7 @@ def _empty_memory(user_id: str, master_id: str) -> dict:
         "user_id": user_id,
         "master_id": master_id,
         "profile": {
-            "relationship_stage": "试探期",
+            "relationship_stage": "入门期",
             "interest_tags": [],
             "personality_notes": "",
             "aesthetic_pref": "",

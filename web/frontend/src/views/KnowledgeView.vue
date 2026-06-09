@@ -82,19 +82,22 @@
               <span>历史对话</span>
             </div>
             <div class="history-list">
-              <div
-                v-for="session in sessions"
-                :key="session.id"
-                :class="['history-item', { active: session.id === currentSessionId }]"
-                @click="switchSession(session)"
-              >
-                <div class="history-title">{{ sessionTitle(session) }}</div>
-                <div class="history-meta">
-                  <span class="history-time">{{ formatSessionTime(session.started_at) }}</span>
-                  <span class="history-count">{{ session.msg_count || 0 }}条</span>
+              <template v-for="group in groupedSessions" :key="group.date">
+                <div class="history-date-header">{{ group.date }}</div>
+                <div
+                  v-for="session in group.sessions"
+                  :key="session.id"
+                  :class="['history-item', { active: session.id === currentSessionId }]"
+                  @click="switchSession(session)"
+                >
+                  <div class="history-title">{{ sessionTitle(session) }}</div>
+                  <div class="history-meta">
+                    <span class="history-time">{{ formatSessionTime(session.started_at) }}</span>
+                    <span class="history-count">{{ session.msg_count || 0 }}条</span>
+                  </div>
+                  <button class="history-delete" @click.stop="deleteSession(session)" title="删除对话">×</button>
                 </div>
-                <button class="history-delete" @click.stop="deleteSession(session)" title="删除对话">×</button>
-              </div>
+              </template>
               <div v-if="sessions.length === 0" class="history-empty">暂无历史对话</div>
             </div>
           </div>
@@ -278,6 +281,31 @@ const formatSessionTime = (ts) => {
   return `${d.getMonth() + 1}/${d.getDate()}`
 }
 
+const formatDateHeader = (dateStr) => {
+  if (!dateStr) return '未知日期'
+  // dateStr 格式: "2026-06-08"
+  const parts = dateStr.split('-')
+  if (parts.length === 3) {
+    return `${parseInt(parts[0])}/${parseInt(parts[1])}/${parseInt(parts[2])}`
+  }
+  return dateStr
+}
+
+// 按日期分组的会话列表
+const groupedSessions = computed(() => {
+  const groups = []
+  const dateMap = {}
+  for (const s of sessions.value) {
+    const date = s.talk_date || (s.started_at ? s.started_at.split('T')[0] : 'unknown')
+    if (!dateMap[date]) {
+      dateMap[date] = { date: formatDateHeader(date), sessions: [] }
+      groups.push(dateMap[date])
+    }
+    dateMap[date].sessions.push(s)
+  }
+  return groups
+})
+
 const loadSessions = async () => {
   if (!userId.value || !currentMaster.value) return
   try {
@@ -293,10 +321,6 @@ const switchSession = async (session) => {
     historySidebarOpen.value = false
     return
   }
-  // 结束当前会话
-  if (currentSessionId.value) {
-    try { await api.endSession(currentSessionId.value) } catch (e) { /* ignore */ }
-  }
   // 切换到选中的会话
   currentSessionId.value = session.id
   messages.value = []
@@ -309,26 +333,17 @@ const switchSession = async (session) => {
   } catch (e) {
     console.error('加载会话消息失败', e)
   }
-  // 持久化
-  localStorage.setItem(`heritage_session_${currentMaster.value.id}`, session.id)
   historySidebarOpen.value = false
   scrollToBottom()
 }
 
 const startNewSession = async () => {
-  // 结束当前会话
-  if (currentSessionId.value) {
-    try { await api.endSession(currentSessionId.value) } catch (e) { /* ignore */ }
-  }
-  // 开始新会话
+  // 开始新会话（按日模式下，同一天不会创建新的，除非手动新建）
   try {
     const session = await api.startSession(userId.value, currentMaster.value.id)
     currentSessionId.value = session.session_id
     messages.value = []
     showQuickQuestions.value = true
-    // 持久化
-    localStorage.setItem(`heritage_session_${currentMaster.value.id}`, session.session_id)
-    // 重新加载会话列表
     await loadSessions()
     // 获取问候语
     let greeting = currentMaster.value.greeting || '来了？坐吧。想聊什么？'
@@ -353,7 +368,6 @@ const deleteSession = async (session) => {
   sessions.value = sessions.value.filter(s => s.id !== session.id)
   // 如果删除的是当前会话，切换到其他会话或创建新的
   if (session.id === currentSessionId.value) {
-    localStorage.removeItem(`heritage_session_${currentMaster.value.id}`)
     if (sessions.value.length > 0) {
       await switchSession(sessions.value[0])
     } else {
@@ -486,40 +500,27 @@ const enterMaster = async (m) => {
   // 加载历史会话列表
   await loadSessions()
 
-  // 尝试恢复上次的会话
-  const lastSessionId = localStorage.getItem(`heritage_session_${m.id}`)
-  if (lastSessionId) {
-    const existing = sessions.value.find(s => s.id === lastSessionId)
-    if (existing) {
-      // 恢复上次会话
-      currentSessionId.value = lastSessionId
-      try {
-        const data = await api.getSessionMessages(lastSessionId, 50)
-        const msgs = data.messages || []
-        if (msgs.length > 0) {
-          messages.value = msgs.map(msg => ({ role: msg.role, text: msg.content }))
-          showQuickQuestions.value = false
-          scrollToBottom()
-          return
-        }
-      } catch (e) {
-        // 会话可能已失效，创建新的
-      }
-    }
-  }
-
-  // 没有可恢复的会话，创建新会话
+  // 获取或创建今天的会话（后端按日复用）
   try {
     const session = await api.startSession(userId.value, m.id)
     currentSessionId.value = session.session_id
-    localStorage.setItem(`heritage_session_${m.id}`, session.session_id)
-    // 重新加载会话列表（包含新会话）
     await loadSessions()
+
+    // 加载该会话的消息
+    const data = await api.getSessionMessages(session.session_id, 50)
+    const msgs = data.messages || []
+    if (msgs.length > 0) {
+      // 今天已有对话，恢复消息
+      messages.value = msgs.map(msg => ({ role: msg.role, text: msg.content }))
+      showQuickQuestions.value = false
+      scrollToBottom()
+      return
+    }
   } catch (e) {
     console.error('开始会话失败', e)
   }
 
-  // 获取阶段感知的问候语
+  // 今天第一次对话 — 获取每日功课问候语
   let greeting = m.greeting || '来了？坐吧。想聊什么？'
   try {
     const greetData = await http.get(`/masters/${m.id}/greeting`, { params: { user_id: userId.value } }).then(r => r.data)
@@ -544,19 +545,6 @@ const leaveMaster = () => {
 }
 
 const confirmLeave = async () => {
-  // 结束会话
-  if (currentSessionId.value) {
-    try {
-      await api.endSession(currentSessionId.value)
-    } catch (e) {
-      console.error('结束会话失败', e)
-    }
-    // 清除持久化的会话 ID
-    if (currentMaster.value) {
-      localStorage.removeItem(`heritage_session_${currentMaster.value.id}`)
-    }
-    currentSessionId.value = ''
-  }
   showFarewell.value = false
   enteredMaster.value = false
   currentMaster.value = null
@@ -871,6 +859,18 @@ const ask = async (q) => {
   justify-content: space-between;
   font-size: 11px;
   color: var(--text-light);
+}
+
+.history-date-header {
+  padding: 10px 16px 4px;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--primary);
+  border-bottom: 1px solid #f0e8df;
+  background: #faf6f1;
+  position: sticky;
+  top: 0;
+  z-index: 1;
 }
 
 .history-empty {

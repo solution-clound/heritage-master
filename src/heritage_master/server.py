@@ -337,7 +337,7 @@ async def explore_cultural_graph(
     展示节点的多层关联关系。
 
     Args:
-        node_id: 节点ID（如 "person:陈少峰", "project:醒狮"）
+        node_id: 节点ID（如 "person:黄钦添", "project:醒狮"）
         depth: 探索深度（1-3）
 
     Returns:

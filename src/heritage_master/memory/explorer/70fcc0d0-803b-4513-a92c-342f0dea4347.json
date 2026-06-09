@@ -5,18 +5,24 @@
   "profile": {
     "relationship_stage": "试探期",
     "interest_tags": [
-      "非遗实地体验",
-      "非遗体验",
-      "潮州工夫茶艺",
+      "昆曲经典剧目",
       "中山非遗",
+      "广州非遗场馆",
       "工夫茶具",
-      "广州非遗场馆"
+      "非遗体验",
+      "四大名绣",
+      "潮州工夫茶艺",
+      "广州玉雕",
+      "广州非遗深度游",
+      "昆曲传承人",
+      "非遗实地体验",
+      "昆曲流派"
     ],
-    "personality_notes": "对茶文化有深入探究的意愿，从了解器具到寻找体验场所，表现出系统学习的倾向。; 对非遗项目有广泛的好奇心，从茶文化延伸至地域性民俗和手工艺，喜欢系统规划路线、深度体验，表现出行动力和探索精神。",
-    "aesthetic_pref": "偏好有历史底蕴、地方特色浓郁的文化体验，喜欢可触摸、可参与的非遗项目，注重实地感受和沉浸式氛围。",
-    "question_count": 15,
+    "personality_notes": "对茶文化有深入探究的意愿，从了解器具到寻找体验场所，表现出系统学习的倾向。; 对非遗项目有广泛的好奇心，从茶文化延伸至地域性民俗和手工艺，喜欢系统规划路线、深度体验，表现出行动力和探索精神。; 在遇到信息断层时仍坚持追问，表现出强烈的求知欲和钻研精神。; 从茶艺到刺绣、昆曲，兴趣广泛且不满足于表面了解，会追问流派、区别等细节，体现出系统梳理知识的习惯。; 用户对同一问题会反复追问，表现出不轻易放弃的执着和耐心，即使在无法获得直接答案时也坚持寻求替代方案。; 对非遗话题有超乎寻常的执着和反复追问的韧性，不满足于简单答案，会持续深入挖掘直至获得满意信息。",
+    "aesthetic_pref": "偏好传统艺术中的流派体系与细节差异，有系统梳理和深度体验的审美倾向。",
+    "question_count": 35,
     "first_met_at": "2026-05-26T02:41:03.538909",
-    "last_talk_at": "2026-05-27T13:20:05.305631+00:00"
+    "last_talk_at": "2026-06-08T16:44:14.470205"
   },
   "core_memories": [
     {
@@ -445,6 +451,268 @@
         "广绣",
         "醒狮"
       ]
+    },
+    {
+      "id": "mem_0b82d00c",
+      "type": "interest",
+      "content": "用户对广州的非遗项目表现出兴趣，主动询问广州非遗项目",
+      "importance": 6,
+      "created_at": "2026-06-08T14:46:08.496298+00:00",
+      "last_referenced": null,
+      "reference_count": 0,
+      "source": "conversation",
+      "tags": [
+        "非遗",
+        "广州",
+        "项目咨询"
+      ]
+    },
+    {
+      "id": "mem_fede696e",
+      "type": "interest",
+      "content": "用户对广州的非遗项目表现出兴趣，主动询问广州非遗项目有哪些",
+      "importance": 6,
+      "created_at": "2026-06-08T14:48:27.925224+00:00",
+      "last_referenced": null,
+      "reference_count": 0,
+      "source": "conversation",
+      "tags": [
+        "广州",
+        "非遗",
+        "广东音乐",
+        "广州玉雕",
+        "蔡李佛拳"
+      ]
+    },
+    {
+      "id": "mem_0516f66f",
+      "type": "interest",
+      "content": "用户对广州玉雕这一国家级非遗项目表现出兴趣，主动询问详细内容",
+      "importance": 7,
+      "created_at": "2026-06-08T14:49:25.058406+00:00",
+      "last_referenced": null,
+      "reference_count": 0,
+      "source": "conversation",
+      "tags": [
+        "广州玉雕",
+        "国家级非遗",
+        "传统美术"
+      ]
+    },
+    {
+      "id": "mem_d87879a2",
+      "type": "interest",
+      "content": "用户对广州非遗体验地点表现出兴趣，主动询问广州哪里可以体验非遗",
+      "importance": 7,
+      "created_at": "2026-06-08T14:50:03.428401+00:00",
+      "last_referenced": null,
+      "reference_count": 0,
+      "source": "conversation",
+      "tags": [
+        "广州非遗",
+        "体验地点",
+        "非遗地图"
+      ]
+    },
+    {
+      "id": "mem_7379c9e9",
+      "type": "interest",
+      "content": "用户对广州非遗深度游表现出兴趣，接受了大师推荐的2日行程规划",
+      "importance": 7,
+      "created_at": "2026-06-08T14:52:27.025736+00:00",
+      "last_referenced": null,
+      "reference_count": 0,
+      "source": "conversation",
+      "tags": [
+        "广州",
+        "非遗",
+        "行程规划",
+        "传统技艺",
+        "传统美术"
+      ]
+    },
+    {
+      "id": "mem_44278cdc",
+      "type": "interest",
+      "content": "用户对广东省博物馆的岭南非遗展览（广绣、广彩、玉雕等）感兴趣",
+      "importance": 6,
+      "created_at": "2026-06-08T14:52:27.029737+00:00",
+      "last_referenced": null,
+      "reference_count": 0,
+      "source": "conversation",
+      "tags": [
+        "广东省博物馆",
+        "岭南非遗",
+        "广绣",
+        "广彩",
+        "玉雕"
+      ]
+    },
+    {
+      "id": "mem_4b3125dd",
+      "type": "interest",
+      "content": "用户对广州市文化馆的非遗展厅和体验活动感兴趣",
+      "importance": 6,
+      "created_at": "2026-06-08T14:52:27.033730+00:00",
+      "last_referenced": null,
+      "reference_count": 0,
+      "source": "conversation",
+      "tags": [
+        "广州市文化馆",
+        "非遗体验",
+        "曲艺园"
+      ]
+    },
+    {
+      "id": "mem_7bc6b48c",
+      "type": "preference",
+      "content": "用户偏好系统性的深度体验，愿意接受完整行程规划",
+      "importance": 5,
+      "created_at": "2026-06-08T14:52:27.034735+00:00",
+      "last_referenced": null,
+      "reference_count": 0,
+      "source": "conversation",
+      "tags": [
+        "深度游",
+        "系统性",
+        "规划型"
+      ]
+    },
+    {
+      "id": "mem_db55985e",
+      "type": "interest",
+      "content": "用户对广东省博物馆的岭南非遗展览（广绣、广彩、玉雕等）感兴趣，并主动查询详细攻略",
+      "importance": 7,
+      "created_at": "2026-06-08T14:53:10.446294+00:00",
+      "last_referenced": null,
+      "reference_count": 0,
+      "source": "conversation",
+      "tags": [
+        "广东省博物馆",
+        "岭南非遗",
+        "广绣",
+        "广彩",
+        "广州玉雕"
+      ]
+    },
+    {
+      "id": "mem_8a1f2dd8",
+      "type": "interest",
+      "content": "用户主动询问四大名绣及其区别，表现出对刺绣类非遗的兴趣",
+      "importance": 5,
+      "created_at": "2026-06-08T14:53:41.755431+00:00",
+      "last_referenced": null,
+      "reference_count": 0,
+      "source": "conversation",
+      "tags": [
+        "四大名绣",
+        "苏绣",
+        "湘绣",
+        "蜀绣",
+        "粤绣",
+        "非遗知识"
+      ]
+    },
+    {
+      "id": "mem_5f5967b3",
+      "type": "interest",
+      "content": "用户在论坛上讨论刺绣，表现出对刺绣类非遗的兴趣",
+      "importance": 5,
+      "created_at": "2026-06-08T15:16:54.359495+00:00",
+      "last_referenced": null,
+      "reference_count": 0,
+      "source": "conversation",
+      "tags": [
+        "刺绣",
+        "非遗"
+      ]
+    },
+    {
+      "id": "mem_9095a31e",
+      "type": "interest",
+      "content": "用户在论坛上主动讨论刺绣话题，表现出对刺绣类非遗的持续兴趣",
+      "importance": 6,
+      "created_at": "2026-06-08T15:16:59.104815+00:00",
+      "last_referenced": null,
+      "reference_count": 0,
+      "source": "conversation",
+      "tags": [
+        "刺绣",
+        "非遗",
+        "论坛讨论"
+      ]
+    },
+    {
+      "id": "mem_86d35b30",
+      "type": "interest",
+      "content": "用户在论坛上主动讨论刺绣话题，表现出对刺绣类非遗的持续兴趣",
+      "importance": 7,
+      "created_at": "2026-06-08T16:17:37.237353+00:00",
+      "last_referenced": null,
+      "reference_count": 0,
+      "source": "conversation",
+      "tags": [
+        "刺绣",
+        "非遗",
+        "论坛讨论"
+      ]
+    },
+    {
+      "id": "mem_e8b9d507",
+      "type": "interest",
+      "content": "用户在论坛上主动讨论刺绣话题，表现出对刺绣类非遗的持续兴趣",
+      "importance": 7,
+      "created_at": "2026-06-08T16:21:04.904406+00:00",
+      "last_referenced": null,
+      "reference_count": 0,
+      "source": "conversation",
+      "tags": [
+        "刺绣",
+        "论坛讨论",
+        "非遗"
+      ]
+    },
+    {
+      "id": "mem_b4e9481a",
+      "type": "interest",
+      "content": "用户在论坛上主动询问昆曲讨论，表现出对昆曲的兴趣",
+      "importance": 6,
+      "created_at": "2026-06-08T16:35:21.070806+00:00",
+      "last_referenced": null,
+      "reference_count": 0,
+      "source": "conversation",
+      "tags": [
+        "昆曲",
+        "戏曲"
+      ]
+    },
+    {
+      "id": "mem_c396b9b5",
+      "type": "interest",
+      "content": "用户对昆曲表现出兴趣，曾在论坛询问昆曲讨论",
+      "importance": 6,
+      "created_at": "2026-06-08T16:41:43.253056+00:00",
+      "last_referenced": null,
+      "reference_count": 0,
+      "source": "conversation",
+      "tags": [
+        "昆曲",
+        "戏曲"
+      ]
+    },
+    {
+      "id": "mem_753a91d1",
+      "type": "interest",
+      "content": "用户在论坛上主动询问昆曲讨论，表现出对昆曲的兴趣",
+      "importance": 7,
+      "created_at": "2026-06-08T16:44:23.599398+00:00",
+      "last_referenced": null,
+      "reference_count": 0,
+      "source": "conversation",
+      "tags": [
+        "昆曲",
+        "戏曲"
+      ]
     }
   ],
   "data_records": {
@@ -452,18 +720,18 @@
     "conversation_topics": [
       {
         "topic": "非遗",
-        "count": 16,
-        "last_discussed": "2026-05-27"
+        "count": 26,
+        "last_discussed": "2026-06-08"
       },
       {
         "topic": "文化",
-        "count": 11,
-        "last_discussed": "2026-05-27"
+        "count": 15,
+        "last_discussed": "2026-06-08"
       },
       {
         "topic": "潮州",
-        "count": 6,
-        "last_discussed": "2026-05-27"
+        "count": 11,
+        "last_discussed": "2026-06-08"
       },
       {
         "topic": "醒狮",
@@ -472,23 +740,23 @@
       },
       {
         "topic": "技艺",
-        "count": 7,
-        "last_discussed": "2026-05-27"
+        "count": 11,
+        "last_discussed": "2026-06-08"
       },
       {
         "topic": "工艺",
-        "count": 3,
-        "last_discussed": "2026-05-27"
+        "count": 7,
+        "last_discussed": "2026-06-08"
       },
       {
         "topic": "传承",
-        "count": 5,
-        "last_discussed": "2026-05-27"
+        "count": 15,
+        "last_discussed": "2026-06-08"
       },
       {
         "topic": "工夫茶",
-        "count": 6,
-        "last_discussed": "2026-05-27"
+        "count": 9,
+        "last_discussed": "2026-06-08"
       },
       {
         "topic": "紫砂壶",
@@ -499,6 +767,11 @@
         "topic": "冲泡",
         "count": 1,
         "last_discussed": "2026-05-27"
+      },
+      {
+        "topic": "武术",
+        "count": 1,
+        "last_discussed": "2026-06-08"
       }
     ],
     "visit_log": [
@@ -646,6 +919,161 @@
         "date": "2026-05-27",
         "session_id": "4f1d14f3-060f-4074-b726-dc26015986b9",
         "topic_summary": "进行一日游规划"
+      },
+      {
+        "date": "2026-06-08",
+        "session_id": "d10d59d0-4e99-413d-8901-416cddd624e5",
+        "topic_summary": ""
+      },
+      {
+        "date": "2026-06-08",
+        "session_id": "d10d59d0-4e99-413d-8901-416cddd624e5",
+        "topic_summary": "广州有什么非遗项目"
+      },
+      {
+        "date": "2026-06-08",
+        "session_id": "d10d59d0-4e99-413d-8901-416cddd624e5",
+        "topic_summary": "广州有什么非遗项目"
+      },
+      {
+        "date": "2026-06-08",
+        "session_id": "cddeae8a-f77a-4645-825b-6b1a0c92d711",
+        "topic_summary": ""
+      },
+      {
+        "date": "2026-06-08",
+        "session_id": "cddeae8a-f77a-4645-825b-6b1a0c92d711",
+        "topic_summary": "广州有什么非遗项目"
+      },
+      {
+        "date": "2026-06-08",
+        "session_id": "cddeae8a-f77a-4645-825b-6b1a0c92d711",
+        "topic_summary": "非遗"
+      },
+      {
+        "date": "2026-06-08",
+        "session_id": "cddeae8a-f77a-4645-825b-6b1a0c92d711",
+        "topic_summary": "广州哪里可以体验非遗"
+      },
+      {
+        "date": "2026-06-08",
+        "session_id": "7461c9f1-5940-4c8d-ada5-4e65475c50fb",
+        "topic_summary": ""
+      },
+      {
+        "date": "2026-06-08",
+        "session_id": "7461c9f1-5940-4c8d-ada5-4e65475c50fb",
+        "topic_summary": "我想在广州玩两天，对传统技艺和传统美术感兴趣"
+      },
+      {
+        "date": "2026-06-08",
+        "session_id": "7461c9f1-5940-4c8d-ada5-4e65475c50fb",
+        "topic_summary": "广东省博物馆"
+      },
+      {
+        "date": "2026-06-08",
+        "session_id": "7461c9f1-5940-4c8d-ada5-4e65475c50fb",
+        "topic_summary": "四大名绣是哪些？有什么区别？"
+      },
+      {
+        "date": "2026-06-08",
+        "session_id": "7461c9f1-5940-4c8d-ada5-4e65475c50fb",
+        "topic_summary": "技艺"
+      },
+      {
+        "date": "2026-06-08",
+        "session_id": "4645b0e3-6c9a-4820-8185-9005fff41392",
+        "topic_summary": ""
+      },
+      {
+        "date": "2026-06-08",
+        "session_id": "4645b0e3-6c9a-4820-8185-9005fff41392",
+        "topic_summary": "论坛里有人讨论刺绣吗？"
+      },
+      {
+        "date": "2026-06-08",
+        "session_id": "4645b0e3-6c9a-4820-8185-9005fff41392",
+        "topic_summary": "论坛里有人讨论刺绣吗？"
+      },
+      {
+        "date": "2026-06-08",
+        "session_id": "4645b0e3-6c9a-4820-8185-9005fff41392",
+        "topic_summary": ""
+      },
+      {
+        "date": "2026-06-08",
+        "session_id": "4645b0e3-6c9a-4820-8185-9005fff41392",
+        "topic_summary": "论坛里有人讨论刺绣吗？"
+      },
+      {
+        "date": "2026-06-08",
+        "session_id": "4645b0e3-6c9a-4820-8185-9005fff41392",
+        "topic_summary": ""
+      },
+      {
+        "date": "2026-06-08",
+        "session_id": "4645b0e3-6c9a-4820-8185-9005fff41392",
+        "topic_summary": "论坛里有人讨论刺绣吗？"
+      },
+      {
+        "date": "2026-06-08",
+        "session_id": "4645b0e3-6c9a-4820-8185-9005fff41392",
+        "topic_summary": ""
+      },
+      {
+        "date": "2026-06-08",
+        "session_id": "4645b0e3-6c9a-4820-8185-9005fff41392",
+        "topic_summary": "日常对话"
+      },
+      {
+        "date": "2026-06-08",
+        "session_id": "4645b0e3-6c9a-4820-8185-9005fff41392",
+        "topic_summary": ""
+      },
+      {
+        "date": "2026-06-08",
+        "session_id": "4645b0e3-6c9a-4820-8185-9005fff41392",
+        "topic_summary": "论坛里有人讨论昆曲吗"
+      },
+      {
+        "date": "2026-06-08",
+        "session_id": "4645b0e3-6c9a-4820-8185-9005fff41392",
+        "topic_summary": ""
+      },
+      {
+        "date": "2026-06-08",
+        "session_id": "4645b0e3-6c9a-4820-8185-9005fff41392",
+        "topic_summary": "论坛里有人讨论昆曲吗"
+      },
+      {
+        "date": "2026-06-08",
+        "session_id": "4645b0e3-6c9a-4820-8185-9005fff41392",
+        "topic_summary": ""
+      },
+      {
+        "date": "2026-06-08",
+        "session_id": "4645b0e3-6c9a-4820-8185-9005fff41392",
+        "topic_summary": "日常对话"
+      },
+      {
+        "date": "2026-06-08",
+        "session_id": "4645b0e3-6c9a-4820-8185-9005fff41392",
+        "topic_summary": ""
+      },
+      {
+        "date": "2026-06-08",
+        "session_id": "4645b0e3-6c9a-4820-8185-9005fff41392",
+        "topic_summary": "论坛里有人讨论昆曲吗"
+      },
+      {
+        "date": "2026-06-08",
+        "session_id": "4645b0e3-6c9a-4820-8185-9005fff41392",
+        "topic_summary": ""
+      },
+      {
+        "date": "2026-06-08",
+        "session_id": "4645b0e3-6c9a-4820-8185-9005fff41392",
+        "topic_summary": "论坛里有人讨论昆曲吗"
       }
     ]
   },
@@ -659,7 +1087,7 @@
   },
   "meta": {
     "last_consolidated_at": null,
-    "memory_count": 28,
+    "memory_count": 45,
     "consolidation_count": 0
   }
 }

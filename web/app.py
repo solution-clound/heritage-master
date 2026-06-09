@@ -655,14 +655,28 @@ async def api_masters():
 
 @app.get("/api/masters/{master_id}/greeting")
 async def api_master_greeting(master_id: str, user_id: str = Query("")):
-    """获取大师的阶段感知问候语（支持记忆增强）"""
+    """获取大师问候语（围绕每日功课展开）
+
+    优先使用每日功课问候，降级为记忆增强问候。
+    """
     if user_id:
+        # 优先：每日功课问候
+        daily = await cultivation.get_daily_greeting(user_id, master_id)
+        if daily and daily.get("greeting"):
+            return {
+                "greeting": daily["greeting"],
+                "today_practice": daily.get("today_practice", ""),
+                "practice_date": daily.get("practice_date", ""),
+            }
+
+        # 降级：记忆增强问候
         mm = get_memory_manager()
         memory = mm.load_memory(master_id, user_id)
         gg = GreetingGenerator()
         greeting = gg.generate_greeting(master_id, memory)
         stage = memory["profile"].get("relationship_stage", "试探期")
         return {"greeting": greeting, "stage": stage}
+
     stage = "试探期"
     greeting = _get_adaptive_greeting(master_id, stage)
     return {"greeting": greeting, "stage": stage}
@@ -745,6 +759,63 @@ async def api_ask(req: AskRequest):
     if not context_items:
         context_items = await search_heritage_data(limit=8)
 
+    # 1.5 搜索论坛帖子作为补充上下文
+    forum_context = ""
+    try:
+        from heritage_master.tools.forum import search_posts, list_posts
+        import re as _re
+
+        # 从问题中提取搜索词：先提取完整中文段，再用 2-gram 切词
+        full_segments = _re.findall(r'[\u4e00-\u9fff]+', req.question)
+        stops = {"什么", "怎么", "可以", "有人", "论坛", "讨论", "有没有", "一下",
+                 "知道", "想问", "请问", "帮我", "看看", "里有", "人讨", "论昆",
+                 "曲吗", "坛里", "吗", "呢", "吧", "啊", "呀"}
+        search_terms = []
+        for seg in full_segments:
+            for i in range(len(seg) - 1):
+                w = seg[i:i+2]
+                if w not in stops and w not in search_terms:
+                    search_terms.append(w)
+        # 也加上 _extract_keywords 提取的关键词
+        if keywords:
+            for kw in keywords:
+                if kw not in search_terms and len(kw) >= 2:
+                    search_terms.append(kw)
+        search_terms = search_terms[:8]  # 最多搜 8 个词
+
+        forum_posts = []
+        for term in search_terms:
+            posts = search_posts(keyword=term, limit=3)
+            if posts:
+                forum_posts.extend(posts)
+                break  # 命中就停
+
+        if forum_posts:
+            seen_ids = set()
+            unique_posts = []
+            for p in forum_posts:
+                pid = p.get("id", "")
+                if pid not in seen_ids:
+                    seen_ids.add(pid)
+                    unique_posts.append(p)
+            forum_lines = []
+            for p in unique_posts[:5]:
+                title = p.get("title", "")
+                content = p.get("content", "")[:80]
+                category = p.get("category", "讨论")
+                author = p.get("author_nickname", "匿名")
+                forum_lines.append(f"【{category}】{title} — {content}（作者：{author}）")
+            forum_context = "相关论坛讨论：\n" + "\n".join(forum_lines)
+        else:
+            # 没搜到，明确告诉 LLM 论坛中暂无相关讨论
+            query_hint = req.question[:20]
+            forum_context = f"论坛中暂无关于「{query_hint}」的讨论帖子。"
+    except Exception as e:
+        # 论坛搜索出错，记录但不影响主流程
+        forum_context = ""
+        import logging
+        logging.getLogger("heritage").warning("[ask] 论坛搜索异常: %s", e)
+
     # 2. 构建上下文文本
     context_parts = []
     for item in context_items:
@@ -759,12 +830,20 @@ async def api_ask(req: AskRequest):
             parts.append(f"简介：{item['description']}")
         context_parts.append(" | ".join(parts))
     context = "\n".join(context_parts)
+    if forum_context:
+        context = context + "\n\n" + forum_context
 
     # 3. 获取实时新闻/活动数据
     news = get_news_for_context(req.question, limit=5)
 
     # 4. 构建 prompt（有用户画像时使用自适应 prompt，否则使用静态 prompt）
     master_id = req.master_id or "chagongfu"
+
+    # 论坛数据直接追加到问题中（确保 LLM 一定能看到）
+    effective_question = req.question
+    if forum_context and "相关论坛讨论" in forum_context:
+        effective_question = req.question + "\n\n[论坛相关数据]\n" + forum_context
+
     if req.user_id:
         user_profile = user_manager.get_user_profile(req.user_id, master_id)
         conversation_summary = user_manager.get_conversation_summary(req.user_id, master_id, limit=10)
@@ -773,7 +852,7 @@ async def api_ask(req: AskRequest):
         memory_context = mm.get_memory_context(master_id, req.user_id)
         messages = _build_adaptive_prompt(
             master_id=master_id,
-            question=req.question,
+            question=effective_question,
             user_profile=user_profile,
             conversation_summary=conversation_summary,
             context_items=context_items or None,
@@ -781,7 +860,8 @@ async def api_ask(req: AskRequest):
             memory_context=memory_context,
         )
     else:
-        messages = _build_qa_prompt(req.question, context_items or None, news=news, master_id=req.master_id)
+        messages = _build_qa_prompt(effective_question, context_items or None, news=news, master_id=req.master_id)
+
     llm_answer = await _ask_llm(req.question, context, messages=messages)
     if llm_answer:
         # 保存大师回复到会话
@@ -1455,14 +1535,14 @@ class StageTransitionRequest(BaseModel):
 @app.post("/api/cultivation/practice/assign")
 async def api_practice_assign(req: PracticeAssignRequest):
     """获取今日功课"""
-    result = cultivation.assign_daily_practice(req.user_id, req.master_id)
+    result = await cultivation.assign_daily_practice(req.user_id, req.master_id)
     return result
 
 
 @app.post("/api/cultivation/practice/submit")
 async def api_practice_submit(req: PracticeSubmitRequest):
     """提交练习记录"""
-    result = cultivation.submit_practice(req.user_id, req.master_id, req.content)
+    result = await cultivation.submit_practice(req.user_id, req.master_id, req.content)
     return result
 
 
@@ -1492,6 +1572,41 @@ async def api_stage_transition(req: StageTransitionRequest):
     """执行阶段转换"""
     result = cultivation.do_stage_transition(req.user_id, req.master_id)
     return result
+
+
+@app.get("/api/cultivation/daily-greeting")
+async def api_daily_greeting(user_id: str = Query(...), master_id: str = Query(...)):
+    """获取每日问候（含今日功课 + 昨日收获提醒）"""
+    result = await cultivation.get_daily_greeting(user_id, master_id)
+    return result
+
+
+class HarvestRequest(BaseModel):
+    user_id: str
+    master_id: str
+    content: str
+
+
+@app.post("/api/cultivation/harvest")
+async def api_record_harvest(req: HarvestRequest):
+    """记录每日收获"""
+    if not req.content.strip():
+        return JSONResponse({"error": "收获内容不能为空"}, status_code=400)
+    result = cultivation.record_daily_harvest(
+        user_id=req.user_id,
+        master_id=req.master_id,
+        content=req.content.strip(),
+    )
+    return result
+
+
+@app.get("/api/cultivation/harvest/history")
+async def api_harvest_history(
+    user_id: str = Query(...), master_id: str = Query(...), limit: int = Query(10)
+):
+    """获取收获历史"""
+    history = cultivation.get_harvest_history(user_id, master_id, limit)
+    return {"harvests": history}
 
 
 # ─── 知识图谱 API ───────────────────────────────────────
@@ -1550,6 +1665,95 @@ async def api_graph_by_type(type: str = Query(...), limit: int = Query(50)):
     """获取指定类型的所有节点"""
     results = knowledge_graph.get_nodes_by_type(type, limit=limit)
     return {"nodes": results, "total": len(results)}
+
+
+# ─── 调试 / 可观测 API ──────────────────────────────────
+
+@app.get("/api/debug/traces")
+async def api_debug_traces(limit: int = Query(20, ge=1, le=100)):
+    """获取最近的请求追踪记录（含每步详情）"""
+    from heritage_master.observability.tracer import collector
+    traces = collector.get_recent(limit)
+    result = []
+    for t in traces:
+        result.append({
+            "trace_id": t.trace_id,
+            "user_id": t.user_id,
+            "session_id": t.session_id,
+            "status": t.status,
+            "total_ms": t.total_ms,
+            "reply_len": t.reply_len,
+            "started_at": t.started_at,
+            "steps": [
+                {"event": s.event, "data": s.data, "duration_ms": s.duration_ms, "timestamp": s.timestamp}
+                for s in t.steps
+            ],
+        })
+    return {"traces": result, "total": len(result)}
+
+
+@app.get("/api/debug/trace/{trace_id}")
+async def api_debug_trace_detail(trace_id: str):
+    """获取单个请求的完整追踪详情"""
+    from heritage_master.observability.tracer import collector
+    trace = collector.get_trace(trace_id)
+    if not trace:
+        return JSONResponse({"error": "追踪记录不存在"}, status_code=404)
+    return {
+        "trace_id": trace.trace_id,
+        "user_id": trace.user_id,
+        "session_id": trace.session_id,
+        "status": trace.status,
+        "total_ms": trace.total_ms,
+        "reply_len": trace.reply_len,
+        "started_at": trace.started_at,
+        "steps": [
+            {"event": s.event, "data": s.data, "duration_ms": s.duration_ms, "timestamp": s.timestamp}
+            for s in trace.steps
+        ],
+    }
+
+
+@app.get("/api/debug/metrics")
+async def api_debug_metrics(limit: int = Query(50, ge=1, le=200)):
+    """获取最近的请求指标"""
+    from heritage_master.observability.metrics import metrics
+    data = metrics.get_recent(limit)
+    return {"metrics": data, "total": len(data)}
+
+
+@app.post("/api/handoff")
+async def api_handoff(user_id: str = Query(""), master_id: str = Query(""), reason: str = Query("")):
+    """用户请求转人工
+
+    记录转人工请求到数据库，供后台查看。
+    """
+    from heritage_master.data.db import get_conn
+    from datetime import datetime
+    now = datetime.utcnow().isoformat()
+    with get_conn() as conn:
+        # 复用 cultivation_records 表存储转人工记录
+        conn.execute(
+            """INSERT INTO cultivation_records (user_id, master_id, practice_type, content, created_at)
+               VALUES (?, ?, 'handoff_request', ?, ?)""",
+            (user_id, master_id, reason or "用户请求转人工", now),
+        )
+    return {"ok": True, "message": "已记录您的转人工请求，工作人员会尽快联系您。"}
+
+
+@app.get("/api/handoff/pending")
+async def api_handoff_pending(limit: int = Query(20)):
+    """获取待处理的转人工请求（管理员用）"""
+    from heritage_master.data.db import get_conn
+    with get_conn() as conn:
+        rows = conn.execute(
+            """SELECT id, user_id, master_id, content, created_at
+               FROM cultivation_records
+               WHERE practice_type='handoff_request'
+               ORDER BY created_at DESC LIMIT ?""",
+            (limit,),
+        ).fetchall()
+        return {"requests": [dict(r) for r in rows]}
 
 
 # ─── 静态文件服务 ───────────────────────────────────────

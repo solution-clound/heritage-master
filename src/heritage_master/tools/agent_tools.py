@@ -6,22 +6,43 @@
 
 AGENT_SYSTEM_PROMPT = """你是非遗探索助手，帮助用户发现、了解和体验中国非物质文化遗产。
 
-你有五个工具，每次只调用最匹配的一个：
+你有以下工具，每次只调用最匹配的一个：
+
+**搜索与查询：**
 1. **search_heritage** — 搜索非遗项目（按关键词、类别、地区）
-2. **find_venues** — 查找体验场馆（博物馆、文化馆、体验中心）
-3. **plan_trip** — 规划旅行路线（按城市、天数、兴趣）
-4. **query_knowledge_graph** — 查询文化知识图谱（传承人、流派、代表作品、技艺、地区关系）
-5. **get_inheritance_chain** — 查询某位传承人的师承谱系（向上追溯师承关系）
+2. **get_heritage_info** — 获取某个非遗项目的详细介绍
+3. **query_knowledge_graph** — 查询知识图谱（传承人、流派、代表作品、技艺、地区关系）
+4. **get_inheritance_chain** — 查询某位传承人的师承谱系（向上追溯）
 
-严格按用户意图选择工具，不要多调也不要少调：
-- 用户问"有什么非遗"、"XX的非遗"、"传统戏剧有哪些" → 只调 search_heritage
-- 用户问"哪里能体验"、"有什么场馆"、"博物馆" → 只调 find_venues
-- 用户问"去XX玩"、"规划行程"、"X日游"、"路线"、"旅行" → 只调 plan_trip
-- 用户问"XX是谁"、"XX的传承人"、"XX有哪些流派"、"XX的代表作品"、"XX的师傅"、"XX和XX的关系" → 只调 query_knowledge_graph
-- 用户问"XX的师承"、"XX的师傅是谁"、"XX传承脉络" → 只调 get_inheritance_chain
-- 用户的信息不够时，追问清楚再调用
+**场馆与活动：**
+5. **find_venues** — 查找体验场馆（博物馆、文化馆、体验中心）
+6. **find_events** — 查找近期非遗活动、展览、演出、工作坊
 
-不要在一个请求中调用多个工具。根据用户的具体意图，选择最合适的一个。
+**旅行规划：**
+7. **plan_trip** — 规划非遗主题旅行路线（按城市、天数、兴趣）
+
+**知识问答：**
+8. **ask_knowledge** — 回答非遗相关知识问题（自由提问）
+9. **get_knowledge** — 获取某个非遗项目的知识详情
+10. **explore_cultural_graph** — 从某节点探索知识图谱（流派、传承关系等）
+
+**论坛互动：**
+11. **browse_forum** — 浏览论坛帖子（按分类或关键词）
+12. **search_forum** — 搜索论坛帖子（按关键词）
+13. **post_to_forum** — 在论坛发布帖子
+14. **reply_to_forum** — 回复论坛帖子
+
+严格按用户意图选择工具：
+- 用户问"有什么非遗"、"XX的非遗" → search_heritage
+- 用户问"XX是谁"、"XX的传承人"、"XX有哪些流派" → query_knowledge_graph 或 get_inheritance_chain
+- 用户问"哪里能体验"、"有什么场馆" → find_venues
+- 用户问"最近有什么活动"、"展览"、"演出" → find_events
+- 用户问"去XX玩"、"规划行程"、"X日游" → plan_trip
+- 用户问"XX是什么"、"介绍一下XX" → get_heritage_info 或 ask_knowledge
+- 用户问"论坛"、"讨论"、"帖子"、"分享"、"有人讨论XX吗" → search_forum 或 browse_forum
+- 用户要发帖、分享经历 → post_to_forum
+
+用户的信息不够时，追问清楚再调用。不要在一个请求中调用多个工具。
 回复时用亲切自然的语气。"""
 
 AGENT_TOOLS = [
@@ -141,7 +162,7 @@ AGENT_TOOLS = [
                 "properties": {
                     "person_name": {
                         "type": "string",
-                        "description": "传承人姓名，如叶汉钟、蔡正仁、陈少峰",
+                        "description": "传承人姓名，如叶汉钟、蔡正仁、黄钦添",
                     },
                 },
                 "required": ["person_name"],
@@ -149,3 +170,61 @@ AGENT_TOOLS = [
         },
     },
 ]
+
+
+# ─── 论坛工具实现 ─────────────────────────────────────────
+
+
+async def browse_forum_impl(category: str = None, keyword: str = None, limit: int = 5) -> str:
+    """浏览论坛帖子"""
+    from .forum import list_posts
+    posts = list_posts(category=category, limit=limit)
+    if keyword:
+        posts = [p for p in posts if keyword in p.get("title", "") or keyword in p.get("content", "")]
+    if not posts:
+        return f"暂无相关讨论（分类={category or '全部'}，关键词={keyword or '无'}）。"
+    lines = []
+    for i, p in enumerate(posts[:limit], 1):
+        lines.append(f"{i}. 【{p.get('category', '')}】{p.get('title', '')}")
+        lines.append(f"   作者：{p.get('author', '匿名')} | 时间：{p.get('created_at', '')[:10]} | 👍{p.get('like_count', 0)} 💬{p.get('comment_count', 0)}")
+        if p.get("content"):
+            lines.append(f"   {p['content'][:100]}...")
+        lines.append("")
+    return "\n".join(lines)
+
+
+async def search_forum_impl(keyword: str, limit: int = 5) -> str:
+    """搜索论坛帖子"""
+    from .forum import search_posts
+    posts = search_posts(keyword=keyword, limit=limit)
+    if not posts:
+        return f"未找到关于「{keyword}」的讨论。"
+    lines = [f"搜索结果：{keyword}（共{len(posts)}条）\n"]
+    for i, p in enumerate(posts[:limit], 1):
+        lines.append(f"{i}. 【{p.get('category', '')}】{p.get('title', '')}")
+        lines.append(f"   作者：{p.get('author', '匿名')} | 时间：{p.get('created_at', '')[:10]} | 👍{p.get('like_count', 0)} 💬{p.get('comment_count', 0)}")
+        if p.get("content"):
+            lines.append(f"   {p['content'][:100]}...")
+        lines.append("")
+    return "\n".join(lines)
+
+
+async def post_to_forum_impl(title: str, body: str, category: str = "experience") -> str:
+    """发布论坛帖子"""
+    from .forum import create_post
+    import uuid
+    user_id = "agent_bot"  # Agent 发帖使用系统用户
+    post_id = str(uuid.uuid4())[:8]
+    result = create_post(user_id=user_id, title=title, content=body, category=category)
+    if result:
+        return f"帖子发布成功！\n标题：{title}\n分类：{category}\n编号：#{post_id}\n\n您的分享将帮助更多人了解非遗文化。"
+    return "帖子发布失败，请稍后再试。"
+
+
+async def reply_to_forum_impl(discussion_number: str, body: str) -> str:
+    """回复论坛帖子"""
+    from .forum import add_comment
+    result = add_comment(post_id=discussion_number, user_id="agent_bot", content=body)
+    if result:
+        return f"回复成功！已回复帖子 #{discussion_number}。"
+    return "回复失败，请检查帖子编号是否正确。"
