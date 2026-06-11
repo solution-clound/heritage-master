@@ -3,7 +3,7 @@
   "user_id": "70fcc0d0-803b-4513-a92c-342f0dea4347",
   "master_id": "chagongfu",
   "profile": {
-    "relationship_stage": "试探期",
+    "relationship_stage": "成长期",
     "interest_tags": [
       "若琛杯",
       "茶道入门",
@@ -19,9 +19,9 @@
     ],
     "personality_notes": "用户对茶有初步兴趣但缺乏深入理解，回答简短，可能性格直率或尚未沉下心来，需要引导和耐心。; 用户虽初时回答直接简单，但在引导后能静心感受并准确描述茶汤体验，显示出可塑性，需要耐心引导以深化对茶的理解。; 用户对茶具和茶香有直觉性的好奇，虽初时回答简短直率，但在引导下能静心感受茶汤，显示出愿意沉下心来学习的潜力，需要持续耐心引导。; 在情绪低落时能接受引导，愿意通过品茶静心，有向内探索的倾向。; 在情绪低落时能接受引导，愿意通过品茶静心，有向内探索的倾向。话题跳跃，思绪易散，但能跟随引导重新聚焦。",
     "aesthetic_pref": "偏好含蓄、有节奏感的传统艺术形式，如茶道与昆曲，欣赏‘起承转合’的韵律与意境。",
-    "question_count": 26,
+    "question_count": 28,
     "first_met_at": "2026-05-26T02:41:22.333654",
-    "last_talk_at": "2026-06-09T02:33:50.340909+00:00"
+    "last_talk_at": "2026-06-10T03:15:59.185356+00:00"
   },
   "core_memories": [
     {
@@ -702,6 +702,36 @@
         "传统文化",
         "艺术兴趣"
       ]
+    },
+    {
+      "id": "mem_71641875",
+      "type": "interest",
+      "content": "用户主动询问潮州工夫茶二十一式的具体内容，表现出对工夫茶艺的兴趣",
+      "importance": 7,
+      "created_at": "2026-06-10T01:59:04.337995+00:00",
+      "last_referenced": null,
+      "reference_count": 0,
+      "source": "conversation",
+      "tags": [
+        "潮州工夫茶",
+        "二十一式",
+        "茶艺"
+      ]
+    },
+    {
+      "id": "mem_cfa0f67c",
+      "type": "interest",
+      "content": "用户主动询问潮州工夫茶二十一式的具体内容，表现出对工夫茶艺的浓厚兴趣",
+      "importance": 7,
+      "created_at": "2026-06-10T03:06:40.516068+00:00",
+      "last_referenced": null,
+      "reference_count": 0,
+      "source": "conversation",
+      "tags": [
+        "潮州工夫茶",
+        "二十一式",
+        "茶艺"
+      ]
     }
   ],
   "data_records": {
@@ -714,13 +744,13 @@
       },
       {
         "topic": "工夫茶",
-        "count": 3,
-        "last_discussed": "2026-05-27"
+        "count": 5,
+        "last_discussed": "2026-06-10"
       },
       {
         "topic": "潮州",
-        "count": 2,
-        "last_discussed": "2026-06-08"
+        "count": 4,
+        "last_discussed": "2026-06-10"
       },
       {
         "topic": "鸭屎香",
@@ -833,6 +863,96 @@
         "date": "2026-06-09",
         "session_id": "b144c02d-4586-4f8b-8a75-e2e9d8e5dc8e",
         "topic_summary": ""
+      },
+      {
+        "date": "2026-06-09",
+        "session_id": "b144c02d-4586-4f8b-8a75-e2e9d8e5dc8e",
+        "topic_summary": ""
+      },
+      {
+        "date": "2026-06-09",
+        "session_id": "b144c02d-4586-4f8b-8a75-e2e9d8e5dc8e",
+        "topic_summary": ""
+      },
+      {
+        "date": "2026-06-09",
+        "session_id": "b144c02d-4586-4f8b-8a75-e2e9d8e5dc8e",
+        "topic_summary": ""
+      },
+      {
+        "date": "2026-06-10",
+        "session_id": "38d58434-15c4-4c72-90c8-a7b155601fc2",
+        "topic_summary": ""
+      },
+      {
+        "date": "2026-06-10",
+        "session_id": "38d58434-15c4-4c72-90c8-a7b155601fc2",
+        "topic_summary": ""
+      },
+      {
+        "date": "2026-06-10",
+        "session_id": "38d58434-15c4-4c72-90c8-a7b155601fc2",
+        "topic_summary": ""
+      },
+      {
+        "date": "2026-06-10",
+        "session_id": "38d58434-15c4-4c72-90c8-a7b155601fc2",
+        "topic_summary": ""
+      },
+      {
+        "date": "2026-06-10",
+        "session_id": "38d58434-15c4-4c72-90c8-a7b155601fc2",
+        "topic_summary": ""
+      },
+      {
+        "date": "2026-06-10",
+        "session_id": "38d58434-15c4-4c72-90c8-a7b155601fc2",
+        "topic_summary": ""
+      },
+      {
+        "date": "2026-06-10",
+        "session_id": "38d58434-15c4-4c72-90c8-a7b155601fc2",
+        "topic_summary": ""
+      },
+      {
+        "date": "2026-06-10",
+        "session_id": "38d58434-15c4-4c72-90c8-a7b155601fc2",
+        "topic_summary": ""
+      },
+      {
+        "date": "2026-06-10",
+        "session_id": "38d58434-15c4-4c72-90c8-a7b155601fc2",
+        "topic_summary": ""
+      },
+      {
+        "date": "2026-06-10",
+        "session_id": "38d58434-15c4-4c72-90c8-a7b155601fc2",
+        "topic_summary": ""
+      },
+      {
+        "date": "2026-06-10",
+        "session_id": "38d58434-15c4-4c72-90c8-a7b155601fc2",
+        "topic_summary": ""
+      },
+      {
+        "date": "2026-06-10",
+        "session_id": "38d58434-15c4-4c72-90c8-a7b155601fc2",
+        "topic_summary": ""
+      },
+      {
+        "date": "2026-06-10",
+        "session_id": "38d58434-15c4-4c72-90c8-a7b155601fc2",
+        "topic_summary": ""
+      },
+      {
+        "date": "2026-06-10",
+        "session_id": "38d58434-15c4-4c72-90c8-a7b155601fc2",
+        "topic_summary": ""
+      },
+      {
+        "date": "2026-06-10",
+        "session_id": "38d58434-15c4-4c72-90c8-a7b155601fc2",
+        "topic_summary": ""
       }
     ]
   },
@@ -846,7 +966,7 @@
   },
   "meta": {
     "last_consolidated_at": null,
-    "memory_count": 46,
+    "memory_count": 48,
     "consolidation_count": 0
   }
 }

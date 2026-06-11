@@ -42,3 +42,20 @@ web/frontend/dist/
 
 # Misc
 *.log
+
+# Database files
+*.db
+*.db-wal
+*.db-shm
+
+# User memory data
+src/heritage_master/memory/
+
+# Temporary/debug scripts
+_garbled_lines.json
+_repair_nodes.py
+check_cp.py
+check_schema.py
+gen_chart*.py
+gen_homework*.py
+gen_paper*.py

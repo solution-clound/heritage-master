@@ -349,6 +349,86 @@ def get_profile_context(user_id: str, master_id: str) -> str:
     return "\n".join(lines)
 
 
+def get_aggregated_profile(user_id: str) -> Optional[Dict[str, Any]]:
+    """聚合用户在所有大师处的画像数据，供探索助手使用
+
+    合并策略：
+    - interest_tags: 所有大师处的标签去重合并
+    - question_count: 所有大师处的提问次数求和
+    - personality_notes: 所有大师处的性格观察拼接
+    - aesthetic_pref: 取最新的非空值
+    - relationship_stage: 取最高阶段
+    """
+    all_profiles = get_all_profiles(user_id)
+    if not all_profiles:
+        return None
+
+    # 阶段优先级映射
+    stage_order = {"入门期": 1, "进阶期": 2, "资深期": 3, "大师期": 4}
+
+    merged = {
+        "interest_tags": [],
+        "question_count": 0,
+        "personality_notes": "",
+        "aesthetic_pref": "",
+        "relationship_stage": "入门期",
+    }
+
+    all_interests = set()
+    personality_parts = []
+    latest_aesthetic = ""
+    highest_stage = "入门期"
+    highest_stage_level = 0
+
+    for p in all_profiles:
+        # 合并兴趣标签
+        if p.get("interest_tags"):
+            all_interests.update(p["interest_tags"])
+
+        # 累加提问次数
+        merged["question_count"] += p.get("question_count", 0)
+
+        # 拼接性格观察
+        if p.get("personality_notes"):
+            personality_parts.append(p["personality_notes"])
+
+        # 取最新的审美偏好
+        if p.get("aesthetic_pref"):
+            latest_aesthetic = p["aesthetic_pref"]
+
+        # 取最高阶段
+        stage = p.get("relationship_stage", "入门期")
+        stage_level = stage_order.get(stage, 0)
+        if stage_level > highest_stage_level:
+            highest_stage_level = stage_level
+            highest_stage = stage
+
+    merged["interest_tags"] = list(all_interests)
+    merged["personality_notes"] = "; ".join(personality_parts) if personality_parts else ""
+    merged["aesthetic_pref"] = latest_aesthetic
+    merged["relationship_stage"] = highest_stage
+
+    return merged
+
+
+def get_aggregated_profile_context(user_id: str) -> str:
+    """聚合所有大师处的画像，格式化为prompt上下文字符串（供探索助手使用）"""
+    profile = get_aggregated_profile(user_id)
+    if profile is None:
+        return ""
+
+    lines = ["【用户综合画像（来自所有大师）】"]
+    lines.append(f"- 关系阶段: {profile['relationship_stage']}")
+    lines.append(f"- 总提问次数: {profile['question_count']}")
+    if profile["interest_tags"]:
+        lines.append(f"- 兴趣标签: {', '.join(profile['interest_tags'])}")
+    if profile["aesthetic_pref"]:
+        lines.append(f"- 审美偏好: {profile['aesthetic_pref']}")
+    if profile["personality_notes"]:
+        lines.append(f"- 性格观察: {profile['personality_notes']}")
+    return "\n".join(lines)
+
+
 # ============================================================
 # 内部辅助
 # ============================================================

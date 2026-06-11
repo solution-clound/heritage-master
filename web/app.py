@@ -285,19 +285,20 @@ async def api_agent(req: AgentRequest):
     if not _LLM_API_KEY:
         return JSONResponse({"error": "LLM 未配置"}, status_code=503)
 
-    # 组装 messages — 注入个性化上下文
+    # 组装 messages — 注入个性化上下文（聚合所有大师的画像）
     system_prompt = AGENT_SYSTEM_PROMPT
     if req.user_id:
         try:
-            profile = user_manager.get_user_profile(req.user_id, "explorer")
             mm = get_memory_manager()
+            # 聚合画像（兴趣标签去重、提问次数累加、性格观察拼接、阶段取最高）
+            agg_ctx = user_manager.get_aggregated_profile_context(req.user_id)
+            agg_profile = user_manager.get_aggregated_profile(req.user_id)
             memory_ctx = mm.get_memory_context("explorer", req.user_id)
-            profile_ctx = user_manager.get_profile_context(req.user_id, "explorer")
             if memory_ctx:
                 system_prompt += "\n\n" + memory_ctx
-            if profile_ctx:
-                system_prompt += "\n\n" + profile_ctx
-            system_prompt += "\n\n" + _build_agent_personalization(profile)
+            if agg_ctx:
+                system_prompt += "\n\n" + agg_ctx
+            system_prompt += "\n\n" + _build_agent_personalization(agg_profile or {})
         except Exception:
             pass
 
@@ -460,7 +461,7 @@ async def api_agent_conversations(user_id: str = ""):
         sessions = user_manager.get_user_sessions(user_id, "explorer")
         result = []
         for s in sessions:
-            messages = user_manager.get_session_messages(s["id"])
+            messages = user_manager.get_recent_messages(s["id"], limit=100)
             result.append({
                 "session_id": s["id"],
                 "topic_summary": s.get("topic_summary", ""),
@@ -477,7 +478,7 @@ async def api_agent_conversations(user_id: str = ""):
 async def api_agent_conversation_detail(session_id: str):
     """获取单个会话的完整消息列表"""
     try:
-        messages = user_manager.get_session_messages(session_id)
+        messages = user_manager.get_recent_messages(session_id, limit=100)
         return {"session_id": session_id, "messages": messages}
     except Exception as e:
         print(f"[agent] 获取会话详情失败: {e}")

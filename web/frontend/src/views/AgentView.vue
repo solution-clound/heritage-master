@@ -333,8 +333,19 @@ const loadConversations = async () => {
         if (raw) localConvs = JSON.parse(raw)
       } catch {}
       const serverIds = new Set(serverConvs.map(c => c.id))
-      const unsynced = localConvs.filter(c => !c.id.startsWith('conv_') || !serverIds.has(c.id))
+      // 保留本地未同步的对话（conv_ 开头且服务端没有的）
+      const unsynced = localConvs.filter(c => c.id.startsWith('conv_') && !serverIds.has(c.id))
+      // 合并：服务端会话优先，但保留本地缓存的 panels 和 messages
+      for (const s of serverConvs) {
+        const local = localConvs.find(l => l.id === s.id)
+        if (local) {
+          if (local.panels && local.panels.length > 0) s.panels = local.panels
+          if (local.messages && local.messages.length > 0) s.messages = local.messages
+        }
+      }
+      // 按时间倒序排列，最新在前
       conversations.value = [...serverConvs, ...unsynced]
+        .sort((a, b) => (b.updatedAt || 0) - (a.updatedAt || 0))
     } catch (e) {
       console.warn('加载服务端对话失败，回退本地:', e)
       _loadLocalConversations()

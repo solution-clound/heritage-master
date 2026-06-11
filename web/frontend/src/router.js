@@ -14,6 +14,7 @@ const routes = [
   { path: '/graph', name: 'Graph', component: () => import('./views/GraphView.vue') },
   { path: '/profile', name: 'Profile', component: () => import('./views/ProfileView.vue'), meta: { requiresAuth: true } },
   { path: '/forum', name: 'Forum', component: () => import('./views/ForumView.vue') },
+  { path: '/trip', name: 'Trip', component: () => import('./views/TripView.vue') },
 ]
 
 const router = createRouter({
