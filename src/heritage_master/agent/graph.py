@@ -117,6 +117,7 @@ def build_graph() -> StateGraph:
         {
             "tools": "tools",
             "validate": "validate",
+            "memory": "memory",
         },
     )
     graph.add_edge("tools", "agent")  # 工具执行后回到 agent 决策
@@ -256,6 +257,7 @@ async def run_heritage_agent(
     return {
         "reply": reply,
         "panels": result.get("panels", []),
+        "trace_id": result.get("metadata", {}).get("trace_id", ""),
         "messages": [
             {"role": type(m).__name__.replace("Message", "").lower(), "content": m.content}
             for m in result.get("messages", [])
@@ -319,6 +321,8 @@ async def run_heritage_agent_stream(
             except Exception:
                 pass
 
+    # 构建初始状态
+    from heritage_master.agent.token_budget import DEFAULT_BUDGET
     initial_state: AgentState = {
         "messages": messages,
         "user_id": user_id,
@@ -328,6 +332,7 @@ async def run_heritage_agent_stream(
         "system_prompt": system_prompt,
         "final_reply": "",
         "metadata": {},
+        "token_budget": DEFAULT_BUDGET,
     }
 
     checkpointer = ctx.checkpointer if session_id else None
@@ -372,8 +377,9 @@ async def run_heritage_agent_stream(
             elif node_name == "memory":
                 reply = node_output.get("final_reply", "")
                 panels = node_output.get("panels", [])
+                trace_id = node_output.get("metadata", {}).get("trace_id", "")
                 final_reply = reply
-                yield {"type": "done", "reply": reply, "panels": panels}
+                yield {"type": "done", "reply": reply, "panels": panels, "trace_id": trace_id}
 
     # 保存对话消息
     if session_id and final_reply:

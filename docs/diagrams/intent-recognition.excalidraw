@@ -1,0 +1,1065 @@
+{
+  "type": "excalidraw",
+  "version": 2,
+  "source": "hermes-agent",
+  "elements": [
+    {
+      "type": "text",
+      "id": "t_title",
+      "x": 200,
+      "y": -10,
+      "width": 300,
+      "height": 30,
+      "text": "意图识别流程图 (双层分类)",
+      "fontSize": 24,
+      "fontFamily": 1,
+      "strokeColor": "#1e1e1e",
+      "originalText": "意图识别流程图 (双层分类)",
+      "autoResize": true
+    },
+    {
+      "type": "rectangle",
+      "id": "r_0",
+      "x": 250,
+      "y": 30,
+      "width": 200,
+      "height": 50,
+      "roundness": {
+        "type": 3
+      },
+      "backgroundColor": "#a5d8ff",
+      "fillStyle": "solid",
+      "strokeColor": "#1e1e1e",
+      "strokeWidth": 2,
+      "roughness": 1,
+      "opacity": 100,
+      "boundElements": [
+        {
+          "id": "t_0",
+          "type": "text"
+        }
+      ]
+    },
+    {
+      "type": "text",
+      "id": "t_0",
+      "x": 255,
+      "y": 35,
+      "width": 190,
+      "height": 40,
+      "text": "用户消息输入",
+      "fontSize": 16,
+      "fontFamily": 1,
+      "strokeColor": "#1e1e1e",
+      "textAlign": "center",
+      "verticalAlign": "middle",
+      "containerId": "r_0",
+      "originalText": "用户消息输入",
+      "autoResize": true
+    },
+    {
+      "type": "rectangle",
+      "id": "r_1",
+      "x": 230,
+      "y": 110,
+      "width": 240,
+      "height": 50,
+      "roundness": {
+        "type": 3
+      },
+      "backgroundColor": "#e9ecef",
+      "fillStyle": "solid",
+      "strokeColor": "#1e1e1e",
+      "strokeWidth": 2,
+      "roughness": 1,
+      "opacity": 100,
+      "boundElements": [
+        {
+          "id": "t_1",
+          "type": "text"
+        }
+      ]
+    },
+    {
+      "type": "text",
+      "id": "t_1",
+      "x": 235,
+      "y": 115,
+      "width": 230,
+      "height": 40,
+      "text": "提取对话上下文\n_ extract_conversation_context()",
+      "fontSize": 16,
+      "fontFamily": 1,
+      "strokeColor": "#1e1e1e",
+      "textAlign": "center",
+      "verticalAlign": "middle",
+      "containerId": "r_1",
+      "originalText": "提取对话上下文\n_ extract_conversation_context()",
+      "autoResize": true
+    },
+    {
+      "type": "diamond",
+      "id": "d_2",
+      "x": 250,
+      "y": 190,
+      "width": 200,
+      "height": 120,
+      "backgroundColor": "#fff3bf",
+      "fillStyle": "solid",
+      "strokeColor": "#1e1e1e",
+      "strokeWidth": 2,
+      "roughness": 1,
+      "opacity": 100,
+      "boundElements": [
+        {
+          "id": "t_2",
+          "type": "text"
+        }
+      ]
+    },
+    {
+      "type": "text",
+      "id": "t_2",
+      "x": 260,
+      "y": 200,
+      "width": 180,
+      "height": 100,
+      "text": "规则匹配\nclassify_intent_rule()",
+      "fontSize": 16,
+      "fontFamily": 1,
+      "strokeColor": "#1e1e1e",
+      "textAlign": "center",
+      "verticalAlign": "middle",
+      "containerId": "d_2",
+      "originalText": "规则匹配\nclassify_intent_rule()",
+      "autoResize": true
+    },
+    {
+      "type": "rectangle",
+      "id": "r_3",
+      "x": 70,
+      "y": 290,
+      "width": 140,
+      "height": 50,
+      "roundness": {
+        "type": 3
+      },
+      "backgroundColor": "#b2f2bb",
+      "fillStyle": "solid",
+      "strokeColor": "#1e1e1e",
+      "strokeWidth": 2,
+      "roughness": 1,
+      "opacity": 100,
+      "boundElements": [
+        {
+          "id": "t_3",
+          "type": "text"
+        }
+      ]
+    },
+    {
+      "type": "text",
+      "id": "t_3",
+      "x": 75,
+      "y": 295,
+      "width": 130,
+      "height": 40,
+      "text": "规则命中\nconfidence=0.85",
+      "fontSize": 16,
+      "fontFamily": 1,
+      "strokeColor": "#1e1e1e",
+      "textAlign": "center",
+      "verticalAlign": "middle",
+      "containerId": "r_3",
+      "originalText": "规则命中\nconfidence=0.85",
+      "autoResize": true
+    },
+    {
+      "type": "diamond",
+      "id": "d_4",
+      "x": 70,
+      "y": 370,
+      "width": 140,
+      "height": 80,
+      "backgroundColor": "#ffd8a8",
+      "fillStyle": "solid",
+      "strokeColor": "#1e1e1e",
+      "strokeWidth": 2,
+      "roughness": 1,
+      "opacity": 100,
+      "boundElements": [
+        {
+          "id": "t_4",
+          "type": "text"
+        }
+      ]
+    },
+    {
+      "type": "text",
+      "id": "t_4",
+      "x": 80,
+      "y": 380,
+      "width": 120,
+      "height": 60,
+      "text": "是否HANDOFF?",
+      "fontSize": 16,
+      "fontFamily": 1,
+      "strokeColor": "#1e1e1e",
+      "textAlign": "center",
+      "verticalAlign": "middle",
+      "containerId": "d_4",
+      "originalText": "是否HANDOFF?",
+      "autoResize": true
+    },
+    {
+      "type": "rectangle",
+      "id": "r_5",
+      "x": -80,
+      "y": 380,
+      "width": 120,
+      "height": 50,
+      "roundness": {
+        "type": 3
+      },
+      "backgroundColor": "#ffc9c9",
+      "fillStyle": "solid",
+      "strokeColor": "#1e1e1e",
+      "strokeWidth": 2,
+      "roughness": 1,
+      "opacity": 100,
+      "boundElements": [
+        {
+          "id": "t_5",
+          "type": "text"
+        }
+      ]
+    },
+    {
+      "type": "text",
+      "id": "t_5",
+      "x": -75,
+      "y": 385,
+      "width": 110,
+      "height": 40,
+      "text": "返回HANDOFF\nconf=0.95",
+      "fontSize": 16,
+      "fontFamily": 1,
+      "strokeColor": "#1e1e1e",
+      "textAlign": "center",
+      "verticalAlign": "middle",
+      "containerId": "r_5",
+      "originalText": "返回HANDOFF\nconf=0.95",
+      "autoResize": true
+    },
+    {
+      "type": "rectangle",
+      "id": "r_6",
+      "x": 70,
+      "y": 480,
+      "width": 140,
+      "height": 50,
+      "roundness": {
+        "type": 3
+      },
+      "backgroundColor": "#b2f2bb",
+      "fillStyle": "solid",
+      "strokeColor": "#1e1e1e",
+      "strokeWidth": 2,
+      "roughness": 1,
+      "opacity": 100,
+      "boundElements": [
+        {
+          "id": "t_6",
+          "type": "text"
+        }
+      ]
+    },
+    {
+      "type": "text",
+      "id": "t_6",
+      "x": 75,
+      "y": 485,
+      "width": 130,
+      "height": 40,
+      "text": "返回意图\nSEARCH/VENUE/...",
+      "fontSize": 16,
+      "fontFamily": 1,
+      "strokeColor": "#1e1e1e",
+      "textAlign": "center",
+      "verticalAlign": "middle",
+      "containerId": "r_6",
+      "originalText": "返回意图\nSEARCH/VENUE/...",
+      "autoResize": true
+    },
+    {
+      "type": "diamond",
+      "id": "d_7",
+      "x": 470,
+      "y": 190,
+      "width": 180,
+      "height": 120,
+      "backgroundColor": "#fff3bf",
+      "fillStyle": "solid",
+      "strokeColor": "#1e1e1e",
+      "strokeWidth": 2,
+      "roughness": 1,
+      "opacity": 100,
+      "boundElements": [
+        {
+          "id": "t_7",
+          "type": "text"
+        }
+      ]
+    },
+    {
+      "type": "text",
+      "id": "t_7",
+      "x": 480,
+      "y": 200,
+      "width": 160,
+      "height": 100,
+      "text": "上下文追问?\nis_followup?",
+      "fontSize": 16,
+      "fontFamily": 1,
+      "strokeColor": "#1e1e1e",
+      "textAlign": "center",
+      "verticalAlign": "middle",
+      "containerId": "d_7",
+      "originalText": "上下文追问?\nis_followup?",
+      "autoResize": true
+    },
+    {
+      "type": "rectangle",
+      "id": "r_8",
+      "x": 690,
+      "y": 230,
+      "width": 140,
+      "height": 50,
+      "roundness": {
+        "type": 3
+      },
+      "backgroundColor": "#d0bfff",
+      "fillStyle": "solid",
+      "strokeColor": "#1e1e1e",
+      "strokeWidth": 2,
+      "roughness": 1,
+      "opacity": 100,
+      "boundElements": [
+        {
+          "id": "t_8",
+          "type": "text"
+        }
+      ]
+    },
+    {
+      "type": "text",
+      "id": "t_8",
+      "x": 695,
+      "y": 235,
+      "width": 130,
+      "height": 40,
+      "text": "继承上轮意图\nconf=0.75",
+      "fontSize": 16,
+      "fontFamily": 1,
+      "strokeColor": "#1e1e1e",
+      "textAlign": "center",
+      "verticalAlign": "middle",
+      "containerId": "r_8",
+      "originalText": "继承上轮意图\nconf=0.75",
+      "autoResize": true
+    },
+    {
+      "type": "rectangle",
+      "id": "r_9",
+      "x": 450,
+      "y": 370,
+      "width": 220,
+      "height": 50,
+      "roundness": {
+        "type": 3
+      },
+      "backgroundColor": "#d0bfff",
+      "fillStyle": "solid",
+      "strokeColor": "#1e1e1e",
+      "strokeWidth": 2,
+      "roughness": 1,
+      "opacity": 100,
+      "boundElements": [
+        {
+          "id": "t_9",
+          "type": "text"
+        }
+      ]
+    },
+    {
+      "type": "text",
+      "id": "t_9",
+      "x": 455,
+      "y": 375,
+      "width": 210,
+      "height": 40,
+      "text": "LLM分类\nclassify_intent_llm()",
+      "fontSize": 16,
+      "fontFamily": 1,
+      "strokeColor": "#1e1e1e",
+      "textAlign": "center",
+      "verticalAlign": "middle",
+      "containerId": "r_9",
+      "originalText": "LLM分类\nclassify_intent_llm()",
+      "autoResize": true
+    },
+    {
+      "type": "rectangle",
+      "id": "r_10",
+      "x": 450,
+      "y": 460,
+      "width": 220,
+      "height": 50,
+      "roundness": {
+        "type": 3
+      },
+      "backgroundColor": "#b2f2bb",
+      "fillStyle": "solid",
+      "strokeColor": "#1e1e1e",
+      "strokeWidth": 2,
+      "roughness": 1,
+      "opacity": 100,
+      "boundElements": [
+        {
+          "id": "t_10",
+          "type": "text"
+        }
+      ]
+    },
+    {
+      "type": "text",
+      "id": "t_10",
+      "x": 455,
+      "y": 465,
+      "width": 210,
+      "height": 40,
+      "text": "返回意图\nconfidence=0.7",
+      "fontSize": 16,
+      "fontFamily": 1,
+      "strokeColor": "#1e1e1e",
+      "textAlign": "center",
+      "verticalAlign": "middle",
+      "containerId": "r_10",
+      "originalText": "返回意图\nconfidence=0.7",
+      "autoResize": true
+    },
+    {
+      "type": "rectangle",
+      "id": "r_11",
+      "x": 700,
+      "y": 370,
+      "width": 140,
+      "height": 50,
+      "roundness": {
+        "type": 3
+      },
+      "backgroundColor": "#ffc9c9",
+      "fillStyle": "solid",
+      "strokeColor": "#1e1e1e",
+      "strokeWidth": 2,
+      "roughness": 1,
+      "opacity": 100,
+      "boundElements": [
+        {
+          "id": "t_11",
+          "type": "text"
+        }
+      ]
+    },
+    {
+      "type": "text",
+      "id": "t_11",
+      "x": 705,
+      "y": 375,
+      "width": 130,
+      "height": 40,
+      "text": "默认CHAT\nconf=0.5",
+      "fontSize": 16,
+      "fontFamily": 1,
+      "strokeColor": "#1e1e1e",
+      "textAlign": "center",
+      "verticalAlign": "middle",
+      "containerId": "r_11",
+      "originalText": "默认CHAT\nconf=0.5",
+      "autoResize": true
+    },
+    {
+      "type": "rectangle",
+      "id": "r_12",
+      "x": 270,
+      "y": 570,
+      "width": 360,
+      "height": 60,
+      "roundness": {
+        "type": 3
+      },
+      "backgroundColor": "#b2f2bb",
+      "fillStyle": "solid",
+      "strokeColor": "#1e1e1e",
+      "strokeWidth": 2,
+      "roughness": 1,
+      "opacity": 100,
+      "boundElements": [
+        {
+          "id": "t_12",
+          "type": "text"
+        }
+      ]
+    },
+    {
+      "type": "text",
+      "id": "t_12",
+      "x": 275,
+      "y": 575,
+      "width": 350,
+      "height": 50,
+      "text": "输出意图: SEARCH / VENUE / TRIP / KNOWLEDGE\nEVENT / CHAT / HANDOFF",
+      "fontSize": 16,
+      "fontFamily": 1,
+      "strokeColor": "#1e1e1e",
+      "textAlign": "center",
+      "verticalAlign": "middle",
+      "containerId": "r_12",
+      "originalText": "输出意图: SEARCH / VENUE / TRIP / KNOWLEDGE\nEVENT / CHAT / HANDOFF",
+      "autoResize": true
+    },
+    {
+      "type": "arrow",
+      "id": "a_1",
+      "x": 350,
+      "y": 80,
+      "width": 0,
+      "height": 30,
+      "points": [
+        [
+          0,
+          30
+        ]
+      ],
+      "endArrowhead": "arrow",
+      "strokeColor": "#1e1e1e",
+      "strokeWidth": 2,
+      "strokeStyle": "solid",
+      "roughness": 1,
+      "opacity": 100,
+      "boundElements": []
+    },
+    {
+      "type": "arrow",
+      "id": "a_2",
+      "x": 350,
+      "y": 160,
+      "width": 0,
+      "height": 30,
+      "points": [
+        [
+          0,
+          30
+        ]
+      ],
+      "endArrowhead": "arrow",
+      "strokeColor": "#1e1e1e",
+      "strokeWidth": 2,
+      "strokeStyle": "solid",
+      "roughness": 1,
+      "opacity": 100,
+      "boundElements": []
+    },
+    {
+      "type": "arrow",
+      "id": "a_3",
+      "x": 250,
+      "y": 250,
+      "width": 80,
+      "height": 40,
+      "points": [
+        [
+          -80,
+          40
+        ]
+      ],
+      "endArrowhead": "arrow",
+      "strokeColor": "#2b8a3e",
+      "strokeWidth": 2,
+      "strokeStyle": "solid",
+      "roughness": 1,
+      "opacity": 100,
+      "boundElements": [
+        {
+          "id": "t_a3",
+          "type": "text"
+        }
+      ]
+    },
+    {
+      "type": "text",
+      "id": "t_a3",
+      "x": 250,
+      "y": 258,
+      "width": 80,
+      "height": 20,
+      "text": "命中",
+      "fontSize": 14,
+      "fontFamily": 1,
+      "strokeColor": "#1e1e1e",
+      "textAlign": "center",
+      "verticalAlign": "middle",
+      "containerId": "a_3",
+      "originalText": "命中",
+      "autoResize": true
+    },
+    {
+      "type": "arrow",
+      "id": "a_4",
+      "x": 350,
+      "y": 310,
+      "width": 120,
+      "height": 120,
+      "points": [
+        [
+          120,
+          -120
+        ]
+      ],
+      "endArrowhead": "arrow",
+      "strokeColor": "#e67700",
+      "strokeWidth": 2,
+      "strokeStyle": "solid",
+      "roughness": 1,
+      "opacity": 100,
+      "boundElements": [
+        {
+          "id": "t_a4",
+          "type": "text"
+        }
+      ]
+    },
+    {
+      "type": "text",
+      "id": "t_a4",
+      "x": 370,
+      "y": 358,
+      "width": 80,
+      "height": 20,
+      "text": "未命中",
+      "fontSize": 14,
+      "fontFamily": 1,
+      "strokeColor": "#1e1e1e",
+      "textAlign": "center",
+      "verticalAlign": "middle",
+      "containerId": "a_4",
+      "originalText": "未命中",
+      "autoResize": true
+    },
+    {
+      "type": "arrow",
+      "id": "a_5",
+      "x": 140,
+      "y": 340,
+      "width": 0,
+      "height": 30,
+      "points": [
+        [
+          0,
+          30
+        ]
+      ],
+      "endArrowhead": "arrow",
+      "strokeColor": "#1e1e1e",
+      "strokeWidth": 2,
+      "strokeStyle": "solid",
+      "roughness": 1,
+      "opacity": 100,
+      "boundElements": []
+    },
+    {
+      "type": "arrow",
+      "id": "a_6",
+      "x": 140,
+      "y": 410,
+      "width": 80,
+      "height": 30,
+      "points": [
+        [
+          -80,
+          -30
+        ]
+      ],
+      "endArrowhead": "arrow",
+      "strokeColor": "#c92a2a",
+      "strokeWidth": 2,
+      "strokeStyle": "solid",
+      "roughness": 1,
+      "opacity": 100,
+      "boundElements": [
+        {
+          "id": "t_a6",
+          "type": "text"
+        }
+      ]
+    },
+    {
+      "type": "text",
+      "id": "t_a6",
+      "x": 140,
+      "y": 413,
+      "width": 80,
+      "height": 20,
+      "text": "是",
+      "fontSize": 14,
+      "fontFamily": 1,
+      "strokeColor": "#1e1e1e",
+      "textAlign": "center",
+      "verticalAlign": "middle",
+      "containerId": "a_6",
+      "originalText": "是",
+      "autoResize": true
+    },
+    {
+      "type": "arrow",
+      "id": "a_7",
+      "x": 140,
+      "y": 450,
+      "width": 0,
+      "height": 30,
+      "points": [
+        [
+          0,
+          30
+        ]
+      ],
+      "endArrowhead": "arrow",
+      "strokeColor": "#2b8a3e",
+      "strokeWidth": 2,
+      "strokeStyle": "solid",
+      "roughness": 1,
+      "opacity": 100,
+      "boundElements": [
+        {
+          "id": "t_a7",
+          "type": "text"
+        }
+      ]
+    },
+    {
+      "type": "text",
+      "id": "t_a7",
+      "x": 100,
+      "y": 453,
+      "width": 80,
+      "height": 20,
+      "text": "否",
+      "fontSize": 14,
+      "fontFamily": 1,
+      "strokeColor": "#1e1e1e",
+      "textAlign": "center",
+      "verticalAlign": "middle",
+      "containerId": "a_7",
+      "originalText": "否",
+      "autoResize": true
+    },
+    {
+      "type": "arrow",
+      "id": "a_8",
+      "x": 140,
+      "y": 530,
+      "width": 130,
+      "height": 40,
+      "points": [
+        [
+          130,
+          40
+        ]
+      ],
+      "endArrowhead": "arrow",
+      "strokeColor": "#2b8a3e",
+      "strokeWidth": 2,
+      "strokeStyle": "solid",
+      "roughness": 1,
+      "opacity": 100,
+      "boundElements": []
+    },
+    {
+      "type": "arrow",
+      "id": "a_9",
+      "x": 690,
+      "y": 250,
+      "width": 0,
+      "height": 0,
+      "points": [
+        [
+          0,
+          0
+        ]
+      ],
+      "endArrowhead": "arrow",
+      "strokeColor": "#2b8a3e",
+      "strokeWidth": 2,
+      "strokeStyle": "solid",
+      "roughness": 1,
+      "opacity": 100,
+      "boundElements": [
+        {
+          "id": "t_a9",
+          "type": "text"
+        }
+      ]
+    },
+    {
+      "type": "text",
+      "id": "t_a9",
+      "x": 650,
+      "y": 238,
+      "width": 80,
+      "height": 20,
+      "text": "是",
+      "fontSize": 14,
+      "fontFamily": 1,
+      "strokeColor": "#1e1e1e",
+      "textAlign": "center",
+      "verticalAlign": "middle",
+      "containerId": "a_9",
+      "originalText": "是",
+      "autoResize": true
+    },
+    {
+      "type": "arrow",
+      "id": "a_10",
+      "x": 760,
+      "y": 280,
+      "width": 190,
+      "height": 290,
+      "points": [
+        [
+          -190,
+          290
+        ]
+      ],
+      "endArrowhead": "arrow",
+      "strokeColor": "#d0bfff",
+      "strokeWidth": 2,
+      "strokeStyle": "solid",
+      "roughness": 1,
+      "opacity": 100,
+      "boundElements": []
+    },
+    {
+      "type": "arrow",
+      "id": "a_11",
+      "x": 470,
+      "y": 250,
+      "width": 10,
+      "height": 60,
+      "points": [
+        [
+          -10,
+          -60
+        ]
+      ],
+      "endArrowhead": "arrow",
+      "strokeColor": "#e67700",
+      "strokeWidth": 2,
+      "strokeStyle": "solid",
+      "roughness": 1,
+      "opacity": 100,
+      "boundElements": []
+    },
+    {
+      "type": "arrow",
+      "id": "a_12",
+      "x": 560,
+      "y": 310,
+      "width": 10,
+      "height": 60,
+      "points": [
+        [
+          -10,
+          60
+        ]
+      ],
+      "endArrowhead": "arrow",
+      "strokeColor": "#e67700",
+      "strokeWidth": 2,
+      "strokeStyle": "solid",
+      "roughness": 1,
+      "opacity": 100,
+      "boundElements": [
+        {
+          "id": "t_a12",
+          "type": "text"
+        }
+      ]
+    },
+    {
+      "type": "text",
+      "id": "t_a12",
+      "x": 525,
+      "y": 328,
+      "width": 80,
+      "height": 20,
+      "text": "否",
+      "fontSize": 14,
+      "fontFamily": 1,
+      "strokeColor": "#1e1e1e",
+      "textAlign": "center",
+      "verticalAlign": "middle",
+      "containerId": "a_12",
+      "originalText": "否",
+      "autoResize": true
+    },
+    {
+      "type": "arrow",
+      "id": "a_13",
+      "x": 560,
+      "y": 420,
+      "width": 0,
+      "height": 40,
+      "points": [
+        [
+          0,
+          40
+        ]
+      ],
+      "endArrowhead": "arrow",
+      "strokeColor": "#1e1e1e",
+      "strokeWidth": 2,
+      "strokeStyle": "solid",
+      "roughness": 1,
+      "opacity": 100,
+      "boundElements": []
+    },
+    {
+      "type": "arrow",
+      "id": "a_14",
+      "x": 560,
+      "y": 510,
+      "width": 70,
+      "height": 60,
+      "points": [
+        [
+          -70,
+          60
+        ]
+      ],
+      "endArrowhead": "arrow",
+      "strokeColor": "#2b8a3e",
+      "strokeWidth": 2,
+      "strokeStyle": "solid",
+      "roughness": 1,
+      "opacity": 100,
+      "boundElements": []
+    },
+    {
+      "type": "arrow",
+      "id": "a_15",
+      "x": 670,
+      "y": 395,
+      "width": 30,
+      "height": 15,
+      "points": [
+        [
+          30,
+          -15
+        ]
+      ],
+      "endArrowhead": "arrow",
+      "strokeColor": "#c92a2a",
+      "strokeWidth": 2,
+      "strokeStyle": "dashed",
+      "roughness": 1,
+      "opacity": 100,
+      "boundElements": [
+        {
+          "id": "t_a15",
+          "type": "text"
+        }
+      ]
+    },
+    {
+      "type": "text",
+      "id": "t_a15",
+      "x": 645,
+      "y": 390,
+      "width": 80,
+      "height": 20,
+      "text": "失败",
+      "fontSize": 14,
+      "fontFamily": 1,
+      "strokeColor": "#1e1e1e",
+      "textAlign": "center",
+      "verticalAlign": "middle",
+      "containerId": "a_15",
+      "originalText": "失败",
+      "autoResize": true
+    },
+    {
+      "type": "arrow",
+      "id": "a_16",
+      "x": 770,
+      "y": 420,
+      "width": 200,
+      "height": 150,
+      "points": [
+        [
+          -200,
+          150
+        ]
+      ],
+      "endArrowhead": "arrow",
+      "strokeColor": "#c92a2a",
+      "strokeWidth": 2,
+      "strokeStyle": "dashed",
+      "roughness": 1,
+      "opacity": 100,
+      "boundElements": []
+    },
+    {
+      "type": "rectangle",
+      "id": "r_leg",
+      "x": 750,
+      "y": 80,
+      "width": 200,
+      "height": 100,
+      "roundness": {
+        "type": 3
+      },
+      "backgroundColor": "#f8f9fa",
+      "fillStyle": "solid",
+      "strokeColor": "#1e1e1e",
+      "strokeWidth": 2,
+      "roughness": 1,
+      "opacity": 100,
+      "boundElements": [
+        {
+          "id": "t_leg",
+          "type": "text"
+        }
+      ]
+    },
+    {
+      "type": "text",
+      "id": "t_leg",
+      "x": 755,
+      "y": 85,
+      "width": 190,
+      "height": 90,
+      "text": "置信度说明:\n规则=0.85\n上下文=0.75\nLLM=0.70\n回退=0.50",
+      "fontSize": 16,
+      "fontFamily": 1,
+      "strokeColor": "#1e1e1e",
+      "textAlign": "center",
+      "verticalAlign": "middle",
+      "containerId": "r_leg",
+      "originalText": "置信度说明:\n规则=0.85\n上下文=0.75\nLLM=0.70\n回退=0.50",
+      "autoResize": true
+    }
+  ],
+  "appState": {
+    "viewBackgroundColor": "#ffffff"
+  }
+}

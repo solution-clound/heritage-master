@@ -115,26 +115,26 @@ async def _execute_agent_tool(tool_name: str, arguments: dict) -> tuple:
 
     elif tool_name == "find_venues":
         venues = await search_venues_amap(
-            city=arguments["city"],
+            city=arguments.get("city", ""),
             keyword=arguments.get("keyword", "非遗"),
             limit=10,
         )
         from heritage_master.tools.venue_finder import format_venue_list
-        text = format_venue_list(venues, arguments["city"])
+        text = format_venue_list(venues, arguments.get("city", ""))
         return venues, "venue_list", text
 
     elif tool_name == "plan_trip":
         print(f"[agent] plan_trip 调用: city={arguments.get('city')}, days={arguments.get('days', 2)}")
         try:
             result = await plan_heritage_route(
-                city=arguments["city"],
+                city=arguments.get("city", ""),
                 days=arguments.get("days", 2),
                 interests=arguments.get("interests"),
             )
             text = result["itinerary"]
             route_data = result.get("route_data")
             print(f"[agent] plan_trip 完成: itinerary_len={len(text)}, route_data={'有' if route_data else '无'}")
-            return {"city": arguments["city"], "days": arguments.get("days", 2), "itinerary": text, "route_data": route_data}, "trip_plan", text
+            return {"city": arguments.get("city", ""), "days": arguments.get("days", 2), "itinerary": text, "route_data": route_data}, "trip_plan", text
         except Exception as e:
             print(f"[agent] plan_trip 失败: {e}")
             return None, None, f"路线规划失败: {e}"
@@ -142,7 +142,7 @@ async def _execute_agent_tool(tool_name: str, arguments: dict) -> tuple:
     elif tool_name == "query_knowledge_graph":
         from heritage_master.data.knowledge_graph import search_nodes, get_node, get_neighbors
         results = search_nodes(
-            arguments["query"],
+            arguments.get("query", ""),
             node_type=arguments.get("node_type") or None,
             limit=10,
         )
@@ -168,7 +168,7 @@ async def _execute_agent_tool(tool_name: str, arguments: dict) -> tuple:
 
     elif tool_name == "get_inheritance_chain":
         from heritage_master.data.knowledge_graph import get_inheritance_chain as _get_chain
-        person_name = arguments["person_name"]
+        person_name = arguments.get("person_name", "")
         person_id = person_name if ":" in person_name else f"person:{person_name}"
         chain = _get_chain(person_id)
         if not chain:
@@ -831,7 +831,7 @@ async def api_agent_graph(req: GraphAgentRequest):
             system_prompt=system_prompt,
         )
 
-        return {"reply": result["reply"], "panels": result["panels"]}
+        return {"reply": result["reply"], "panels": result["panels"], "trace_id": result.get("trace_id", "")}
 
     except ImportError as e:
         print(f"[langgraph] 模块导入失败: {e}")

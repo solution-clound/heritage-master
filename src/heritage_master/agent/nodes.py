@@ -197,7 +197,7 @@ async def classify_intent_llm(message: str, context: dict = None) -> IntentResul
         resp = await llm.ainvoke([HumanMessage(content=prompt)])
         label = resp.content.strip().lower()
         for intent in Intent:
-            if intent.value in label:
+            if label == intent.value or label.startswith(intent.value + " ") or label.startswith(intent.value + ","):
                 return IntentResult(intent=intent, confidence=0.7, method="llm")
     except Exception as e:
         logger.warning("[intent] LLM 分类失败: %s", e)
@@ -304,7 +304,8 @@ async def classify_and_plan(state: AgentState) -> dict[str, Any]:
         raw_plan = data.get("plan")
         matched = Intent.CHAT
         for it in Intent:
-            if it.value in intent_label: matched = it; break
+            if intent_label == it.value or intent_label.startswith(it.value + " ") or intent_label.startswith(it.value + ","):
+                matched = it; break
         metadata["intent"] = matched.value; metadata["confidence"] = 0.7; metadata["method"] = "llm_merged"
         collector.add_step(trace_id, "intent_classify", {"intent": matched.value, "confidence": 0.7, "method": "llm"})
         if isinstance(raw_plan, list) and len(raw_plan) >= _PLANNER_MIN_COMPLEXITY:
@@ -326,7 +327,7 @@ async def _generate_plan_for_intent(user_msg, intent):
     try:
         from heritage_master.config import settings
         llm = ChatOpenAI(model=settings.llm_model, api_key=settings.llm_api_key, base_url=settings.llm_base_url, temperature=0, max_tokens=500)
-        prompt = f"用户意图：{intent}\\n用户消息：{user_msg}\\n\\n生成执行计划(JSON数组，每个含step/tool/args/purpose)。只需一个工具则返回[]。只输出JSON。"
+        prompt = f"用户意图：{intent}\n用户消息：{user_msg}\n\n生成执行计划(JSON数组，每个含step/tool/args/purpose)。只需一个工具则返回[]。只输出JSON。"
         resp = await llm.ainvoke([HumanMessage(content=prompt)])
         text = resp.content.strip()
         if "```" in text: text = text.split("```")[1]
@@ -392,11 +393,21 @@ async def agent_node(state: AgentState) -> dict[str, Any]:
     full = []
     if system_prompt:
         hint = TOOL_HINTS.get(Intent(intent), "") if intent else ""
-        enhanced = system_prompt
-        if hint: enhanced += "\\n\\n【意图提示】" + hint
-        if plan_step > 0 and not plan: enhanced += "\\n\\n【执行完成】请基于工具结果生成总结回复。"
-        full.append(SystemMessage(content=enhanced))
-    full.extend(messages)
+        # 如果 messages 已经有 SystemMessage（build_messages 注入的），不要重复添加
+        if messages and isinstance(messages[0], SystemMessage):
+            enhanced = messages[0].content
+            if hint: enhanced += "\n\n【意图提示】" + hint
+            if plan_step > 0 and not plan: enhanced += "\n\n【执行完成】请基于工具结果生成总结回复。"
+            full.append(SystemMessage(content=enhanced))
+            full.extend(messages[1:])
+        else:
+            enhanced = system_prompt
+            if hint: enhanced += "\n\n【意图提示】" + hint
+            if plan_step > 0 and not plan: enhanced += "\n\n【执行完成】请基于工具结果生成总结回复。"
+            full.append(SystemMessage(content=enhanced))
+            full.extend(messages)
+    else:
+        full.extend(messages)
     llm = _get_llm_with_tools()
     try:
         t_start = _time.time()
@@ -524,7 +535,6 @@ async def memory_node(state: AgentState) -> dict[str, Any]:
         if isinstance(msg, AIMessage) and not msg.tool_calls and msg.content:
             final_reply = msg.content; break
     if not final_reply: final_reply = "抱歉，我暂时无法生成回复。"
-    metadata = state.get("metadata", {})
     if metadata.get("should_handoff"):
         final_reply += (
             "\n\n---\n看起来我连续几次都没能帮到您。"
@@ -533,13 +543,6 @@ async def memory_node(state: AgentState) -> dict[str, Any]:
         )
         if trace_id:
             collector.add_step(trace_id, "auto_handoff_trigger", {"consecutive_failures": metadata.get("consecutive_failures", 0)})
-    if user_id and session_id:
-        try:
-            from heritage_master.tools import user_manager
-            for msg in messages:
-                if isinstance(msg, HumanMessage): user_manager.add_message(session_id, "user", msg.content[:500]); break
-            user_manager.add_message(session_id, "assistant", final_reply[:2000])
-        except Exception as e: logger.warning("[memory] 保存会话失败: %s", e)
     token_budget = state.get("token_budget", -1)
     if user_id:
         try:
@@ -553,7 +556,7 @@ async def memory_node(state: AgentState) -> dict[str, Any]:
         collector.add_step(trace_id, "memory_extract", {"user_id": user_id[:8] if user_id else ""})
     try: _record_metrics(state, final_reply)
     except Exception as e: logger.warning("[memory] 指标失败: %s", e)
-    return {"final_reply": final_reply}
+    return {"final_reply": final_reply, "metadata": metadata}
 
 
 def _record_metrics(state, final_reply):
@@ -587,7 +590,7 @@ async def _extract_memories(messages, user_id, reply, use_llm=True):
         lm = await ext.extract_from_conversation([{"role":"user","content":user_msg},{"role":"assistant","content":reply}], "explorer", user_id)
         if lm:
             for m in lm: mm.add_memory("explorer", user_id, m)
-    except: pass
+    except Exception: pass
 
 
 async def _maybe_consolidate(user_id, session_id):
