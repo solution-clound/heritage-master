@@ -25,7 +25,7 @@ def test_imports():
     from heritage_master.tools.knowledge_base import ask_heritage_expert
     print("[OK] knowledge_base 导入成功")
 
-    from heritage_master.tools.forum import _check_config
+    from heritage_master.tools.forum import create_post, list_posts
     print("[OK] forum 导入成功")
 
     from heritage_master.tools.route_planner import plan_heritage_route
