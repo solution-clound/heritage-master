@@ -279,10 +279,63 @@ class AgentRequest(BaseModel):
     session_id: str = ""
 
 
+def _merge_panels(panels: list) -> list:
+    """合并同类型面板，避免多个 venue_list、heritage_list 等。"""
+    if not panels:
+        return panels
+
+    merged = {}
+    order = []
+    for p in panels:
+        ptype = p.get("type", "")
+        if ptype in ("venue_list", "heritage_list"):
+            if ptype not in merged:
+                merged[ptype] = []
+                order.append(ptype)
+            data = p.get("data", [])
+            if isinstance(data, list):
+                merged[ptype].extend(data)
+        else:
+            # 其他类型面板保持不变
+            key = f"{ptype}_{id(p)}"
+            merged[key] = p
+            order.append(key)
+
+    result = []
+    for key in order:
+        if key in merged:
+            val = merged[key]
+            if isinstance(val, list):
+                # 去重（按 id 字段）
+                seen = set()
+                deduped = []
+                for item in val:
+                    item_id = item.get("id", "") if isinstance(item, dict) else ""
+                    if item_id and item_id in seen:
+                        continue
+                    if item_id:
+                        seen.add(item_id)
+                    deduped.append(item)
+                result.append({"type": key, "data": deduped})
+            else:
+                result.append(val)
+
+    return result
+
+
 @app.post("/api/agent")
 async def api_agent(req: AgentRequest):
     """非遗探索助手 — 对话式 Agent，自动路由到搜索/场馆/旅行工具。"""
+    import time as _time
+    import uuid as _uuid
+    from heritage_master.observability.tracer import collector
+
+    started_at = _time.time()
+    trace_id = f"tr_{int(started_at)}_{_uuid.uuid4().hex[:8]}"
+    collector.start_trace(trace_id, user_id=req.user_id or "", session_id=req.session_id or "")
+
     if not _LLM_API_KEY:
+        collector.end_trace(trace_id, status="failed")
         return JSONResponse({"error": "LLM 未配置"}, status_code=503)
 
     # 组装 messages — 注入个性化上下文（聚合所有大师的画像）
@@ -317,18 +370,34 @@ async def api_agent(req: AgentRequest):
 
     panels = []
     max_rounds = 5  # 防止无限循环
+    llm_call_count = 0
+    tool_call_count = 0
 
     for _ in range(max_rounds):
+        t0 = _time.time()
         resp_data = await _ask_llm_with_tools(messages, AGENT_TOOLS)
+        llm_ms = int((_time.time() - t0) * 1000)
+        llm_call_count += 1
+
         if not resp_data or "choices" not in resp_data:
+            collector.add_step(trace_id, "llm_call", {"round": llm_call_count, "status": "error", "duration_ms": llm_ms})
             break
 
         choice = resp_data["choices"][0]
         msg = choice.get("message", {})
         finish_reason = choice.get("finish_reason", "")
 
+        # 记录 LLM 调用
+        has_tools = bool(msg.get("tool_calls"))
+        collector.add_step(trace_id, "llm_call", {
+            "round": llm_call_count,
+            "has_tool_calls": has_tools,
+            "finish_reason": finish_reason,
+            "duration_ms": llm_ms,
+        })
+
         # 如果有 tool_calls，执行工具
-        if msg.get("tool_calls"):
+        if has_tools:
             # 先把 assistant 消息（含 tool_calls）加入 messages
             messages.append(msg)
 
@@ -341,12 +410,22 @@ async def api_agent(req: AgentRequest):
                     arguments = {}
 
                 raw_data, panel_type, tool_text = await _execute_agent_tool(tool_name, arguments)
+                tool_ms = int((_time.time() - t0) * 1000) if 't0' in dir() else 0
+                tool_call_count += 1
 
                 # 添加 tool result 到 messages
                 messages.append({
                     "role": "tool",
                     "tool_call_id": tc["id"],
                     "content": tool_text or "未找到相关结果",
+                })
+
+                # 记录工具调用
+                collector.add_step(trace_id, "tool_call", {
+                    "tool": tool_name,
+                    "args": arguments,
+                    "duration_ms": tool_ms,
+                    "result_len": len(tool_text) if tool_text else 0,
                 })
 
                 # 收集面板数据
@@ -405,7 +484,20 @@ async def api_agent(req: AgentRequest):
         except Exception as e:
             print(f"[memory] 探索助手记忆提取失败: {e}")
 
-    return {"reply": reply, "panels": panels}
+    # 结束 trace
+    total_ms = int((_time.time() - started_at) * 1000)
+    collector.add_step(trace_id, "agent_complete", {
+        "llm_calls": llm_call_count,
+        "tool_calls": tool_call_count,
+        "reply_len": len(reply) if reply else 0,
+        "panels_count": len(panels),
+    })
+    collector.end_trace(trace_id, status="completed", reply_len=len(reply) if reply else 0, total_ms=total_ms)
+
+    # 合并同类型面板（避免多个 venue_list、heritage_list）
+    merged_panels = _merge_panels(panels)
+
+    return {"reply": reply, "panels": merged_panels, "trace_id": trace_id}
 
 
 @app.get("/api/agent/greeting")

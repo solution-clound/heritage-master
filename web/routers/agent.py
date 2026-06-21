@@ -15,6 +15,7 @@ from __future__ import annotations
 import json as _json
 import re
 import asyncio
+import uuid
 from typing import List, Optional
 
 from fastapi import APIRouter, Query
@@ -399,7 +400,15 @@ class GraphAgentRequest(BaseModel):
 @router.post("/api/agent")
 async def api_agent(req: AgentRequest):
     """非遗探索助手 — 对话式 Agent，自动路由到搜索/场馆/旅行工具。"""
+    import time as _time
+    from heritage_master.observability.tracer import collector
+
+    started_at = _time.time()
+    trace_id = f"tr_{int(started_at)}_{uuid.uuid4().hex[:8]}"
+    collector.start_trace(trace_id, user_id=req.user_id or "", session_id=req.session_id or "")
+
     if not get_llm():
+        collector.end_trace(trace_id, status="failed")
         return JSONResponse({"error": "LLM 未配置"}, status_code=503)
 
     # 组装 messages — 注入个性化上下文（聚合所有大师的画像和记忆）
@@ -455,26 +464,42 @@ async def api_agent(req: AgentRequest):
     max_rounds = 8  # 防止无限循环
     # 跨轮去重：记录已执行过的工具调用，避免重复调用同名同参数的工具
     global_seen_tools: dict[str, tuple] = {}  # tool_key -> (raw_data, panel_type, tool_text)
+    llm_call_count = 0
+    tool_call_count = 0
 
     for _ in range(max_rounds):
+        t0 = _time.time()
         resp_data = await _ask_llm_with_tools(messages, AGENT_TOOLS)
+        llm_ms = int((_time.time() - t0) * 1000)
+        llm_call_count += 1
+
         if not resp_data or "choices" not in resp_data:
             print(f"[agent] LLM 返回异常: {str(resp_data)[:300]}")
+            collector.add_step(trace_id, "llm_call", {"round": llm_call_count, "status": "error", "duration_ms": llm_ms})
             break
 
         choice = resp_data["choices"][0]
         msg = choice.get("message", {})
         finish_reason = choice.get("finish_reason", "")
 
+        # 记录 LLM 调用
+        has_tools = bool(msg.get("tool_calls"))
+        collector.add_step(trace_id, "llm_call", {
+            "round": llm_call_count,
+            "has_tool_calls": has_tools,
+            "finish_reason": finish_reason,
+            "duration_ms": llm_ms,
+        })
+
         # 调试日志
-        if msg.get("tool_calls"):
+        if has_tools:
             tool_names = [tc.get("function",{}).get("name","?") for tc in msg["tool_calls"]]
             print(f"[agent] LLM 调用工具: {tool_names}")
         else:
             print(f"[agent] LLM 直接回复 (无工具调用), finish_reason={finish_reason}")
 
         # 如果有 tool_calls，执行工具
-        if msg.get("tool_calls"):
+        if has_tools:
             # 先把 assistant 消息（含 tool_calls）加入 messages
             messages.append(msg)
 
@@ -496,14 +521,24 @@ async def api_agent(req: AgentRequest):
                         "tool_call_id": tc["id"],
                         "content": tool_text or "未找到相关结果",
                     })
+                    collector.add_step(trace_id, "tool_call", {"tool": tool_name, "cached": True})
                 else:
                     # 首次调用，正常执行
+                    tool_call_count += 1
+                    t1 = _time.time()
                     raw_data, panel_type, tool_text = await _execute_agent_tool(tool_name, arguments)
+                    tool_ms = int((_time.time() - t1) * 1000)
                     global_seen_tools[tool_key] = (raw_data, panel_type, tool_text)
                     messages.append({
                         "role": "tool",
                         "tool_call_id": tc["id"],
                         "content": tool_text or "未找到相关结果",
+                    })
+                    collector.add_step(trace_id, "tool_call", {
+                        "tool": tool_name,
+                        "args": arguments,
+                        "duration_ms": tool_ms,
+                        "result_len": len(tool_text) if tool_text else 0,
                     })
 
                 # 收集面板数据（重复调用不重复收集）
@@ -569,7 +604,17 @@ async def api_agent(req: AgentRequest):
         except Exception as e:
             print(f"[memory] 探索助手记忆提取失败: {e}")
 
-    return {"reply": reply, "panels": panels}
+    # 结束 trace
+    total_ms = int((_time.time() - started_at) * 1000)
+    collector.add_step(trace_id, "agent_complete", {
+        "llm_calls": llm_call_count,
+        "tool_calls": tool_call_count,
+        "reply_len": len(reply) if reply else 0,
+        "panels_count": len(panels),
+    })
+    collector.end_trace(trace_id, status="completed", reply_len=len(reply) if reply else 0, total_ms=total_ms)
+
+    return {"reply": reply, "panels": panels, "trace_id": trace_id}
 
 
 @router.get("/api/agent/greeting")

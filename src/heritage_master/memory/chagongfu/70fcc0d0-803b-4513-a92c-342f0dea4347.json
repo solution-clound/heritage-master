@@ -19,9 +19,9 @@
     ],
     "personality_notes": "用户对茶有初步兴趣但缺乏深入理解，回答简短，可能性格直率或尚未沉下心来，需要引导和耐心。; 用户虽初时回答直接简单，但在引导后能静心感受并准确描述茶汤体验，显示出可塑性，需要耐心引导以深化对茶的理解。; 用户对茶具和茶香有直觉性的好奇，虽初时回答简短直率，但在引导下能静心感受茶汤，显示出愿意沉下心来学习的潜力，需要持续耐心引导。; 在情绪低落时能接受引导，愿意通过品茶静心，有向内探索的倾向。; 在情绪低落时能接受引导，愿意通过品茶静心，有向内探索的倾向。话题跳跃，思绪易散，但能跟随引导重新聚焦。",
     "aesthetic_pref": "偏好含蓄、有节奏感的传统艺术形式，如茶道与昆曲，欣赏‘起承转合’的韵律与意境。",
-    "question_count": 28,
+    "question_count": 29,
     "first_met_at": "2026-05-26T02:41:22.333654",
-    "last_talk_at": "2026-06-10T03:15:59.185356+00:00"
+    "last_talk_at": "2026-06-21T04:39:01.277260+00:00"
   },
   "core_memories": [
     {
@@ -732,6 +732,22 @@
         "二十一式",
         "茶艺"
       ]
+    },
+    {
+      "id": "mem_8e8e549b",
+      "type": "interest",
+      "content": "用户主动询问'关公巡城'和'韩信点兵'这两个工夫茶冲泡术语，对工夫茶艺的技法细节表现出兴趣",
+      "importance": 6,
+      "created_at": "2026-06-15T02:06:57.182436+00:00",
+      "last_referenced": null,
+      "reference_count": 0,
+      "source": "conversation",
+      "tags": [
+        "工夫茶艺",
+        "冲泡技法",
+        "关公巡城",
+        "韩信点兵"
+      ]
     }
   ],
   "data_records": {
@@ -953,6 +969,26 @@
         "date": "2026-06-10",
         "session_id": "38d58434-15c4-4c72-90c8-a7b155601fc2",
         "topic_summary": ""
+      },
+      {
+        "date": "2026-06-15",
+        "session_id": "25067d57-c947-4d9e-9856-1f1545a55e65",
+        "topic_summary": ""
+      },
+      {
+        "date": "2026-06-15",
+        "session_id": "25067d57-c947-4d9e-9856-1f1545a55e65",
+        "topic_summary": ""
+      },
+      {
+        "date": "2026-06-17",
+        "session_id": "e6fda7ec-6897-4c7b-9cc4-50f4b17af677",
+        "topic_summary": ""
+      },
+      {
+        "date": "2026-06-21",
+        "session_id": "36202c1a-3d75-4b7f-b8d3-e3343b0d0dbd",
+        "topic_summary": ""
       }
     ]
   },
@@ -966,7 +1002,7 @@
   },
   "meta": {
     "last_consolidated_at": null,
-    "memory_count": 48,
+    "memory_count": 49,
     "consolidation_count": 0
   }
 }
